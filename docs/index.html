@@ -1,0 +1,883 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta http-equiv="refresh" content="300" />
+  <title>Performance Team — 2026 World Cup Tracker</title>
+  <link rel="stylesheet" href="assets/cisco-brand.css" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: var(--cisco-font);
+      background: var(--cisco-navy);
+      color: var(--cisco-white);
+      min-height: 100vh;
+    }
+    .chrome {
+      background: var(--cisco-navy-mid);
+      border-bottom: 1px solid var(--cisco-slate);
+      padding: 14px 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+    .chrome .brand {
+      font-weight: 700;
+      color: var(--cisco-cyan);
+      font-size: 15px;
+      letter-spacing: 0.02em;
+    }
+    .chrome .sep { color: var(--cisco-slate); }
+    .chrome .title { font-weight: 600; font-size: 14px; }
+    .chrome .spacer { flex: 1; }
+    .chrome .meta { font-size: 12px; color: var(--cisco-muted); }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 5px 12px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 600;
+      border: 1px solid var(--cisco-slate);
+      color: var(--cisco-muted);
+    }
+    .pill.live {
+      border-color: var(--cisco-cyan);
+      color: var(--cisco-cyan);
+      background: rgba(2, 200, 255, 0.08);
+    }
+    .live-dot {
+      width: 7px; height: 7px;
+      border-radius: 50%;
+      background: var(--cisco-cyan);
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.35; }
+    }
+    .main { padding: 22px 24px 40px; max-width: 1440px; margin: 0 auto; }
+    h1 { font-size: 26px; font-weight: 700; margin-bottom: 6px; }
+    .subtitle { color: var(--cisco-muted); font-size: 13px; margin-bottom: 18px; line-height: 1.5; }
+    .alert-banner {
+      display: none;
+      background: rgba(255, 144, 0, 0.12);
+      border: 1px solid rgba(255, 144, 0, 0.45);
+      border-left: 4px solid var(--cisco-orange);
+      border-radius: var(--cisco-radius);
+      padding: 12px 16px;
+      margin-bottom: 18px;
+      font-size: 13px;
+    }
+    .alert-banner.show { display: block; }
+    .alert-banner strong { color: var(--cisco-orange); }
+    .summary-row {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+      margin-bottom: 22px;
+    }
+    @media (max-width: 900px) {
+      .summary-row { grid-template-columns: repeat(2, 1fr); }
+    }
+    .stat-card {
+      background: var(--cisco-navy-mid);
+      border: 1px solid var(--cisco-slate);
+      border-radius: var(--cisco-radius);
+      padding: 16px 18px;
+      position: relative;
+      overflow: hidden;
+    }
+    .stat-card::after {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--cisco-slate);
+    }
+    .stat-card.in::after { background: #00d46a; }
+    .stat-card.out::after { background: #ff4d4f; }
+    .stat-card.pending::after { background: var(--cisco-orange); }
+    .stat-card.team::after { background: var(--cisco-blue); }
+    .stat-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--cisco-muted);
+      margin-bottom: 6px;
+    }
+    .stat-value { font-size: 32px; font-weight: 700; line-height: 1; }
+    .stat-card.in .stat-value { color: #00d46a; }
+    .stat-card.out .stat-value { color: #ff6b6b; }
+    .stat-card.pending .stat-value { color: var(--cisco-orange); }
+    .toolbar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .toolbar input, .toolbar select {
+      background: var(--cisco-navy-mid);
+      border: 1px solid var(--cisco-slate);
+      color: var(--cisco-white);
+      border-radius: 8px;
+      padding: 9px 12px;
+      font-size: 13px;
+      font-family: inherit;
+    }
+    .toolbar input { min-width: 220px; flex: 1; }
+    .filter-btn {
+      background: transparent;
+      border: 1px solid var(--cisco-slate);
+      color: var(--cisco-muted);
+      border-radius: 999px;
+      padding: 7px 14px;
+      font-size: 12px;
+      font-weight: 600;
+      cursor: pointer;
+      font-family: inherit;
+      transition: all 0.15s;
+    }
+    .filter-btn:hover { border-color: var(--cisco-cyan); color: var(--cisco-white); }
+    .filter-btn.active {
+      background: var(--cisco-blue);
+      border-color: var(--cisco-blue);
+      color: #fff;
+    }
+    .section-title {
+      font-size: 14px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--cisco-cyan);
+      margin: 26px 0 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .section-title::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: rgba(82, 94, 108, 0.6);
+    }
+    .member-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 14px;
+    }
+    .member-card {
+      background: var(--cisco-navy-mid);
+      border: 1px solid var(--cisco-slate);
+      border-radius: var(--cisco-radius);
+      padding: 14px 16px;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .member-card:hover {
+      border-color: rgba(2, 200, 255, 0.45);
+      transform: translateY(-1px);
+    }
+    .member-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+    .member-name { font-weight: 700; font-size: 15px; }
+    .member-score {
+      font-size: 11px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(2, 200, 255, 0.12);
+      color: var(--cisco-cyan);
+    }
+    .member-note {
+      font-size: 11px;
+      color: var(--cisco-orange);
+      margin: -6px 0 10px;
+      font-style: italic;
+    }
+    .country-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 0;
+      border-top: 1px solid rgba(82, 94, 108, 0.35);
+      cursor: pointer;
+      border-radius: 8px;
+      transition: background 0.15s;
+    }
+    .country-row:hover { background: rgba(2, 200, 255, 0.06); }
+    .country-row:first-of-type { border-top: none; padding-top: 0; }
+    .flag {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: rgba(255,255,255,0.08);
+      flex-shrink: 0;
+    }
+    .flag-placeholder {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--cisco-muted);
+      flex-shrink: 0;
+    }
+    .country-info { flex: 1; min-width: 0; }
+    .country-name {
+      font-size: 13px;
+      font-weight: 600;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .country-meta { font-size: 11px; color: var(--cisco-muted); margin-top: 1px; }
+    .badge {
+      font-size: 10px;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      padding: 4px 8px;
+      border-radius: 6px;
+      flex-shrink: 0;
+    }
+    .badge.in { background: rgba(0, 212, 106, 0.15); color: #00d46a; border: 1px solid rgba(0, 212, 106, 0.35); }
+    .badge.out { background: rgba(255, 77, 79, 0.15); color: #ff6b6b; border: 1px solid rgba(255, 77, 79, 0.35); }
+    .badge.pending { background: rgba(255, 144, 0, 0.15); color: var(--cisco-orange); border: 1px solid rgba(255, 144, 0, 0.35); }
+    .country-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+      gap: 12px;
+    }
+    .country-card {
+      background: var(--cisco-navy-mid);
+      border: 1px solid var(--cisco-slate);
+      border-radius: var(--cisco-radius);
+      padding: 14px;
+      position: relative;
+      cursor: pointer;
+      transition: border-color 0.15s, transform 0.15s;
+    }
+    .country-card:hover {
+      border-color: rgba(2, 200, 255, 0.45);
+      transform: translateY(-1px);
+    }
+    .country-card.status-in { border-color: rgba(0, 212, 106, 0.35); }
+    .country-card.status-out { border-color: rgba(255, 77, 79, 0.35); opacity: 0.85; }
+    .country-card.status-out .country-card-name { text-decoration: line-through; text-decoration-color: rgba(255,107,107,0.5); }
+    .country-card-top {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+    .country-card-name { font-weight: 700; font-size: 14px; }
+    .country-card-group {
+      font-size: 11px;
+      color: var(--cisco-muted);
+      margin-bottom: 8px;
+    }
+    .country-card-detail { font-size: 12px; color: var(--cisco-muted); line-height: 1.4; }
+    .matches-list { display: grid; gap: 10px; }
+    .match-card {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--cisco-navy-mid);
+      border: 1px solid var(--cisco-slate);
+      border-radius: var(--cisco-radius);
+      padding: 12px 16px;
+      flex-wrap: wrap;
+    }
+    .match-team {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 140px;
+      font-size: 13px;
+      font-weight: 600;
+    }
+    .match-score {
+      font-size: 18px;
+      font-weight: 800;
+      color: var(--cisco-cyan);
+      min-width: 60px;
+      text-align: center;
+    }
+    .match-status {
+      margin-left: auto;
+      font-size: 11px;
+      color: var(--cisco-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .match-tracked {
+      width: 100%;
+      font-size: 11px;
+      color: var(--cisco-orange);
+    }
+    .footer {
+      margin-top: 32px;
+      padding-top: 16px;
+      border-top: 1px solid var(--cisco-slate);
+      font-size: 11px;
+      color: var(--cisco-muted);
+      line-height: 1.6;
+    }
+    .empty {
+      color: var(--cisco-muted);
+      font-size: 13px;
+      padding: 20px;
+      text-align: center;
+      border: 1px dashed var(--cisco-slate);
+      border-radius: var(--cisco-radius);
+    }
+    .hidden { display: none !important; }
+    .search-hint {
+      font-size: 11px;
+      color: var(--cisco-muted);
+      margin: -8px 0 14px;
+    }
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(7, 24, 45, 0.82);
+      backdrop-filter: blur(4px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      z-index: 1000;
+    }
+    .modal-backdrop.open { display: flex; }
+    .country-modal {
+      width: min(520px, 100%);
+      background: var(--cisco-navy-mid);
+      border: 1px solid var(--cisco-slate);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 24px 64px rgba(0, 0, 0, 0.45);
+      animation: modalIn 0.2s ease-out;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.98); }
+      to { opacity: 1; transform: none; }
+    }
+    .modal-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 18px 20px;
+      border-bottom: 1px solid rgba(82, 94, 108, 0.45);
+      background: rgba(10, 96, 255, 0.08);
+    }
+    .modal-flag {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: rgba(255,255,255,0.08);
+    }
+    .modal-title { font-size: 20px; font-weight: 700; }
+    .modal-subtitle { font-size: 12px; color: var(--cisco-muted); margin-top: 2px; }
+    .modal-close {
+      margin-left: auto;
+      background: transparent;
+      border: 1px solid var(--cisco-slate);
+      color: var(--cisco-muted);
+      width: 34px;
+      height: 34px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 18px;
+      line-height: 1;
+    }
+    .modal-close:hover { color: #fff; border-color: var(--cisco-cyan); }
+    .modal-body { padding: 20px; }
+    .star-section {
+      display: grid;
+      grid-template-columns: 120px 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    @media (max-width: 480px) {
+      .star-section { grid-template-columns: 1fr; text-align: center; }
+    }
+    .star-photo-wrap {
+      width: 120px;
+      height: 120px;
+      border-radius: 14px;
+      overflow: hidden;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(82, 94, 108, 0.5);
+    }
+    .star-photo {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+    .star-photo-placeholder {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 36px;
+      color: var(--cisco-slate);
+      background: linear-gradient(145deg, rgba(10, 96, 255, 0.25), rgba(2, 200, 255, 0.12));
+    }
+    .star-photo-placeholder.star-initials {
+      font-size: 28px;
+      font-weight: 800;
+      color: var(--cisco-cyan);
+      letter-spacing: 0.04em;
+    }
+    .star-label {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--cisco-cyan);
+      margin-bottom: 4px;
+      font-weight: 700;
+    }
+    .star-name { font-size: 22px; font-weight: 700; margin-bottom: 4px; }
+    .star-position { font-size: 13px; color: var(--cisco-muted); }
+    .modal-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 8px;
+    }
+    .modal-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: opacity 0.15s;
+    }
+    .modal-link:hover { opacity: 0.88; }
+    .modal-link.fifa {
+      background: var(--cisco-blue);
+      color: #fff;
+    }
+    .modal-link.espn {
+      background: rgba(2, 200, 255, 0.12);
+      color: var(--cisco-cyan);
+      border: 1px solid rgba(2, 200, 255, 0.35);
+    }
+    .modal-meta {
+      font-size: 12px;
+      color: var(--cisco-muted);
+      line-height: 1.5;
+      padding-top: 14px;
+      border-top: 1px solid rgba(82, 94, 108, 0.35);
+    }
+  </style>
+</head>
+<body>
+  <header class="chrome">
+    <span class="brand">Cisco Performance Team</span>
+    <span class="sep">|</span>
+    <span class="title">2026 FIFA World Cup Tracker</span>
+    <span class="spacer"></span>
+    <span class="pill live"><span class="live-dot"></span> Daily status</span>
+    <span class="meta" id="updatedMeta">Loading…</span>
+  </header>
+
+  <main class="main">
+    <h1>World Cup Country Tracker</h1>
+    <p class="subtitle">
+      Follow every country from our FIFA Draw — see at a glance who is still <strong style="color:#00d46a">IN</strong>
+      or <strong style="color:#ff6b6b">OUT</strong> of the 2026 World Cup. Click any country to meet their star player and link to FIFA.com.
+    </p>
+
+    <div class="alert-banner" id="changesBanner"></div>
+
+    <div class="summary-row" id="summaryRow"></div>
+
+    <div class="toolbar">
+      <input type="search" id="searchInput" placeholder="Search country or team member…" />
+      <select id="memberFilter">
+        <option value="">All team members</option>
+      </select>
+      <button class="filter-btn active" data-status="ALL">All</button>
+      <button class="filter-btn" data-status="IN">IN</button>
+      <button class="filter-btn" data-status="OUT">OUT</button>
+      <button class="filter-btn" data-status="PENDING">Pending</button>
+    </div>
+    <p class="search-hint" id="searchHint">Tip: click a country card or press Enter after searching to open star player details.</p>
+
+    <div class="section-title">By Team Member</div>
+    <div class="member-grid" id="memberGrid"></div>
+
+    <div class="section-title">All Tracked Countries</div>
+    <div class="country-grid" id="countryGrid"></div>
+
+    <div class="section-title">Today's Matches (Your Countries)</div>
+    <div class="matches-list" id="matchesList"></div>
+
+    <footer class="footer">
+      Data source: ESPN public API. Run <code style="color:var(--cisco-cyan)">update-world-cup-dashboard.ps1</code> daily
+      (or schedule in Task Scheduler) to refresh. Share this HTML file with <code style="color:var(--cisco-cyan)">world-cup-data.js</code>
+      in the same folder via SharePoint or OneDrive.
+    </footer>
+  </main>
+
+  <div class="modal-backdrop" id="countryModal" aria-hidden="true">
+    <div class="country-modal" role="dialog" aria-labelledby="modalCountryName">
+      <div class="modal-header">
+        <img class="modal-flag" id="modalFlag" alt="" />
+        <div>
+          <div class="modal-title" id="modalCountryName"></div>
+          <div class="modal-subtitle" id="modalCountryMeta"></div>
+        </div>
+        <button class="modal-close" id="modalClose" aria-label="Close">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div class="star-section">
+          <div class="star-photo-wrap" id="modalStarPhotoWrap"></div>
+          <div>
+            <div class="star-label">Star Player</div>
+            <div class="star-name" id="modalStarName"></div>
+            <div class="star-position" id="modalStarPosition"></div>
+          </div>
+        </div>
+        <div class="modal-actions" id="modalActions"></div>
+        <div class="modal-meta" id="modalMeta"></div>
+      </div>
+    </div>
+  </div>
+
+  <script src="world-cup-data.js"></script>
+  <script>
+    let data = window.WC_DASHBOARD_DATA;
+    let statusFilter = 'ALL';
+
+    function findCountry(pickName) {
+      return data.countries.find(c => c.pickName === pickName);
+    }
+
+    function getVisibleCountries() {
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const memberVal = document.getElementById('memberFilter').value;
+      let picks = data.countries;
+      if (memberVal) {
+        const member = data.members.find(m => m.name === memberVal);
+        if (member) picks = member.countries;
+      }
+      return picks.filter(c => matchesFilter(c)).filter(c => {
+        if (!search) return true;
+        return c.pickName.toLowerCase().includes(search) ||
+          (c.displayName || '').toLowerCase().includes(search) ||
+          ((c.starPlayer && c.starPlayer.name) || '').toLowerCase().includes(search);
+      });
+    }
+
+    function openCountryModal(country) {
+      if (!country) return;
+      const modal = document.getElementById('countryModal');
+      const star = country.starPlayer || {};
+      const flagEl = document.getElementById('modalFlag');
+      if (country.logo) {
+        flagEl.src = country.logo;
+        flagEl.alt = country.displayName || country.pickName;
+        flagEl.classList.remove('hidden');
+        flagEl.onerror = () => {
+          flagEl.classList.add('hidden');
+        };
+      } else {
+        flagEl.removeAttribute('src');
+        flagEl.classList.add('hidden');
+      }
+      document.getElementById('modalCountryName').textContent = country.displayName || country.pickName;
+      document.getElementById('modalCountryMeta').textContent =
+        `${country.group} · ${country.status} · ${country.record || '0-0-0'} · ${country.detail || ''}`;
+      document.getElementById('modalStarName').textContent = star.name || 'Star player TBD';
+      document.getElementById('modalStarPosition').textContent = star.position || 'National team squad';
+
+      const photoWrap = document.getElementById('modalStarPhotoWrap');
+      if (star.headshot) {
+        photoWrap.innerHTML = `<img class="star-photo" src="${esc(star.headshot)}" alt="${esc(star.name)}" onerror="this.replaceWith((function(){var d=document.createElement('div');d.className='star-photo-placeholder star-initials';d.textContent='${esc((star.name || '?').split(' ').map(function(w){return w[0];}).filter(Boolean).slice(0,2).join('').toUpperCase() || '⚽')}';return d;})())" />`;
+      } else {
+        const initials = (star.name || '?').split(' ').map(w => w[0]).filter(Boolean).slice(0, 2).join('').toUpperCase() || '⚽';
+        photoWrap.innerHTML = `<div class="star-photo-placeholder star-initials">${esc(initials)}</div>`;
+      }
+
+      const actions = [];
+      const fifaUrl = country.fifaUrl || star.fifaUrl;
+      if (fifaUrl) {
+        actions.push(`<a class="modal-link fifa" href="${esc(fifaUrl)}" target="_blank" rel="noopener noreferrer">Learn more on FIFA.com</a>`);
+      }
+      if (star.espnUrl) {
+        actions.push(`<a class="modal-link espn" href="${esc(star.espnUrl)}" target="_blank" rel="noopener noreferrer">View player profile</a>`);
+      }
+      document.getElementById('modalActions').innerHTML = actions.join('') ||
+        '<span class="modal-meta">FIFA team link unavailable for this country.</span>';
+
+      document.getElementById('modalMeta').textContent =
+        `Tracked from our Performance Team FIFA Draw. Star player selected from squad data and curated picks in country-profiles.json.`;
+
+      modal.classList.add('open');
+      modal.setAttribute('aria-hidden', 'false');
+    }
+
+    function closeCountryModal() {
+      const modal = document.getElementById('countryModal');
+      modal.classList.remove('open');
+      modal.setAttribute('aria-hidden', 'true');
+    }
+
+    function bindCountryClicks() {
+      document.querySelectorAll('[data-pick-name]').forEach(el => {
+        el.addEventListener('click', () => openCountryModal(findCountry(el.dataset.pickName)));
+      });
+    }
+
+    function updateSearchHint() {
+      const visible = getVisibleCountries();
+      const hint = document.getElementById('searchHint');
+      if (visible.length === 1) {
+        hint.textContent = `1 match: ${visible[0].displayName || visible[0].pickName} — press Enter or click to view star player.`;
+      } else if (visible.length === 0) {
+        hint.textContent = 'No countries match your search.';
+      } else {
+        hint.textContent = 'Tip: click a country card or press Enter after searching to open star player details.';
+      }
+    }
+
+    function esc(s) {
+      const d = document.createElement('div');
+      d.textContent = s || '';
+      return d.innerHTML;
+    }
+
+    function flagHtml(c) {
+      const abbr = esc((c.abbreviation || '??').slice(0, 3));
+      if (c.logo) {
+        return `<img class="flag" src="${esc(c.logo)}" alt="" loading="lazy" onerror="this.replaceWith(Object.assign(document.createElement('div'),{className:'flag-placeholder',textContent:'${abbr}'}))" />`;
+      }
+      return `<div class="flag-placeholder">${abbr}</div>`;
+    }
+
+    function badgeHtml(status) {
+      const label = status === 'IN' ? 'IN' : status === 'OUT' ? 'OUT' : 'PENDING';
+      const cls = status === 'IN' ? 'in' : status === 'OUT' ? 'out' : 'pending';
+      return `<span class="badge ${cls}">${label}</span>`;
+    }
+
+    function renderSummary() {
+      const s = data.summary;
+      document.getElementById('summaryRow').innerHTML = `
+        <div class="stat-card in"><div class="stat-label">Still In</div><div class="stat-value">${s.inCount}</div></div>
+        <div class="stat-card out"><div class="stat-label">Eliminated</div><div class="stat-value">${s.outCount}</div></div>
+        <div class="stat-card pending"><div class="stat-label">Pending</div><div class="stat-value">${s.pendingCount}</div></div>
+        <div class="stat-card team"><div class="stat-label">Team Members</div><div class="stat-value">${s.members}</div></div>
+      `;
+      document.getElementById('updatedMeta').textContent =
+        `${data.phase} · Updated ${data.lastUpdatedDisplay}`;
+    }
+
+    function renderChanges() {
+      const banner = document.getElementById('changesBanner');
+      if (!data.statusChanges || data.statusChanges.length === 0) {
+        banner.classList.remove('show');
+        return;
+      }
+      const items = data.statusChanges.map(c =>
+        `<strong>${esc(c.country)}</strong>: ${esc(c.from)} → ${esc(c.to)} (${esc(c.detail)})`
+      ).join(' · ');
+      banner.innerHTML = `<strong>Status changes since last update:</strong> ${items}`;
+      banner.classList.add('show');
+    }
+
+    function renderMembers() {
+      const grid = document.getElementById('memberGrid');
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const memberVal = document.getElementById('memberFilter').value;
+
+      const html = data.members
+        .filter(m => !memberVal || m.name === memberVal)
+        .filter(m => {
+          if (!search) return true;
+          if (m.name.toLowerCase().includes(search)) return true;
+          return m.countries.some(c =>
+            c.pickName.toLowerCase().includes(search) ||
+            (c.displayName || '').toLowerCase().includes(search)
+          );
+        })
+        .map(m => {
+          const countries = m.countries.filter(c => matchesFilter(c));
+          if (countries.length === 0 && (statusFilter !== 'ALL' || search)) return '';
+          const note = m.note ? `<div class="member-note">${esc(m.note)}</div>` : '';
+          const rows = (countries.length ? countries : m.countries).map(c => `
+            <div class="country-row" data-status="${esc(c.status)}" data-pick-name="${esc(c.pickName)}" title="View star player">
+              ${flagHtml(c)}
+              <div class="country-info">
+                <div class="country-name">${esc(c.displayName || c.pickName)}</div>
+                <div class="country-meta">${esc(c.group)} · ${esc(c.record || '0-0-0')} · ${esc(c.detail)}</div>
+              </div>
+              ${badgeHtml(c.status)}
+            </div>
+          `).join('');
+          return `
+            <article class="member-card" data-member="${esc(m.name)}">
+              <div class="member-head">
+                <span class="member-name">${esc(m.name)}</span>
+                <span class="member-score">${m.inCount} IN · ${m.outCount} OUT</span>
+              </div>
+              ${note}
+              ${rows}
+            </article>
+          `;
+        })
+        .filter(Boolean)
+        .join('');
+
+      grid.innerHTML = html || '<div class="empty">No team members match your filters.</div>';
+      bindCountryClicks();
+      updateSearchHint();
+    }
+
+    function renderCountries() {
+      const grid = document.getElementById('countryGrid');
+      const search = document.getElementById('searchInput').value.toLowerCase();
+      const memberVal = document.getElementById('memberFilter').value;
+
+      let picks = data.countries;
+      if (memberVal) {
+        const member = data.members.find(m => m.name === memberVal);
+        if (member) picks = member.countries;
+      }
+
+      const html = picks
+        .filter(c => matchesFilter(c))
+        .filter(c => {
+          if (!search) return true;
+          return c.pickName.toLowerCase().includes(search) ||
+            (c.displayName || '').toLowerCase().includes(search) ||
+            ((c.starPlayer && c.starPlayer.name) || '').toLowerCase().includes(search);
+        })
+        .sort((a, b) => {
+          const order = { IN: 0, PENDING: 1, OUT: 2 };
+          return (order[a.status] ?? 9) - (order[b.status] ?? 9) ||
+            a.pickName.localeCompare(b.pickName);
+        })
+        .map(c => `
+          <article class="country-card status-${c.status.toLowerCase()}" data-pick-name="${esc(c.pickName)}" title="View star player">
+            <div class="country-card-top">
+              ${flagHtml(c)}
+              <div>
+                <div class="country-card-name">${esc(c.displayName || c.pickName)}</div>
+                <div class="country-card-group">${esc(c.group)} · Rank ${c.rank} · ${c.points} pts</div>
+              </div>
+              ${badgeHtml(c.status)}
+            </div>
+            <div class="country-card-detail">${esc(c.detail)}</div>
+          </article>
+        `)
+        .join('');
+
+      grid.innerHTML = html || '<div class="empty">No countries match your filters.</div>';
+      bindCountryClicks();
+      updateSearchHint();
+    }
+
+    function renderMatches() {
+      const list = document.getElementById('matchesList');
+      if (!data.todayMatches || data.todayMatches.length === 0) {
+        list.innerHTML = '<div class="empty">No matches today involving your tracked countries — check back on match days.</div>';
+        return;
+      }
+      list.innerHTML = data.todayMatches.map(m => `
+        <div class="match-card">
+          <div class="match-team">${flagHtml({ logo: m.home.logo, abbreviation: 'H' })} ${esc(m.home.name)}</div>
+          <div class="match-score">${esc(m.home.score || '–')} : ${esc(m.away.score || '–')}</div>
+          <div class="match-team">${flagHtml({ logo: m.away.logo, abbreviation: 'A' })} ${esc(m.away.name)}</div>
+          <div class="match-status">${esc(m.status)}</div>
+          <div class="match-tracked">Tracking: ${esc(m.tracked.join(', '))}</div>
+        </div>
+      `).join('');
+    }
+
+    function populateMemberFilter() {
+      const sel = document.getElementById('memberFilter');
+      data.members.forEach(m => {
+        const opt = document.createElement('option');
+        opt.value = m.name;
+        opt.textContent = m.name;
+        sel.appendChild(opt);
+      });
+    }
+
+    function matchesFilter(c) {
+      if (statusFilter === 'ALL') return true;
+      return c.status === statusFilter;
+    }
+
+    function renderAll() {
+      renderSummary();
+      renderChanges();
+      renderMembers();
+      renderCountries();
+      renderMatches();
+    }
+
+    document.querySelectorAll('.filter-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        statusFilter = btn.dataset.status;
+        renderMembers();
+        renderCountries();
+      });
+    });
+
+    document.getElementById('searchInput').addEventListener('input', () => {
+      renderMembers();
+      renderCountries();
+    });
+
+    document.getElementById('searchInput').addEventListener('keydown', (e) => {
+      if (e.key !== 'Enter') return;
+      const visible = getVisibleCountries();
+      if (visible.length >= 1) openCountryModal(visible[0]);
+    });
+
+    document.getElementById('memberFilter').addEventListener('change', () => {
+      renderMembers();
+      renderCountries();
+    });
+
+    document.getElementById('modalClose').addEventListener('click', closeCountryModal);
+    document.getElementById('countryModal').addEventListener('click', (e) => {
+      if (e.target.id === 'countryModal') closeCountryModal();
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') closeCountryModal();
+    });
+
+    if (!data) {
+      document.querySelector('.main').innerHTML =
+        '<div class="empty">No data found. Run update-world-cup-dashboard.ps1 first to generate world-cup-data.js</div>';
+    } else {
+      populateMemberFilter();
+      renderAll();
+    }
+  </script>
+</body>
+</html>

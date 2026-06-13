@@ -1,0 +1,25 @@
+/* Cisco Dark theme — from Dark PPT Template and Branding Guide.potx (Cisco Dark 05-21-2025) */
+:root {
+  --cisco-navy: #07182d;
+  --cisco-navy-mid: #0a2444;
+  --cisco-slate: #525e6c;
+  --cisco-muted: #b4b9c0;
+  --cisco-cyan: #02c8ff;
+  --cisco-blue: #0a60ff;
+  --cisco-magenta: #ff007f;
+  --cisco-orange: #ff9000;
+  --cisco-white: #ffffff;
+  --cisco-surface: #f4f7fa;
+  --cisco-card: #ffffff;
+  --cisco-line: #dce3eb;
+  --cisco-ink: #07182d;
+  --cisco-font: "CiscoSansTT", "Segoe UI", system-ui, -apple-system, sans-serif;
+  --cisco-radius: 10px;
+  --cisco-shadow: 0 1px 3px rgba(7, 24, 45, 0.08), 0 8px 24px rgba(7, 24, 45, 0.1);
+  --cisco-accent: var(--cisco-blue);
+  --cisco-accent-bright: var(--cisco-cyan);
+  --cisco-accent-soft: #e8f7fc;
+  --cisco-accent-border: #9de9ff;
+  --cisco-path-b: #5b6ef5;
+  --cisco-path-b-soft: #eef0ff;
+}

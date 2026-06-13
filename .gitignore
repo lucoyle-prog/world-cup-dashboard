@@ -1,0 +1,13 @@
+# Large generated SharePoint builds (GitHub uses docs/ instead)
+wc-dashboard-publish-sharepoint/
+World Cup/sharepoint-image-cache.json
+World Cup/live-update.log
+World Cup/world-cup-status-history.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Keep source data JSON for local dev; docs/ is the published site
+# World Cup/world-cup-dashboard-data.json is committed for reference
