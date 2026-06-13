@@ -1,6 +1,11 @@
 # Updates World Cup Performance Team dashboard data from ESPN (no API key required).
 # Schedule daily via Task Scheduler, or run manually before sharing the dashboard.
+param(
+    [switch]$SkipRosterFetch
+)
+
 $ErrorActionPreference = 'Stop'
+[Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12
 
 $root = $PSScriptRoot
 $csvPath = Join-Path (Split-Path $root -Parent) 'FIFA Draw(Draw Results).csv'
@@ -122,7 +127,7 @@ function Read-TeamPicks([string]$Path) {
             $members += [PSCustomObject]@{
                 name = 'Not Picked (Pool)'
                 countries = @($raw)
-                note = ($row.'Country 2').Trim()
+                note = if ($row.'Country 2') { ($row.'Country 2').Trim() } else { '' }
             }
             continue
         }
@@ -163,7 +168,8 @@ function Find-AthleteByName($Athletes, [string]$TargetName) {
 }
 
 function Select-FallbackStar($Athletes) {
-    $outfield = $Athletes | Where-Object { $_.position.abbreviation -ne 'G' }
+    if (-not $Athletes) { return $null }
+    $outfield = @($Athletes) | Where-Object { $_.position -and $_.position.abbreviation -ne 'G' }
     $profiled = $outfield | Where-Object { $_.profiled -eq $true } | Select-Object -First 1
     if ($profiled) { return $profiled }
     $withPhoto = $outfield | Where-Object { Get-PlayerHeadshot $_ } | Select-Object -First 1
@@ -190,7 +196,7 @@ function Build-StarPlayerInfo([string]$PickName, [string]$EspnTeamId, $ProfilesC
     $starName = if ($profile) { $profile.starPlayer } else { '' }
 
     $athlete = $null
-    if ($EspnTeamId) {
+    if ($EspnTeamId -and -not $SkipRosterFetch) {
         if (-not $RosterCache.ContainsKey($EspnTeamId)) {
             try {
                 $RosterCache[$EspnTeamId] = (Invoke-RestMethod -Uri "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/teams/$EspnTeamId/roster").athletes
@@ -240,7 +246,12 @@ $totalMatchesPlayed = 0
 foreach ($group in $standings.children) {
     $groupName = $group.name
     $entries = @()
-    foreach ($entry in $group.standings.entries) {
+    $groupEntries = @()
+    if ($group.standings -and $group.standings.entries) {
+        $groupEntries = @($group.standings.entries)
+    }
+    foreach ($entry in $groupEntries) {
+        if (-not $entry -or -not $entry.team) { continue }
         $resolved = Resolve-CountryStatus $entry $groupName 'tournament'
         $gp = $resolved.played
         $totalMatchesPlayed += $gp
@@ -416,7 +427,10 @@ $json = $payload | ConvertTo-Json -Depth 8
 $utf8NoBom = New-Object System.Text.UTF8Encoding $false
 [System.IO.File]::WriteAllText($dataJsonPath, $json, $utf8NoBom)
 [System.IO.File]::WriteAllText($dataJsPath, "window.WC_DASHBOARD_DATA = $json;", $utf8NoBom)
-[System.IO.File]::WriteAllText($historyPath, (@($countries | ForEach-Object { @{ pickName = $_.pickName; status = $_.status } }) | ConvertTo-Json), $utf8NoBom)
+$historyPayload = @{
+    countries = @($countries | ForEach-Object { @{ pickName = $_.pickName; status = $_.status } })
+}
+[System.IO.File]::WriteAllText($historyPath, ($historyPayload | ConvertTo-Json -Depth 4), $utf8NoBom)
 
 Write-Host "Updated $($countries.Count) countries - IN: $($summary.inCount), OUT: $($summary.outCount), PENDING: $($summary.pendingCount)"
 if ($statusChanges.Count -gt 0) {

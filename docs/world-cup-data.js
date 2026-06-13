@@ -1,5 +1,5 @@
 window.WC_DASHBOARD_DATA = {
-    "lastUpdatedDisplay":  "Friday, June 12, 2026 3:56 PM",
+    "lastUpdatedDisplay":  "Saturday, June 13, 2026 6:06 PM",
     "members":  [
                     {
                         "outCount":  0,
@@ -19,11 +19,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Senegal",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/senegal",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/169797/sadio-mane",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Sadio Mane",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/169797.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group I"
@@ -63,11 +63,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Uzbekistan",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uzbekistan",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/216937/eldor-shomurodov",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Eldor Shomurodov",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/216937.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group K"
@@ -82,25 +82,25 @@ window.WC_DASHBOARD_DATA = {
                         "countries":  [
                                           {
                                               "abbreviation":  "BIH",
-                                              "rank":  2,
+                                              "rank":  4,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/bosnia-and-herzegovina",
                                               "group":  "Group B",
-                                              "played":  0,
-                                              "points":  0,
+                                              "played":  1,
+                                              "points":  1,
                                               "displayName":  "Bosnia-Herzegovina",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
                                               "status":  "IN",
                                               "pickName":  "Bosnia and Herzegovina",
-                                              "note":  "Advance to Round of 32",
+                                              "note":  "Eliminated",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/bosnia-and-herzegovina",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/102337/edin-dzeko",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Edin Dzeko",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/102337.png"
+                                                                 "headshot":  null
                                                              },
-                                              "record":  "0-0-0",
-                                              "detail":  "In World Cup - Group B"
+                                              "record":  "0-1-0",
+                                              "detail":  "In World Cup - Group B (group stage in progress)"
                                           },
                                           {
                                               "abbreviation":  "ALG",
@@ -115,11 +115,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Algeria",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/algeria",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/163940/riyad-mahrez",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Riyad Mahrez",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/163940.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group J"
@@ -137,11 +137,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Ecuador",
                                               "note":  "Eliminated",
                                               "starPlayer":  {
-                                                                 "position":  "Midfielder",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ecuador",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/289877/moises-caicedo",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Moises Caicedo",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/289877.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group E"
@@ -167,11 +167,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "C�te d\u0027Ivoire",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cote-d-ivoire",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/210397/nicolas-pepe",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Nicolas Pepe",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/210397.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group E"
@@ -189,11 +189,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Uruguay",
                                               "note":  "Eliminated",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uruguay",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/271788/darwin-nunez",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Darwin Nunez",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/271788.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group H"
@@ -233,22 +233,22 @@ window.WC_DASHBOARD_DATA = {
                                               "rank":  3,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/qatar",
                                               "group":  "Group B",
-                                              "played":  0,
-                                              "points":  0,
+                                              "played":  1,
+                                              "points":  1,
                                               "displayName":  "Qatar",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
                                               "status":  "IN",
                                               "pickName":  "Qatar",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/qatar",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/219258/akram-afif",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Akram Afif",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/219258.png"
+                                                                 "headshot":  null
                                                              },
-                                              "record":  "0-0-0",
-                                              "detail":  "In World Cup - Group B"
+                                              "record":  "0-1-0",
+                                              "detail":  "In World Cup - Group B (group stage in progress)"
                                           },
                                           {
                                               "abbreviation":  "EGY",
@@ -263,11 +263,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Egypt",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/egypt",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/173896/mohamed-salah",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Mohamed Salah",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/173896.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group G"
@@ -285,11 +285,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Scotland",
                                               "note":  "Eliminated",
                                               "starPlayer":  {
-                                                                 "position":  "Defender",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/scotland",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/104943/andy-robertson",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Andy Robertson",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/104943.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group C"
@@ -315,11 +315,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Australia",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
-                                                                 "position":  "Goalkeeper",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/australia",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/141438/mathew-ryan",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Mathew Ryan",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/141438.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group D"
@@ -337,11 +337,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Spain",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Midfielder",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/spain",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/250465/pedri",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Pedri",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/250465.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group H"
@@ -359,11 +359,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Brazil",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/brazil",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/252107/vinicius-junior",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Vinicius Junior",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/252107.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group C"
@@ -378,7 +378,7 @@ window.WC_DASHBOARD_DATA = {
                         "countries":  [
                                           {
                                               "abbreviation":  "TUR",
-                                              "rank":  4,
+                                              "rank":  2,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/turkiye",
                                               "group":  "Group D",
                                               "played":  0,
@@ -387,13 +387,13 @@ window.WC_DASHBOARD_DATA = {
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
                                               "status":  "IN",
                                               "pickName":  "Turkey",
-                                              "note":  "Eliminated",
+                                              "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Midfielder",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/turkiye",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/310452/arda-guler",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Arda Guler",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/310452.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group D"
@@ -411,36 +411,36 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Colombia",
                                               "note":  "Eliminated",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/colombia",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/257390/luis-diaz",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Luis Diaz",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/257390.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group K"
                                           },
                                           {
                                               "abbreviation":  "PAR",
-                                              "rank":  2,
+                                              "rank":  4,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/paraguay",
                                               "group":  "Group D",
-                                              "played":  0,
+                                              "played":  1,
                                               "points":  0,
                                               "displayName":  "Paraguay",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
                                               "status":  "IN",
                                               "pickName":  "Paraguay",
-                                              "note":  "Advance to Round of 32",
+                                              "note":  "Eliminated",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/paraguay",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/48128/miguel-almiron",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Miguel Almiron",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/48128.png"
+                                                                 "headshot":  null
                                                              },
-                                              "record":  "0-0-0",
-                                              "detail":  "In World Cup - Group D"
+                                              "record":  "0-0-1",
+                                              "detail":  "In World Cup - Group D (group stage in progress)"
                                           }
                                       ],
                         "inCount":  3
@@ -507,11 +507,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Netherlands",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Defender",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/netherlands",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/157892/virgil-van-dijk",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Virgil van Dijk",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/157892.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group F"
@@ -537,11 +537,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Cape Verde Islands",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cabo-verde",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/135216/ryan-mendes",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Ryan Mendes",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/135216.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group H"
@@ -559,11 +559,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Belgium",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Midfielder",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/belgium",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/134947/kevin-de-bruyne",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Kevin De Bruyne",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/134947.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group G"
@@ -581,11 +581,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Czech Republic",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/czechia",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/212330/patrik-schick",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Patrik Schick",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/212330.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-1",
                                               "detail":  "In World Cup - Group A (group stage in progress)"
@@ -611,11 +611,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Croatia",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Midfielder",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/croatia",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/76762/luka-modric",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Luka Modric",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/76762.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group L"
@@ -633,11 +633,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "England",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/england",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/142200/harry-kane",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Harry Kane",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/142200.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group L"
@@ -655,11 +655,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Morocco",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Defender",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/morocco",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/240233/achraf-hakimi",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Achraf Hakimi",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/240233.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group C"
@@ -685,36 +685,36 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Norway",
                                               "note":  "Eliminated",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/norway",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/253989/erling-haaland",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Erling Haaland",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/253989.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group I"
                                           },
                                           {
                                               "abbreviation":  "SUI",
-                                              "rank":  4,
+                                              "rank":  1,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/switzerland",
                                               "group":  "Group B",
-                                              "played":  0,
-                                              "points":  0,
+                                              "played":  1,
+                                              "points":  1,
                                               "displayName":  "Switzerland",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
                                               "status":  "IN",
                                               "pickName":  "Switzerland",
-                                              "note":  "Eliminated",
+                                              "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Midfielder",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/switzerland",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/149981/granit-xhaka",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Granit Xhaka",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/149981.png"
+                                                                 "headshot":  null
                                                              },
-                                              "record":  "0-0-0",
-                                              "detail":  "In World Cup - Group B"
+                                              "record":  "0-1-0",
+                                              "detail":  "In World Cup - Group B (group stage in progress)"
                                           },
                                           {
                                               "abbreviation":  "JPN",
@@ -759,11 +759,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Iraq",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/iraq",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/269478/mohanad-ali",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Mohanad Ali",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/269478.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group I"
@@ -781,11 +781,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "France",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/france",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/231388/kylian-mbappe",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Kylian Mbappe",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/231388.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group I"
@@ -855,11 +855,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Korea Republic",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/korea-republic",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/149945/son-heung-min",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Son Heung-min",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/149945.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "1-0-0",
                                               "detail":  "In World Cup - Group A (group stage in progress)"
@@ -877,11 +877,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Germany",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Midfielder",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/germany",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/303821/jamal-musiala",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Jamal Musiala",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/303821.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group E"
@@ -907,11 +907,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Sweden",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/sweden",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/235662/alexander-isak",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Alexander Isak",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/235662.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group F"
@@ -929,11 +929,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Portugal",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/portugal",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/22774/cristiano-ronaldo",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Cristiano Ronaldo",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/22774.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group K"
@@ -951,11 +951,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Austria",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
-                                                                 "position":  "Defender",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/austria",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/118444/david-alaba",
+                                                                 "espnUrl":  null,
                                                                  "name":  "David Alaba",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/118444.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group J"
@@ -981,36 +981,36 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Argentina",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/argentina",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/45843/lionel-messi",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Lionel Messi",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/45843.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group J"
                                           },
                                           {
                                               "abbreviation":  "CAN",
-                                              "rank":  1,
+                                              "rank":  2,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/canada",
                                               "group":  "Group B",
-                                              "played":  0,
-                                              "points":  0,
+                                              "played":  1,
+                                              "points":  1,
                                               "displayName":  "Canada",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
                                               "status":  "IN",
                                               "pickName":  "Canada",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Defender",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/canada",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/236721/alphonso-davies",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Alphonso Davies",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/236721.png"
+                                                                 "headshot":  null
                                                              },
-                                              "record":  "0-0-0",
-                                              "detail":  "In World Cup - Group B"
+                                              "record":  "0-1-0",
+                                              "detail":  "In World Cup - Group B (group stage in progress)"
                                           },
                                           {
                                               "abbreviation":  "CUW",
@@ -1025,11 +1025,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Curacao",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Midfielder",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/curacao",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/138664/leandro-bacuna",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Leandro Bacuna",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/138664.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group E"
@@ -1091,11 +1091,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "New Zealand",
                                               "note":  "Eliminated",
                                               "starPlayer":  {
-                                                                 "position":  "Forward",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/new-zealand",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/134190/chris-wood",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Chris Wood",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/134190.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group G"
@@ -1113,11 +1113,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Panama",
                                               "note":  "Eliminated",
                                               "starPlayer":  {
-                                                                 "position":  "Midfielder",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/panama",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/116825/anibal-godoy",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Anibal Godoy",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/116825.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group L"
@@ -1135,11 +1135,11 @@ window.WC_DASHBOARD_DATA = {
                                               "pickName":  "Saudi Arabia",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
-                                                                 "position":  "Midfielder",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/saudi-arabia",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/163850/salem-al-dawsari",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Salem Al-Dawsari",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/163850.png"
+                                                                 "headshot":  null
                                                              },
                                               "record":  "0-0-0",
                                               "detail":  "In World Cup - Group H"
@@ -1149,22 +1149,22 @@ window.WC_DASHBOARD_DATA = {
                                               "rank":  1,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/usa",
                                               "group":  "Group D",
-                                              "played":  0,
-                                              "points":  0,
+                                              "played":  1,
+                                              "points":  3,
                                               "displayName":  "United States",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
                                               "status":  "IN",
                                               "pickName":  "United States",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
-                                                                 "position":  "Midfielder",
+                                                                 "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/usa",
-                                                                 "espnUrl":  "https://www.espn.com/soccer/player/_/id/225607/christian-pulisic",
+                                                                 "espnUrl":  null,
                                                                  "name":  "Christian Pulisic",
-                                                                 "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/225607.png"
+                                                                 "headshot":  null
                                                              },
-                                              "record":  "0-0-0",
-                                              "detail":  "In World Cup - Group D"
+                                              "record":  "1-0-0",
+                                              "detail":  "In World Cup - Group D (group stage in progress)"
                                           }
                                       ],
                         "inCount":  9
@@ -1235,58 +1235,58 @@ window.WC_DASHBOARD_DATA = {
                    {
                        "teams":  [
                                      {
-                                         "record":  "0-0-0",
-                                         "rank":  1,
+                                         "record":  "0-1-0",
+                                         "rank":  2,
                                          "note":  "Advance to Round of 32",
-                                         "played":  0,
+                                         "played":  1,
                                          "espnTeamId":  "206",
-                                         "points":  0,
+                                         "points":  1,
                                          "abbreviation":  "CAN",
                                          "name":  "Canada",
                                          "group":  "Group B",
-                                         "detail":  "In World Cup - Group B",
+                                         "detail":  "In World Cup - Group B (group stage in progress)",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/can.png"
                                      },
                                      {
-                                         "record":  "0-0-0",
-                                         "rank":  2,
-                                         "note":  "Advance to Round of 32",
-                                         "played":  0,
+                                         "record":  "0-1-0",
+                                         "rank":  4,
+                                         "note":  "Eliminated",
+                                         "played":  1,
                                          "espnTeamId":  "452",
-                                         "points":  0,
+                                         "points":  1,
                                          "abbreviation":  "BIH",
                                          "name":  "Bosnia-Herzegovina",
                                          "group":  "Group B",
-                                         "detail":  "In World Cup - Group B",
+                                         "detail":  "In World Cup - Group B (group stage in progress)",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bih.png"
                                      },
                                      {
-                                         "record":  "0-0-0",
-                                         "rank":  4,
-                                         "note":  "Eliminated",
-                                         "played":  0,
+                                         "record":  "0-1-0",
+                                         "rank":  1,
+                                         "note":  "Advance to Round of 32",
+                                         "played":  1,
                                          "espnTeamId":  "475",
-                                         "points":  0,
+                                         "points":  1,
                                          "abbreviation":  "SUI",
                                          "name":  "Switzerland",
                                          "group":  "Group B",
-                                         "detail":  "In World Cup - Group B",
+                                         "detail":  "In World Cup - Group B (group stage in progress)",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sui.png"
                                      },
                                      {
-                                         "record":  "0-0-0",
+                                         "record":  "0-1-0",
                                          "rank":  3,
                                          "note":  "Best 8 advance",
-                                         "played":  0,
+                                         "played":  1,
                                          "espnTeamId":  "4398",
-                                         "points":  0,
+                                         "points":  1,
                                          "abbreviation":  "QAT",
                                          "name":  "Qatar",
                                          "group":  "Group B",
-                                         "detail":  "In World Cup - Group B",
+                                         "detail":  "In World Cup - Group B (group stage in progress)",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/qat.png"
                                      }
@@ -1357,23 +1357,23 @@ window.WC_DASHBOARD_DATA = {
                    {
                        "teams":  [
                                      {
-                                         "record":  "0-0-0",
-                                         "rank":  2,
-                                         "note":  "Advance to Round of 32",
-                                         "played":  0,
+                                         "record":  "0-0-1",
+                                         "rank":  4,
+                                         "note":  "Eliminated",
+                                         "played":  1,
                                          "espnTeamId":  "210",
                                          "points":  0,
                                          "abbreviation":  "PAR",
                                          "name":  "Paraguay",
                                          "group":  "Group D",
-                                         "detail":  "In World Cup - Group D",
+                                         "detail":  "In World Cup - Group D (group stage in progress)",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/par.png"
                                      },
                                      {
                                          "record":  "0-0-0",
-                                         "rank":  4,
-                                         "note":  "Eliminated",
+                                         "rank":  2,
+                                         "note":  "Advance to Round of 32",
                                          "played":  0,
                                          "espnTeamId":  "465",
                                          "points":  0,
@@ -1399,16 +1399,16 @@ window.WC_DASHBOARD_DATA = {
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/aus.png"
                                      },
                                      {
-                                         "record":  "0-0-0",
+                                         "record":  "1-0-0",
                                          "rank":  1,
                                          "note":  "Advance to Round of 32",
-                                         "played":  0,
+                                         "played":  1,
                                          "espnTeamId":  "660",
-                                         "points":  0,
+                                         "points":  3,
                                          "abbreviation":  "USA",
                                          "name":  "United States",
                                          "group":  "Group D",
-                                         "detail":  "In World Cup - Group D",
+                                         "detail":  "In World Cup - Group D (group stage in progress)",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/usa.png"
                                      }
@@ -1905,51 +1905,70 @@ window.WC_DASHBOARD_DATA = {
                    }
                ],
     "tournamentDates":  "June 11 - July 19, 2026",
-    "lastUpdated":  "2026-06-12T15:56:52-04:00",
+    "lastUpdated":  "2026-06-13T18:06:18-04:00",
     "todayMatches":  [
                          {
-                             "name":  "Bosnia-Herzegovina at Canada",
+                             "name":  "Switzerland at Qatar",
                              "away":  {
                                           "score":  "1",
-                                          "name":  "Bosnia-Herzegovina",
+                                          "name":  "Switzerland",
                                           "logo":  null
                                       },
                              "home":  {
-                                          "score":  "0",
-                                          "name":  "Canada",
+                                          "score":  "1",
+                                          "name":  "Qatar",
                                           "logo":  null
                                       },
-                             "state":  "in",
-                             "status":  "Halftime",
+                             "state":  "post",
+                             "status":  "Full Time",
                              "tracked":  [
-                                             "Canada",
-                                             "Bosnia-Herzegovina"
+                                             "Qatar",
+                                             "Switzerland"
                                          ]
                          },
                          {
-                             "name":  "Paraguay at United States",
+                             "name":  "Morocco at Brazil",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Paraguay",
+                                          "name":  "Morocco",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "United States",
+                                          "name":  "Brazil",
+                                          "logo":  null
+                                      },
+                             "state":  "in",
+                             "status":  "First Half",
+                             "tracked":  [
+                                             "Brazil",
+                                             "Morocco"
+                                         ]
+                         },
+                         {
+                             "name":  "Scotland at Haiti",
+                             "away":  {
+                                          "score":  "0",
+                                          "name":  "Scotland",
+                                          "logo":  null
+                                      },
+                             "home":  {
+                                          "score":  "0",
+                                          "name":  "Haiti",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "United States",
-                                             "Paraguay"
+                                             "Haiti",
+                                             "Scotland"
                                          ]
                          }
                      ],
     "phase":  "Tournament in progress",
     "tournament":  "2026 FIFA World Cup",
     "summary":  {
-                    "matchesPlayedInTournament":  2,
+                    "matchesPlayedInTournament":  5,
                     "outCount":  0,
                     "total":  48,
                     "members":  14,
@@ -1970,11 +1989,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Senegal",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/senegal",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/169797/sadio-mane",
+                                             "espnUrl":  null,
                                              "name":  "Sadio Mane",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/169797.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group I"
@@ -2014,36 +2033,36 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Uzbekistan",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uzbekistan",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/216937/eldor-shomurodov",
+                                             "espnUrl":  null,
                                              "name":  "Eldor Shomurodov",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/216937.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group K"
                       },
                       {
                           "abbreviation":  "BIH",
-                          "rank":  2,
+                          "rank":  4,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/bosnia-and-herzegovina",
                           "group":  "Group B",
-                          "played":  0,
-                          "points":  0,
+                          "played":  1,
+                          "points":  1,
                           "displayName":  "Bosnia-Herzegovina",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
                           "status":  "IN",
                           "pickName":  "Bosnia and Herzegovina",
-                          "note":  "Advance to Round of 32",
+                          "note":  "Eliminated",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/bosnia-and-herzegovina",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/102337/edin-dzeko",
+                                             "espnUrl":  null,
                                              "name":  "Edin Dzeko",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/102337.png"
+                                             "headshot":  null
                                          },
-                          "record":  "0-0-0",
-                          "detail":  "In World Cup - Group B"
+                          "record":  "0-1-0",
+                          "detail":  "In World Cup - Group B (group stage in progress)"
                       },
                       {
                           "abbreviation":  "ALG",
@@ -2058,11 +2077,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Algeria",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/algeria",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/163940/riyad-mahrez",
+                                             "espnUrl":  null,
                                              "name":  "Riyad Mahrez",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/163940.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group J"
@@ -2080,11 +2099,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Ecuador",
                           "note":  "Eliminated",
                           "starPlayer":  {
-                                             "position":  "Midfielder",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/ecuador",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/289877/moises-caicedo",
+                                             "espnUrl":  null,
                                              "name":  "Moises Caicedo",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/289877.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group E"
@@ -2102,11 +2121,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "C�te d\u0027Ivoire",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cote-d-ivoire",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/210397/nicolas-pepe",
+                                             "espnUrl":  null,
                                              "name":  "Nicolas Pepe",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/210397.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group E"
@@ -2124,11 +2143,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Uruguay",
                           "note":  "Eliminated",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/uruguay",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/271788/darwin-nunez",
+                                             "espnUrl":  null,
                                              "name":  "Darwin Nunez",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/271788.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group H"
@@ -2160,22 +2179,22 @@ window.WC_DASHBOARD_DATA = {
                           "rank":  3,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/qatar",
                           "group":  "Group B",
-                          "played":  0,
-                          "points":  0,
+                          "played":  1,
+                          "points":  1,
                           "displayName":  "Qatar",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
                           "status":  "IN",
                           "pickName":  "Qatar",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/qatar",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/219258/akram-afif",
+                                             "espnUrl":  null,
                                              "name":  "Akram Afif",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/219258.png"
+                                             "headshot":  null
                                          },
-                          "record":  "0-0-0",
-                          "detail":  "In World Cup - Group B"
+                          "record":  "0-1-0",
+                          "detail":  "In World Cup - Group B (group stage in progress)"
                       },
                       {
                           "abbreviation":  "EGY",
@@ -2190,11 +2209,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Egypt",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/egypt",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/173896/mohamed-salah",
+                                             "espnUrl":  null,
                                              "name":  "Mohamed Salah",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/173896.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group G"
@@ -2212,11 +2231,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Scotland",
                           "note":  "Eliminated",
                           "starPlayer":  {
-                                             "position":  "Defender",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/scotland",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/104943/andy-robertson",
+                                             "espnUrl":  null,
                                              "name":  "Andy Robertson",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/104943.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group C"
@@ -2234,11 +2253,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Australia",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
-                                             "position":  "Goalkeeper",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/australia",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/141438/mathew-ryan",
+                                             "espnUrl":  null,
                                              "name":  "Mathew Ryan",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/141438.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group D"
@@ -2256,11 +2275,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Spain",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Midfielder",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/spain",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/250465/pedri",
+                                             "espnUrl":  null,
                                              "name":  "Pedri",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/250465.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group H"
@@ -2278,18 +2297,18 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Brazil",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/brazil",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/252107/vinicius-junior",
+                                             "espnUrl":  null,
                                              "name":  "Vinicius Junior",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/252107.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group C"
                       },
                       {
                           "abbreviation":  "TUR",
-                          "rank":  4,
+                          "rank":  2,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/turkiye",
                           "group":  "Group D",
                           "played":  0,
@@ -2298,13 +2317,13 @@ window.WC_DASHBOARD_DATA = {
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/tur.png",
                           "status":  "IN",
                           "pickName":  "Turkey",
-                          "note":  "Eliminated",
+                          "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Midfielder",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/turkiye",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/310452/arda-guler",
+                                             "espnUrl":  null,
                                              "name":  "Arda Guler",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/310452.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group D"
@@ -2322,36 +2341,36 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Colombia",
                           "note":  "Eliminated",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/colombia",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/257390/luis-diaz",
+                                             "espnUrl":  null,
                                              "name":  "Luis Diaz",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/257390.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group K"
                       },
                       {
                           "abbreviation":  "PAR",
-                          "rank":  2,
+                          "rank":  4,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/paraguay",
                           "group":  "Group D",
-                          "played":  0,
+                          "played":  1,
                           "points":  0,
                           "displayName":  "Paraguay",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/par.png",
                           "status":  "IN",
                           "pickName":  "Paraguay",
-                          "note":  "Advance to Round of 32",
+                          "note":  "Eliminated",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/paraguay",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/48128/miguel-almiron",
+                                             "espnUrl":  null,
                                              "name":  "Miguel Almiron",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/48128.png"
+                                             "headshot":  null
                                          },
-                          "record":  "0-0-0",
-                          "detail":  "In World Cup - Group D"
+                          "record":  "0-0-1",
+                          "detail":  "In World Cup - Group D (group stage in progress)"
                       },
                       {
                           "abbreviation":  "RSA",
@@ -2410,11 +2429,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Netherlands",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Defender",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/netherlands",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/157892/virgil-van-dijk",
+                                             "espnUrl":  null,
                                              "name":  "Virgil van Dijk",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/157892.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group F"
@@ -2432,11 +2451,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Cape Verde Islands",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/cabo-verde",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/135216/ryan-mendes",
+                                             "espnUrl":  null,
                                              "name":  "Ryan Mendes",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/135216.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group H"
@@ -2454,11 +2473,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Belgium",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Midfielder",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/belgium",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/134947/kevin-de-bruyne",
+                                             "espnUrl":  null,
                                              "name":  "Kevin De Bruyne",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/134947.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group G"
@@ -2476,11 +2495,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Czech Republic",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/czechia",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/212330/patrik-schick",
+                                             "espnUrl":  null,
                                              "name":  "Patrik Schick",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/212330.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-1",
                           "detail":  "In World Cup - Group A (group stage in progress)"
@@ -2498,11 +2517,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Croatia",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Midfielder",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/croatia",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/76762/luka-modric",
+                                             "espnUrl":  null,
                                              "name":  "Luka Modric",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/76762.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group L"
@@ -2520,11 +2539,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "England",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/england",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/142200/harry-kane",
+                                             "espnUrl":  null,
                                              "name":  "Harry Kane",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/142200.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group L"
@@ -2542,11 +2561,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Morocco",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Defender",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/morocco",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/240233/achraf-hakimi",
+                                             "espnUrl":  null,
                                              "name":  "Achraf Hakimi",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/240233.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group C"
@@ -2564,36 +2583,36 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Norway",
                           "note":  "Eliminated",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/norway",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/253989/erling-haaland",
+                                             "espnUrl":  null,
                                              "name":  "Erling Haaland",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/253989.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group I"
                       },
                       {
                           "abbreviation":  "SUI",
-                          "rank":  4,
+                          "rank":  1,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/switzerland",
                           "group":  "Group B",
-                          "played":  0,
-                          "points":  0,
+                          "played":  1,
+                          "points":  1,
                           "displayName":  "Switzerland",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
                           "status":  "IN",
                           "pickName":  "Switzerland",
-                          "note":  "Eliminated",
+                          "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Midfielder",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/switzerland",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/149981/granit-xhaka",
+                                             "espnUrl":  null,
                                              "name":  "Granit Xhaka",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/149981.png"
+                                             "headshot":  null
                                          },
-                          "record":  "0-0-0",
-                          "detail":  "In World Cup - Group B"
+                          "record":  "0-1-0",
+                          "detail":  "In World Cup - Group B (group stage in progress)"
                       },
                       {
                           "abbreviation":  "JPN",
@@ -2630,11 +2649,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Iraq",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/iraq",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/269478/mohanad-ali",
+                                             "espnUrl":  null,
                                              "name":  "Mohanad Ali",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/269478.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group I"
@@ -2652,11 +2671,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "France",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/france",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/231388/kylian-mbappe",
+                                             "espnUrl":  null,
                                              "name":  "Kylian Mbappe",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/231388.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group I"
@@ -2718,11 +2737,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Korea Republic",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/korea-republic",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/149945/son-heung-min",
+                                             "espnUrl":  null,
                                              "name":  "Son Heung-min",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/149945.png"
+                                             "headshot":  null
                                          },
                           "record":  "1-0-0",
                           "detail":  "In World Cup - Group A (group stage in progress)"
@@ -2740,11 +2759,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Germany",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Midfielder",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/germany",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/303821/jamal-musiala",
+                                             "espnUrl":  null,
                                              "name":  "Jamal Musiala",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/303821.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group E"
@@ -2762,11 +2781,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Sweden",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/sweden",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/235662/alexander-isak",
+                                             "espnUrl":  null,
                                              "name":  "Alexander Isak",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/235662.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group F"
@@ -2784,11 +2803,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Portugal",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/portugal",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/22774/cristiano-ronaldo",
+                                             "espnUrl":  null,
                                              "name":  "Cristiano Ronaldo",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/22774.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group K"
@@ -2806,11 +2825,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Austria",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
-                                             "position":  "Defender",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/austria",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/118444/david-alaba",
+                                             "espnUrl":  null,
                                              "name":  "David Alaba",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/118444.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group J"
@@ -2828,36 +2847,36 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Argentina",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/argentina",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/45843/lionel-messi",
+                                             "espnUrl":  null,
                                              "name":  "Lionel Messi",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/45843.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group J"
                       },
                       {
                           "abbreviation":  "CAN",
-                          "rank":  1,
+                          "rank":  2,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/canada",
                           "group":  "Group B",
-                          "played":  0,
-                          "points":  0,
+                          "played":  1,
+                          "points":  1,
                           "displayName":  "Canada",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
                           "status":  "IN",
                           "pickName":  "Canada",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Defender",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/canada",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/236721/alphonso-davies",
+                                             "espnUrl":  null,
                                              "name":  "Alphonso Davies",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/236721.png"
+                                             "headshot":  null
                                          },
-                          "record":  "0-0-0",
-                          "detail":  "In World Cup - Group B"
+                          "record":  "0-1-0",
+                          "detail":  "In World Cup - Group B (group stage in progress)"
                       },
                       {
                           "abbreviation":  "CUW",
@@ -2872,11 +2891,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Curacao",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Midfielder",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/curacao",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/138664/leandro-bacuna",
+                                             "espnUrl":  null,
                                              "name":  "Leandro Bacuna",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/138664.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group E"
@@ -2938,11 +2957,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "New Zealand",
                           "note":  "Eliminated",
                           "starPlayer":  {
-                                             "position":  "Forward",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/new-zealand",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/134190/chris-wood",
+                                             "espnUrl":  null,
                                              "name":  "Chris Wood",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/134190.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group G"
@@ -2960,11 +2979,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Panama",
                           "note":  "Eliminated",
                           "starPlayer":  {
-                                             "position":  "Midfielder",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/panama",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/116825/anibal-godoy",
+                                             "espnUrl":  null,
                                              "name":  "Anibal Godoy",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/116825.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group L"
@@ -2982,11 +3001,11 @@ window.WC_DASHBOARD_DATA = {
                           "pickName":  "Saudi Arabia",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
-                                             "position":  "Midfielder",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/saudi-arabia",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/163850/salem-al-dawsari",
+                                             "espnUrl":  null,
                                              "name":  "Salem Al-Dawsari",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/163850.png"
+                                             "headshot":  null
                                          },
                           "record":  "0-0-0",
                           "detail":  "In World Cup - Group H"
@@ -2996,22 +3015,22 @@ window.WC_DASHBOARD_DATA = {
                           "rank":  1,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/usa",
                           "group":  "Group D",
-                          "played":  0,
-                          "points":  0,
+                          "played":  1,
+                          "points":  3,
                           "displayName":  "United States",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/usa.png",
                           "status":  "IN",
                           "pickName":  "United States",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
-                                             "position":  "Midfielder",
+                                             "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/usa",
-                                             "espnUrl":  "https://www.espn.com/soccer/player/_/id/225607/christian-pulisic",
+                                             "espnUrl":  null,
                                              "name":  "Christian Pulisic",
-                                             "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/225607.png"
+                                             "headshot":  null
                                          },
-                          "record":  "0-0-0",
-                          "detail":  "In World Cup - Group D"
+                          "record":  "1-0-0",
+                          "detail":  "In World Cup - Group D (group stage in progress)"
                       }
                   ],
     "statusChanges":  [
