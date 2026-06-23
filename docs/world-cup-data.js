@@ -1,5 +1,5 @@
 window.WC_DASHBOARD_DATA = {
-    "lastUpdatedDisplay":  "Tuesday, June 23, 2026 11:22 AM",
+    "lastUpdatedDisplay":  "Tuesday, June 23, 2026 12:12 PM",
     "members":  [
                     {
                         "outCount":  0,
@@ -1905,7 +1905,7 @@ window.WC_DASHBOARD_DATA = {
                    }
                ],
     "tournamentDates":  "June 11 - July 19, 2026",
-    "lastUpdated":  "2026-06-23T11:22:21-04:00",
+    "lastUpdated":  "2026-06-23T12:12:06-04:00",
     "todayMatches":  [
                          {
                              "name":  "Uzbekistan at Portugal",
