@@ -188,6 +188,17 @@
       margin-bottom: 12px;
     }
     .member-name { font-weight: 700; font-size: 15px; }
+    .member-name-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .member-total-points {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--cisco-cyan);
+    }
     .member-score {
       font-size: 11px;
       font-weight: 700;
@@ -723,13 +734,14 @@
         .map(m => {
           const countries = m.countries.filter(c => matchesFilter(c));
           if (countries.length === 0 && (statusFilter !== 'ALL' || search)) return '';
+          const totalPoints = m.countries.reduce((sum, c) => sum + (Number(c.points) || 0), 0);
           const note = m.note ? `<div class="member-note">${esc(m.note)}</div>` : '';
           const rows = (countries.length ? countries : m.countries).map(c => `
             <div class="country-row" data-status="${esc(c.status)}" data-pick-name="${esc(c.pickName)}" title="View star player">
               ${flagHtml(c)}
               <div class="country-info">
                 <div class="country-name">${esc(c.displayName || c.pickName)}</div>
-                <div class="country-meta">${esc(c.group)} · ${esc(c.record || '0-0-0')} · ${esc(c.detail)}</div>
+                <div class="country-meta">${esc(c.group)} · Rank ${c.rank > 0 ? c.rank : '–'} · ${esc(c.record || '0-0-0')} · ${c.points ?? 0} pts · ${esc(c.detail)}</div>
               </div>
               ${badgeHtml(c.status)}
             </div>
@@ -737,7 +749,10 @@
           return `
             <article class="member-card" data-member="${esc(m.name)}">
               <div class="member-head">
-                <span class="member-name">${esc(m.name)}</span>
+                <div class="member-name-wrap">
+                  <span class="member-name">${esc(m.name)}</span>
+                  <span class="member-total-points">${totalPoints} pts</span>
+                </div>
                 <span class="member-score">${m.inCount} IN · ${m.outCount} OUT</span>
               </div>
               ${note}
