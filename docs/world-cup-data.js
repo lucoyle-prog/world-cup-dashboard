@@ -1,5 +1,5 @@
 window.WC_DASHBOARD_DATA = {
-    "lastUpdatedDisplay":  "Wednesday, June 24, 2026 10:21 AM",
+    "lastUpdatedDisplay":  "Wednesday, June 24, 2026 10:22 AM",
     "members":  [
                     {
                         "outCount":  0,
@@ -1905,7 +1905,7 @@ window.WC_DASHBOARD_DATA = {
                    }
                ],
     "tournamentDates":  "June 11 - July 19, 2026",
-    "lastUpdated":  "2026-06-24T10:21:19-04:00",
+    "lastUpdated":  "2026-06-24T10:22:20-04:00",
     "todayMatches":  [
                          {
                              "name":  "Qatar at Bosnia-Herzegovina",
