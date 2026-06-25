@@ -1,5 +1,5 @@
 window.WC_DASHBOARD_DATA = {
-    "lastUpdatedDisplay":  "Wednesday, June 24, 2026 10:22 AM",
+    "lastUpdatedDisplay":  "Thursday, June 25, 2026 9:34 AM",
     "members":  [
                     {
                         "outCount":  0,
@@ -85,8 +85,8 @@ window.WC_DASHBOARD_DATA = {
                                               "rank":  3,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/bosnia-and-herzegovina",
                                               "group":  "Group B",
-                                              "played":  2,
-                                              "points":  1,
+                                              "played":  3,
+                                              "points":  4,
                                               "displayName":  "Bosnia-Herzegovina",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
                                               "status":  "IN",
@@ -99,8 +99,8 @@ window.WC_DASHBOARD_DATA = {
                                                                  "name":  "Edin Dzeko",
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/102337.png"
                                                              },
-                                              "record":  "0-1-1",
-                                              "detail":  "In World Cup - Group B (group stage in progress)"
+                                              "record":  "1-1-1",
+                                              "detail":  "Advanced - still in the World Cup"
                                           },
                                           {
                                               "abbreviation":  "ALG",
@@ -224,7 +224,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  3
                     },
                     {
-                        "outCount":  0,
+                        "outCount":  1,
                         "name":  "Rosy",
                         "note":  "",
                         "countries":  [
@@ -233,11 +233,11 @@ window.WC_DASHBOARD_DATA = {
                                               "rank":  4,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/qatar",
                                               "group":  "Group B",
-                                              "played":  2,
+                                              "played":  3,
                                               "points":  1,
                                               "displayName":  "Qatar",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Qatar",
                                               "note":  "Eliminated",
                                               "starPlayer":  {
@@ -247,8 +247,8 @@ window.WC_DASHBOARD_DATA = {
                                                                  "name":  "Akram Afif",
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/219258.png"
                                                              },
-                                              "record":  "0-1-1",
-                                              "detail":  "In World Cup - Group B (group stage in progress)"
+                                              "record":  "0-1-2",
+                                              "detail":  "Eliminated from World Cup"
                                           },
                                           {
                                               "abbreviation":  "EGY",
@@ -277,7 +277,7 @@ window.WC_DASHBOARD_DATA = {
                                               "rank":  3,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/scotland",
                                               "group":  "Group C",
-                                              "played":  2,
+                                              "played":  3,
                                               "points":  3,
                                               "displayName":  "Scotland",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
@@ -291,11 +291,11 @@ window.WC_DASHBOARD_DATA = {
                                                                  "name":  "Andy Robertson",
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/104943.png"
                                                              },
-                                              "record":  "1-0-1",
-                                              "detail":  "In World Cup - Group C (group stage in progress)"
+                                              "record":  "1-0-2",
+                                              "detail":  "Still in World Cup - awaiting best third-place result"
                                           }
                                       ],
-                        "inCount":  3
+                        "inCount":  2
                     },
                     {
                         "outCount":  0,
@@ -351,8 +351,8 @@ window.WC_DASHBOARD_DATA = {
                                               "rank":  1,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/brazil",
                                               "group":  "Group C",
-                                              "played":  2,
-                                              "points":  4,
+                                              "played":  3,
+                                              "points":  7,
                                               "displayName":  "Brazil",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
                                               "status":  "IN",
@@ -365,8 +365,8 @@ window.WC_DASHBOARD_DATA = {
                                                                  "name":  "Vinicius Junior",
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/252107.png"
                                                              },
-                                              "record":  "1-1-0",
-                                              "detail":  "In World Cup - Group C (group stage in progress)"
+                                              "record":  "2-1-0",
+                                              "detail":  "Advanced - still in the World Cup"
                                           }
                                       ],
                         "inCount":  3
@@ -452,16 +452,16 @@ window.WC_DASHBOARD_DATA = {
                         "countries":  [
                                           {
                                               "abbreviation":  "RSA",
-                                              "rank":  4,
+                                              "rank":  2,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/south-africa",
                                               "group":  "Group A",
-                                              "played":  2,
-                                              "points":  1,
+                                              "played":  3,
+                                              "points":  4,
                                               "displayName":  "South Africa",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
                                               "status":  "IN",
                                               "pickName":  "South Africa",
-                                              "note":  "Eliminated",
+                                              "note":  "Advance to Round of 32",
                                               "starPlayer":  {
                                                                  "position":  "",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/south-africa",
@@ -469,8 +469,8 @@ window.WC_DASHBOARD_DATA = {
                                                                  "name":  "Percy Tau",
                                                                  "headshot":  null
                                                              },
-                                              "record":  "0-1-1",
-                                              "detail":  "In World Cup - Group A (group stage in progress)"
+                                              "record":  "1-1-1",
+                                              "detail":  "Advanced - still in the World Cup"
                                           },
                                           {
                                               "abbreviation":  "IRN",
@@ -520,7 +520,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  3
                     },
                     {
-                        "outCount":  0,
+                        "outCount":  1,
                         "name":  "Kassidy",
                         "note":  "",
                         "countries":  [
@@ -570,16 +570,16 @@ window.WC_DASHBOARD_DATA = {
                                           },
                                           {
                                               "abbreviation":  "CZE",
-                                              "rank":  3,
+                                              "rank":  4,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/czechia",
                                               "group":  "Group A",
-                                              "played":  2,
+                                              "played":  3,
                                               "points":  1,
                                               "displayName":  "Czechia",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Czech Republic",
-                                              "note":  "Best 8 advance",
+                                              "note":  "Eliminated",
                                               "starPlayer":  {
                                                                  "position":  "Forward",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/czechia",
@@ -587,11 +587,11 @@ window.WC_DASHBOARD_DATA = {
                                                                  "name":  "Patrik Schick",
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/212330.png"
                                                              },
-                                              "record":  "0-1-1",
-                                              "detail":  "In World Cup - Group A (group stage in progress)"
+                                              "record":  "0-1-2",
+                                              "detail":  "Eliminated from World Cup"
                                           }
                                       ],
-                        "inCount":  3
+                        "inCount":  2
                     },
                     {
                         "outCount":  0,
@@ -647,8 +647,8 @@ window.WC_DASHBOARD_DATA = {
                                               "rank":  2,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/morocco",
                                               "group":  "Group C",
-                                              "played":  2,
-                                              "points":  4,
+                                              "played":  3,
+                                              "points":  7,
                                               "displayName":  "Morocco",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
                                               "status":  "IN",
@@ -661,8 +661,8 @@ window.WC_DASHBOARD_DATA = {
                                                                  "name":  "Achraf Hakimi",
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/240233.png"
                                                              },
-                                              "record":  "1-1-0",
-                                              "detail":  "In World Cup - Group C (group stage in progress)"
+                                              "record":  "2-1-0",
+                                              "detail":  "Advanced - still in the World Cup"
                                           }
                                       ],
                         "inCount":  3
@@ -696,11 +696,11 @@ window.WC_DASHBOARD_DATA = {
                                           },
                                           {
                                               "abbreviation":  "SUI",
-                                              "rank":  2,
+                                              "rank":  1,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/switzerland",
                                               "group":  "Group B",
-                                              "played":  2,
-                                              "points":  4,
+                                              "played":  3,
+                                              "points":  7,
                                               "displayName":  "Switzerland",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
                                               "status":  "IN",
@@ -713,8 +713,8 @@ window.WC_DASHBOARD_DATA = {
                                                                  "name":  "Granit Xhaka",
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/149981.png"
                                                              },
-                                              "record":  "1-1-0",
-                                              "detail":  "In World Cup - Group B (group stage in progress)"
+                                              "record":  "2-1-0",
+                                              "detail":  "Advanced - still in the World Cup"
                                           },
                                           {
                                               "abbreviation":  "JPN",
@@ -825,8 +825,8 @@ window.WC_DASHBOARD_DATA = {
                                               "rank":  1,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/mexico",
                                               "group":  "Group A",
-                                              "played":  2,
-                                              "points":  6,
+                                              "played":  3,
+                                              "points":  9,
                                               "displayName":  "Mexico",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
                                               "status":  "IN",
@@ -839,21 +839,21 @@ window.WC_DASHBOARD_DATA = {
                                                                  "name":  "Hirving Lozano",
                                                                  "headshot":  null
                                                              },
-                                              "record":  "2-0-0",
+                                              "record":  "3-0-0",
                                               "detail":  "Advanced - still in the World Cup"
                                           },
                                           {
                                               "abbreviation":  "KOR",
-                                              "rank":  2,
+                                              "rank":  3,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/korea-republic",
                                               "group":  "Group A",
-                                              "played":  2,
+                                              "played":  3,
                                               "points":  3,
                                               "displayName":  "South Korea",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
                                               "status":  "IN",
                                               "pickName":  "Korea Republic",
-                                              "note":  "Advance to Round of 32",
+                                              "note":  "Best 8 advance",
                                               "starPlayer":  {
                                                                  "position":  "Forward",
                                                                  "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/korea-republic",
@@ -861,8 +861,8 @@ window.WC_DASHBOARD_DATA = {
                                                                  "name":  "Son Heung-min",
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/149945.png"
                                                              },
-                                              "record":  "1-0-1",
-                                              "detail":  "In World Cup - Group A (group stage in progress)"
+                                              "record":  "1-0-2",
+                                              "detail":  "Still in World Cup - awaiting best third-place result"
                                           },
                                           {
                                               "abbreviation":  "GER",
@@ -964,7 +964,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  3
                     },
                     {
-                        "outCount":  0,
+                        "outCount":  1,
                         "name":  "Not Picked (Pool)",
                         "note":  "BETH LOVES GHANA THOUGH SO THATS MY REAL PICK!!!!!!!!",
                         "countries":  [
@@ -992,10 +992,10 @@ window.WC_DASHBOARD_DATA = {
                                           },
                                           {
                                               "abbreviation":  "CAN",
-                                              "rank":  1,
+                                              "rank":  2,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/canada",
                                               "group":  "Group B",
-                                              "played":  2,
+                                              "played":  3,
                                               "points":  4,
                                               "displayName":  "Canada",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
@@ -1009,8 +1009,8 @@ window.WC_DASHBOARD_DATA = {
                                                                  "name":  "Alphonso Davies",
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/236721.png"
                                                              },
-                                              "record":  "1-1-0",
-                                              "detail":  "In World Cup - Group B (group stage in progress)"
+                                              "record":  "1-1-1",
+                                              "detail":  "Advanced - still in the World Cup"
                                           },
                                           {
                                               "abbreviation":  "CUW",
@@ -1061,11 +1061,11 @@ window.WC_DASHBOARD_DATA = {
                                               "rank":  4,
                                               "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/haiti",
                                               "group":  "Group C",
-                                              "played":  2,
+                                              "played":  3,
                                               "points":  0,
                                               "displayName":  "Haiti",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Haiti",
                                               "note":  "Eliminated",
                                               "starPlayer":  {
@@ -1075,8 +1075,8 @@ window.WC_DASHBOARD_DATA = {
                                                                  "name":  "Duckens Nascimento",
                                                                  "headshot":  null
                                                              },
-                                              "record":  "0-0-2",
-                                              "detail":  "In World Cup - Group C (group stage in progress)"
+                                              "record":  "0-0-3",
+                                              "detail":  "Eliminated from World Cup"
                                           },
                                           {
                                               "abbreviation":  "NZL",
@@ -1167,19 +1167,19 @@ window.WC_DASHBOARD_DATA = {
                                               "detail":  "Advanced - still in the World Cup"
                                           }
                                       ],
-                        "inCount":  9
+                        "inCount":  8
                     }
                 ],
     "groups":  [
                    {
                        "teams":  [
                                      {
-                                         "record":  "2-0-0",
+                                         "record":  "3-0-0",
                                          "rank":  1,
                                          "note":  "Advance to Round of 32",
-                                         "played":  2,
+                                         "played":  3,
                                          "espnTeamId":  "203",
-                                         "points":  6,
+                                         "points":  9,
                                          "abbreviation":  "MEX",
                                          "name":  "Mexico",
                                          "group":  "Group A",
@@ -1188,44 +1188,44 @@ window.WC_DASHBOARD_DATA = {
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/mex.png"
                                      },
                                      {
-                                         "record":  "0-1-1",
-                                         "rank":  3,
-                                         "note":  "Best 8 advance",
-                                         "played":  2,
+                                         "record":  "0-1-2",
+                                         "rank":  4,
+                                         "note":  "Eliminated",
+                                         "played":  3,
                                          "espnTeamId":  "450",
                                          "points":  1,
                                          "abbreviation":  "CZE",
                                          "name":  "Czechia",
                                          "group":  "Group A",
-                                         "detail":  "In World Cup - Group A (group stage in progress)",
-                                         "status":  "IN",
+                                         "detail":  "Eliminated from World Cup",
+                                         "status":  "OUT",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/cze.png"
                                      },
                                      {
-                                         "record":  "1-0-1",
-                                         "rank":  2,
-                                         "note":  "Advance to Round of 32",
-                                         "played":  2,
+                                         "record":  "1-0-2",
+                                         "rank":  3,
+                                         "note":  "Best 8 advance",
+                                         "played":  3,
                                          "espnTeamId":  "451",
                                          "points":  3,
                                          "abbreviation":  "KOR",
                                          "name":  "South Korea",
                                          "group":  "Group A",
-                                         "detail":  "In World Cup - Group A (group stage in progress)",
+                                         "detail":  "Still in World Cup - awaiting best third-place result",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/kors.png"
                                      },
                                      {
-                                         "record":  "0-1-1",
-                                         "rank":  4,
-                                         "note":  "Eliminated",
-                                         "played":  2,
+                                         "record":  "1-1-1",
+                                         "rank":  2,
+                                         "note":  "Advance to Round of 32",
+                                         "played":  3,
                                          "espnTeamId":  "467",
-                                         "points":  1,
+                                         "points":  4,
                                          "abbreviation":  "RSA",
                                          "name":  "South Africa",
                                          "group":  "Group A",
-                                         "detail":  "In World Cup - Group A (group stage in progress)",
+                                         "detail":  "Advanced - still in the World Cup",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png"
                                      }
@@ -1235,59 +1235,59 @@ window.WC_DASHBOARD_DATA = {
                    {
                        "teams":  [
                                      {
-                                         "record":  "1-1-0",
-                                         "rank":  1,
+                                         "record":  "1-1-1",
+                                         "rank":  2,
                                          "note":  "Advance to Round of 32",
-                                         "played":  2,
+                                         "played":  3,
                                          "espnTeamId":  "206",
                                          "points":  4,
                                          "abbreviation":  "CAN",
                                          "name":  "Canada",
                                          "group":  "Group B",
-                                         "detail":  "In World Cup - Group B (group stage in progress)",
+                                         "detail":  "Advanced - still in the World Cup",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/can.png"
                                      },
                                      {
-                                         "record":  "0-1-1",
+                                         "record":  "1-1-1",
                                          "rank":  3,
                                          "note":  "Best 8 advance",
-                                         "played":  2,
+                                         "played":  3,
                                          "espnTeamId":  "452",
-                                         "points":  1,
+                                         "points":  4,
                                          "abbreviation":  "BIH",
                                          "name":  "Bosnia-Herzegovina",
                                          "group":  "Group B",
-                                         "detail":  "In World Cup - Group B (group stage in progress)",
+                                         "detail":  "Advanced - still in the World Cup",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bih.png"
                                      },
                                      {
-                                         "record":  "1-1-0",
-                                         "rank":  2,
+                                         "record":  "2-1-0",
+                                         "rank":  1,
                                          "note":  "Advance to Round of 32",
-                                         "played":  2,
+                                         "played":  3,
                                          "espnTeamId":  "475",
-                                         "points":  4,
+                                         "points":  7,
                                          "abbreviation":  "SUI",
                                          "name":  "Switzerland",
                                          "group":  "Group B",
-                                         "detail":  "In World Cup - Group B (group stage in progress)",
+                                         "detail":  "Advanced - still in the World Cup",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sui.png"
                                      },
                                      {
-                                         "record":  "0-1-1",
+                                         "record":  "0-1-2",
                                          "rank":  4,
                                          "note":  "Eliminated",
-                                         "played":  2,
+                                         "played":  3,
                                          "espnTeamId":  "4398",
                                          "points":  1,
                                          "abbreviation":  "QAT",
                                          "name":  "Qatar",
                                          "group":  "Group B",
-                                         "detail":  "In World Cup - Group B (group stage in progress)",
-                                         "status":  "IN",
+                                         "detail":  "Eliminated from World Cup",
+                                         "status":  "OUT",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/qat.png"
                                      }
                                  ],
@@ -1296,58 +1296,58 @@ window.WC_DASHBOARD_DATA = {
                    {
                        "teams":  [
                                      {
-                                         "record":  "1-1-0",
+                                         "record":  "2-1-0",
                                          "rank":  1,
                                          "note":  "Advance to Round of 32",
-                                         "played":  2,
+                                         "played":  3,
                                          "espnTeamId":  "205",
-                                         "points":  4,
+                                         "points":  7,
                                          "abbreviation":  "BRA",
                                          "name":  "Brazil",
                                          "group":  "Group C",
-                                         "detail":  "In World Cup - Group C (group stage in progress)",
+                                         "detail":  "Advanced - still in the World Cup",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bra.png"
                                      },
                                      {
-                                         "record":  "1-0-1",
+                                         "record":  "1-0-2",
                                          "rank":  3,
                                          "note":  "Best 8 advance",
-                                         "played":  2,
+                                         "played":  3,
                                          "espnTeamId":  "580",
                                          "points":  3,
                                          "abbreviation":  "SCO",
                                          "name":  "Scotland",
                                          "group":  "Group C",
-                                         "detail":  "In World Cup - Group C (group stage in progress)",
+                                         "detail":  "Still in World Cup - awaiting best third-place result",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sco.png"
                                      },
                                      {
-                                         "record":  "0-0-2",
+                                         "record":  "0-0-3",
                                          "rank":  4,
                                          "note":  "Eliminated",
-                                         "played":  2,
+                                         "played":  3,
                                          "espnTeamId":  "2654",
                                          "points":  0,
                                          "abbreviation":  "HAI",
                                          "name":  "Haiti",
                                          "group":  "Group C",
-                                         "detail":  "In World Cup - Group C (group stage in progress)",
-                                         "status":  "IN",
+                                         "detail":  "Eliminated from World Cup",
+                                         "status":  "OUT",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/hai.png"
                                      },
                                      {
-                                         "record":  "1-1-0",
+                                         "record":  "2-1-0",
                                          "rank":  2,
                                          "note":  "Advance to Round of 32",
-                                         "played":  2,
+                                         "played":  3,
                                          "espnTeamId":  "2869",
-                                         "points":  4,
+                                         "points":  7,
                                          "abbreviation":  "MAR",
                                          "name":  "Morocco",
                                          "group":  "Group C",
-                                         "detail":  "In World Cup - Group C (group stage in progress)",
+                                         "detail":  "Advanced - still in the World Cup",
                                          "status":  "IN",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/mar.png"
                                      }
@@ -1905,131 +1905,131 @@ window.WC_DASHBOARD_DATA = {
                    }
                ],
     "tournamentDates":  "June 11 - July 19, 2026",
-    "lastUpdated":  "2026-06-24T10:22:20-04:00",
+    "lastUpdated":  "2026-06-25T09:34:01-04:00",
     "todayMatches":  [
                          {
-                             "name":  "Qatar at Bosnia-Herzegovina",
+                             "name":  "Ivory Coast at Curaçao",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Qatar",
+                                          "name":  "Ivory Coast",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "Bosnia-Herzegovina",
+                                          "name":  "Curaçao",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "Bosnia-Herzegovina",
-                                             "Qatar"
+                                             "Curaçao",
+                                             "Ivory Coast"
                                          ]
                          },
                          {
-                             "name":  "Canada at Switzerland",
+                             "name":  "Germany at Ecuador",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Canada",
+                                          "name":  "Germany",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "Switzerland",
+                                          "name":  "Ecuador",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "Switzerland",
-                                             "Canada"
+                                             "Ecuador",
+                                             "Germany"
                                          ]
                          },
                          {
-                             "name":  "Haiti at Morocco",
+                             "name":  "Sweden at Japan",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Haiti",
+                                          "name":  "Sweden",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "Morocco",
+                                          "name":  "Japan",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "Morocco",
-                                             "Haiti"
+                                             "Japan",
+                                             "Sweden"
                                          ]
                          },
                          {
-                             "name":  "Brazil at Scotland",
+                             "name":  "Netherlands at Tunisia",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Brazil",
+                                          "name":  "Netherlands",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "Scotland",
+                                          "name":  "Tunisia",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "Scotland",
-                                             "Brazil"
+                                             "Tunisia",
+                                             "Netherlands"
                                          ]
                          },
                          {
-                             "name":  "Mexico at Czechia",
+                             "name":  "Australia at Paraguay",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Mexico",
+                                          "name":  "Australia",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "Czechia",
+                                          "name":  "Paraguay",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "Czechia",
-                                             "Mexico"
+                                             "Paraguay",
+                                             "Australia"
                                          ]
                          },
                          {
-                             "name":  "South Korea at South Africa",
+                             "name":  "United States at Türkiye",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "South Korea",
+                                          "name":  "United States",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "South Africa",
+                                          "name":  "Türkiye",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "South Africa",
-                                             "South Korea"
+                                             "Türkiye",
+                                             "United States"
                                          ]
                          }
                      ],
     "phase":  "Tournament in progress",
     "tournament":  "2026 FIFA World Cup",
     "summary":  {
-                    "matchesPlayedInTournament":  48,
-                    "outCount":  0,
+                    "matchesPlayedInTournament":  54,
+                    "outCount":  3,
                     "total":  48,
                     "members":  14,
-                    "inCount":  48,
+                    "inCount":  45,
                     "pendingCount":  0
                 },
     "countries":  [
@@ -2104,8 +2104,8 @@ window.WC_DASHBOARD_DATA = {
                           "rank":  3,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/bosnia-and-herzegovina",
                           "group":  "Group B",
-                          "played":  2,
-                          "points":  1,
+                          "played":  3,
+                          "points":  4,
                           "displayName":  "Bosnia-Herzegovina",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
                           "status":  "IN",
@@ -2118,8 +2118,8 @@ window.WC_DASHBOARD_DATA = {
                                              "name":  "Edin Dzeko",
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/102337.png"
                                          },
-                          "record":  "0-1-1",
-                          "detail":  "In World Cup - Group B (group stage in progress)"
+                          "record":  "1-1-1",
+                          "detail":  "Advanced - still in the World Cup"
                       },
                       {
                           "abbreviation":  "ALG",
@@ -2236,11 +2236,11 @@ window.WC_DASHBOARD_DATA = {
                           "rank":  4,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/qatar",
                           "group":  "Group B",
-                          "played":  2,
+                          "played":  3,
                           "points":  1,
                           "displayName":  "Qatar",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/qat.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Qatar",
                           "note":  "Eliminated",
                           "starPlayer":  {
@@ -2250,8 +2250,8 @@ window.WC_DASHBOARD_DATA = {
                                              "name":  "Akram Afif",
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/219258.png"
                                          },
-                          "record":  "0-1-1",
-                          "detail":  "In World Cup - Group B (group stage in progress)"
+                          "record":  "0-1-2",
+                          "detail":  "Eliminated from World Cup"
                       },
                       {
                           "abbreviation":  "EGY",
@@ -2280,7 +2280,7 @@ window.WC_DASHBOARD_DATA = {
                           "rank":  3,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/scotland",
                           "group":  "Group C",
-                          "played":  2,
+                          "played":  3,
                           "points":  3,
                           "displayName":  "Scotland",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
@@ -2294,8 +2294,8 @@ window.WC_DASHBOARD_DATA = {
                                              "name":  "Andy Robertson",
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/104943.png"
                                          },
-                          "record":  "1-0-1",
-                          "detail":  "In World Cup - Group C (group stage in progress)"
+                          "record":  "1-0-2",
+                          "detail":  "Still in World Cup - awaiting best third-place result"
                       },
                       {
                           "abbreviation":  "AUS",
@@ -2346,8 +2346,8 @@ window.WC_DASHBOARD_DATA = {
                           "rank":  1,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/brazil",
                           "group":  "Group C",
-                          "played":  2,
-                          "points":  4,
+                          "played":  3,
+                          "points":  7,
                           "displayName":  "Brazil",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bra.png",
                           "status":  "IN",
@@ -2360,8 +2360,8 @@ window.WC_DASHBOARD_DATA = {
                                              "name":  "Vinicius Junior",
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/252107.png"
                                          },
-                          "record":  "1-1-0",
-                          "detail":  "In World Cup - Group C (group stage in progress)"
+                          "record":  "2-1-0",
+                          "detail":  "Advanced - still in the World Cup"
                       },
                       {
                           "abbreviation":  "TUR",
@@ -2431,16 +2431,16 @@ window.WC_DASHBOARD_DATA = {
                       },
                       {
                           "abbreviation":  "RSA",
-                          "rank":  4,
+                          "rank":  2,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/south-africa",
                           "group":  "Group A",
-                          "played":  2,
-                          "points":  1,
+                          "played":  3,
+                          "points":  4,
                           "displayName":  "South Africa",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/rsa.png",
                           "status":  "IN",
                           "pickName":  "South Africa",
-                          "note":  "Eliminated",
+                          "note":  "Advance to Round of 32",
                           "starPlayer":  {
                                              "position":  "",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/south-africa",
@@ -2448,8 +2448,8 @@ window.WC_DASHBOARD_DATA = {
                                              "name":  "Percy Tau",
                                              "headshot":  null
                                          },
-                          "record":  "0-1-1",
-                          "detail":  "In World Cup - Group A (group stage in progress)"
+                          "record":  "1-1-1",
+                          "detail":  "Advanced - still in the World Cup"
                       },
                       {
                           "abbreviation":  "IRN",
@@ -2541,16 +2541,16 @@ window.WC_DASHBOARD_DATA = {
                       },
                       {
                           "abbreviation":  "CZE",
-                          "rank":  3,
+                          "rank":  4,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/czechia",
                           "group":  "Group A",
-                          "played":  2,
+                          "played":  3,
                           "points":  1,
                           "displayName":  "Czechia",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/cze.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Czech Republic",
-                          "note":  "Best 8 advance",
+                          "note":  "Eliminated",
                           "starPlayer":  {
                                              "position":  "Forward",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/czechia",
@@ -2558,8 +2558,8 @@ window.WC_DASHBOARD_DATA = {
                                              "name":  "Patrik Schick",
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/212330.png"
                                          },
-                          "record":  "0-1-1",
-                          "detail":  "In World Cup - Group A (group stage in progress)"
+                          "record":  "0-1-2",
+                          "detail":  "Eliminated from World Cup"
                       },
                       {
                           "abbreviation":  "CRO",
@@ -2610,8 +2610,8 @@ window.WC_DASHBOARD_DATA = {
                           "rank":  2,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/morocco",
                           "group":  "Group C",
-                          "played":  2,
-                          "points":  4,
+                          "played":  3,
+                          "points":  7,
                           "displayName":  "Morocco",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/mar.png",
                           "status":  "IN",
@@ -2624,8 +2624,8 @@ window.WC_DASHBOARD_DATA = {
                                              "name":  "Achraf Hakimi",
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/240233.png"
                                          },
-                          "record":  "1-1-0",
-                          "detail":  "In World Cup - Group C (group stage in progress)"
+                          "record":  "2-1-0",
+                          "detail":  "Advanced - still in the World Cup"
                       },
                       {
                           "abbreviation":  "NOR",
@@ -2651,11 +2651,11 @@ window.WC_DASHBOARD_DATA = {
                       },
                       {
                           "abbreviation":  "SUI",
-                          "rank":  2,
+                          "rank":  1,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/switzerland",
                           "group":  "Group B",
-                          "played":  2,
-                          "points":  4,
+                          "played":  3,
+                          "points":  7,
                           "displayName":  "Switzerland",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
                           "status":  "IN",
@@ -2668,8 +2668,8 @@ window.WC_DASHBOARD_DATA = {
                                              "name":  "Granit Xhaka",
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/149981.png"
                                          },
-                          "record":  "1-1-0",
-                          "detail":  "In World Cup - Group B (group stage in progress)"
+                          "record":  "2-1-0",
+                          "detail":  "Advanced - still in the World Cup"
                       },
                       {
                           "abbreviation":  "JPN",
@@ -2764,8 +2764,8 @@ window.WC_DASHBOARD_DATA = {
                           "rank":  1,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/mexico",
                           "group":  "Group A",
-                          "played":  2,
-                          "points":  6,
+                          "played":  3,
+                          "points":  9,
                           "displayName":  "Mexico",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/mex.png",
                           "status":  "IN",
@@ -2778,21 +2778,21 @@ window.WC_DASHBOARD_DATA = {
                                              "name":  "Hirving Lozano",
                                              "headshot":  null
                                          },
-                          "record":  "2-0-0",
+                          "record":  "3-0-0",
                           "detail":  "Advanced - still in the World Cup"
                       },
                       {
                           "abbreviation":  "KOR",
-                          "rank":  2,
+                          "rank":  3,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/korea-republic",
                           "group":  "Group A",
-                          "played":  2,
+                          "played":  3,
                           "points":  3,
                           "displayName":  "South Korea",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
                           "status":  "IN",
                           "pickName":  "Korea Republic",
-                          "note":  "Advance to Round of 32",
+                          "note":  "Best 8 advance",
                           "starPlayer":  {
                                              "position":  "Forward",
                                              "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/korea-republic",
@@ -2800,8 +2800,8 @@ window.WC_DASHBOARD_DATA = {
                                              "name":  "Son Heung-min",
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/149945.png"
                                          },
-                          "record":  "1-0-1",
-                          "detail":  "In World Cup - Group A (group stage in progress)"
+                          "record":  "1-0-2",
+                          "detail":  "Still in World Cup - awaiting best third-place result"
                       },
                       {
                           "abbreviation":  "GER",
@@ -2915,10 +2915,10 @@ window.WC_DASHBOARD_DATA = {
                       },
                       {
                           "abbreviation":  "CAN",
-                          "rank":  1,
+                          "rank":  2,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/canada",
                           "group":  "Group B",
-                          "played":  2,
+                          "played":  3,
                           "points":  4,
                           "displayName":  "Canada",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/can.png",
@@ -2932,8 +2932,8 @@ window.WC_DASHBOARD_DATA = {
                                              "name":  "Alphonso Davies",
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/236721.png"
                                          },
-                          "record":  "1-1-0",
-                          "detail":  "In World Cup - Group B (group stage in progress)"
+                          "record":  "1-1-1",
+                          "detail":  "Advanced - still in the World Cup"
                       },
                       {
                           "abbreviation":  "CUW",
@@ -2984,11 +2984,11 @@ window.WC_DASHBOARD_DATA = {
                           "rank":  4,
                           "fifaUrl":  "https://www.fifa.com/en/tournaments/mens/worldcup/canadamexicousa2026/teams/haiti",
                           "group":  "Group C",
-                          "played":  2,
+                          "played":  3,
                           "points":  0,
                           "displayName":  "Haiti",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/hai.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Haiti",
                           "note":  "Eliminated",
                           "starPlayer":  {
@@ -2998,8 +2998,8 @@ window.WC_DASHBOARD_DATA = {
                                              "name":  "Duckens Nascimento",
                                              "headshot":  null
                                          },
-                          "record":  "0-0-2",
-                          "detail":  "In World Cup - Group C (group stage in progress)"
+                          "record":  "0-0-3",
+                          "detail":  "Eliminated from World Cup"
                       },
                       {
                           "abbreviation":  "NZL",
@@ -3091,7 +3091,24 @@ window.WC_DASHBOARD_DATA = {
                       }
                   ],
     "statusChanges":  [
-
+                          {
+                              "detail":  "Eliminated from World Cup",
+                              "from":  "IN",
+                              "to":  "OUT",
+                              "country":  "Qatar"
+                          },
+                          {
+                              "detail":  "Eliminated from World Cup",
+                              "from":  "IN",
+                              "to":  "OUT",
+                              "country":  "Czech Republic"
+                          },
+                          {
+                              "detail":  "Eliminated from World Cup",
+                              "from":  "IN",
+                              "to":  "OUT",
+                              "country":  "Haiti"
+                          }
                       ],
     "unmatchedPicks":  [
 
