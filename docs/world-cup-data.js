@@ -1,5 +1,5 @@
 window.WC_DASHBOARD_DATA = {
-    "lastUpdatedDisplay":  "Thursday, June 25, 2026 9:34 AM",
+    "lastUpdatedDisplay":  "Thursday, June 25, 2026 9:38 AM",
     "members":  [
                     {
                         "outCount":  0,
@@ -1905,7 +1905,7 @@ window.WC_DASHBOARD_DATA = {
                    }
                ],
     "tournamentDates":  "June 11 - July 19, 2026",
-    "lastUpdated":  "2026-06-25T09:34:01-04:00",
+    "lastUpdated":  "2026-06-25T09:38:15-04:00",
     "todayMatches":  [
                          {
                              "name":  "Ivory Coast at Curaçao",
