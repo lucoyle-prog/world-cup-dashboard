@@ -1,5 +1,5 @@
 window.WC_DASHBOARD_DATA = {
-    "lastUpdatedDisplay":  "Monday, June 29, 2026 9:29 AM",
+    "lastUpdatedDisplay":  "Tuesday, June 30, 2026 12:00 PM",
     "members":  [
                     {
                         "outCount":  1,
@@ -1905,63 +1905,63 @@ window.WC_DASHBOARD_DATA = {
                    }
                ],
     "tournamentDates":  "June 11 - July 19, 2026",
-    "lastUpdated":  "2026-06-29T09:29:40-04:00",
+    "lastUpdated":  "2026-06-30T12:00:57-04:00",
     "todayMatches":  [
                          {
-                             "name":  "Japan at Brazil",
+                             "name":  "Norway at Ivory Coast",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Japan",
+                                          "name":  "Norway",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "Brazil",
+                                          "name":  "Ivory Coast",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "Brazil",
-                                             "Japan"
+                                             "Ivory Coast",
+                                             "Norway"
                                          ]
                          },
                          {
-                             "name":  "Paraguay at Germany",
+                             "name":  "Sweden at France",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Paraguay",
+                                          "name":  "Sweden",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "Germany",
+                                          "name":  "France",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "Germany",
-                                             "Paraguay"
+                                             "France",
+                                             "Sweden"
                                          ]
                          },
                          {
-                             "name":  "Morocco at Netherlands",
+                             "name":  "Ecuador at Mexico",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Morocco",
+                                          "name":  "Ecuador",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "Netherlands",
+                                          "name":  "Mexico",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "Netherlands",
-                                             "Morocco"
+                                             "Mexico",
+                                             "Ecuador"
                                          ]
                          }
                      ],
@@ -3034,42 +3034,7 @@ window.WC_DASHBOARD_DATA = {
                       }
                   ],
     "statusChanges":  [
-                          {
-                              "detail":  "Eliminated from World Cup",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Uzbekistan"
-                          },
-                          {
-                              "detail":  "Eliminated from World Cup",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Jordan"
-                          },
-                          {
-                              "detail":  "Eliminated from World Cup",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Iraq"
-                          },
-                          {
-                              "detail":  "Eliminated from World Cup",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "New Zealand"
-                          },
-                          {
-                              "detail":  "Eliminated from World Cup",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Panama"
-                          },
-                          {
-                              "detail":  "Eliminated from World Cup",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Saudi Arabia"
-                          }
+
                       ],
     "unmatchedPicks":  [
 

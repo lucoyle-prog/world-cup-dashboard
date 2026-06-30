@@ -190,22 +190,127 @@
     .member-name { font-weight: 700; font-size: 15px; }
     .member-name-wrap {
       display: flex;
-      align-items: baseline;
-      gap: 8px;
-      flex-wrap: wrap;
+      flex-direction: column;
+      gap: 6px;
+      min-width: 0;
     }
-    .member-total-points {
-      font-size: 13px;
+    .member-alive-label {
+      font-size: 11px;
       font-weight: 700;
-      color: var(--cisco-cyan);
+      color: var(--cisco-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+    }
+    .member-alive-label strong { color: #00d46a; font-size: 13px; }
+    .member-alive-label.all-out strong { color: #ff6b6b; }
+    .survival-bar {
+      display: flex;
+      gap: 4px;
+      width: 100%;
+      max-width: 120px;
+    }
+    .survival-segment {
+      flex: 1;
+      height: 6px;
+      border-radius: 999px;
+      background: rgba(255, 77, 79, 0.35);
+    }
+    .survival-segment.alive {
+      background: linear-gradient(90deg, #00d46a, #02c8ff);
+      box-shadow: 0 0 8px rgba(0, 212, 106, 0.35);
     }
     .member-score {
       font-size: 11px;
       font-weight: 700;
       padding: 4px 10px;
       border-radius: 999px;
-      background: rgba(2, 200, 255, 0.12);
+      flex-shrink: 0;
+    }
+    .member-score.surviving {
+      background: rgba(0, 212, 106, 0.12);
+      color: #00d46a;
+      border: 1px solid rgba(0, 212, 106, 0.35);
+    }
+    .member-score.partial {
+      background: rgba(255, 144, 0, 0.12);
+      color: var(--cisco-orange);
+      border: 1px solid rgba(255, 144, 0, 0.35);
+    }
+    .member-score.eliminated {
+      background: rgba(255, 77, 79, 0.12);
+      color: #ff6b6b;
+      border: 1px solid rgba(255, 77, 79, 0.35);
+    }
+    .member-card.perfect { border-color: rgba(0, 212, 106, 0.45); }
+    .member-card.gone { opacity: 0.72; border-color: rgba(255, 77, 79, 0.35); }
+    .eliminated-divider {
+      font-size: 10px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #ff6b6b;
+      margin: 10px 0 4px;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(255, 77, 79, 0.35);
+    }
+    .country-row.eliminated {
+      opacity: 0.55;
+      cursor: pointer;
+    }
+    .country-row.eliminated:hover { opacity: 0.72; }
+    .country-row.eliminated .country-name {
+      text-decoration: line-through;
+      text-decoration-color: rgba(255, 107, 107, 0.7);
+      color: var(--cisco-muted);
+    }
+    .country-row.eliminated .flag,
+    .country-row.eliminated .flag-placeholder {
+      filter: grayscale(1);
+      opacity: 0.65;
+    }
+    .leaderboard {
+      display: grid;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+    .leaderboard-row {
+      display: grid;
+      grid-template-columns: 36px 1fr auto auto;
+      gap: 12px;
+      align-items: center;
+      background: var(--cisco-navy-mid);
+      border: 1px solid var(--cisco-slate);
+      border-radius: var(--cisco-radius);
+      padding: 12px 14px;
+    }
+    .leaderboard-row.top { border-color: rgba(0, 212, 106, 0.45); background: rgba(0, 212, 106, 0.06); }
+    .leaderboard-rank {
+      font-size: 18px;
+      font-weight: 800;
       color: var(--cisco-cyan);
+      text-align: center;
+    }
+    .leaderboard-name { font-weight: 700; font-size: 14px; }
+    .leaderboard-meta { font-size: 11px; color: var(--cisco-muted); margin-top: 2px; }
+    .leaderboard-flags {
+      display: flex;
+      gap: 4px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .leaderboard-flags .flag,
+    .leaderboard-flags .flag-placeholder {
+      width: 22px;
+      height: 22px;
+      font-size: 8px;
+    }
+    @media (max-width: 700px) {
+      .leaderboard-row {
+        grid-template-columns: 32px 1fr;
+        grid-template-rows: auto auto;
+      }
+      .leaderboard-flags { grid-column: 2; justify-content: flex-start; }
+      .leaderboard-row .survival-bar { grid-column: 2; max-width: 100%; }
     }
     .member-note {
       font-size: 11px;
@@ -513,8 +618,8 @@
   <main class="main">
     <h1>World Cup Country Tracker</h1>
     <p class="subtitle">
-      Follow every country from our FIFA Draw — see at a glance who is still <strong style="color:#00d46a">IN</strong>
-      or <strong style="color:#ff6b6b">OUT</strong> of the 2026 World Cup. Click any country to meet their star player and link to FIFA.com.
+      Knockout stage tracker for our FIFA Draw picks — see who still has countries
+      <strong style="color:#00d46a">alive</strong> in the 2026 World Cup. Click any country for star player details.
     </p>
 
     <div class="alert-banner" id="changesBanner"></div>
@@ -532,6 +637,9 @@
       <button class="filter-btn" data-status="PENDING">Pending</button>
     </div>
     <p class="search-hint" id="searchHint">Tip: click a country card or press Enter after searching to open star player details.</p>
+
+    <div class="section-title">Knockout Survival Standings</div>
+    <div class="leaderboard" id="leaderboard"></div>
 
     <div class="section-title">By Team Member</div>
     <div class="member-grid" id="memberGrid"></div>
@@ -686,15 +794,70 @@
     }
 
     function badgeHtml(status) {
-      const label = status === 'IN' ? 'IN' : status === 'OUT' ? 'OUT' : 'PENDING';
+      const label = status === 'IN' ? 'ALIVE' : status === 'OUT' ? 'OUT' : 'PENDING';
       const cls = status === 'IN' ? 'in' : status === 'OUT' ? 'out' : 'pending';
       return `<span class="badge ${cls}">${label}</span>`;
+    }
+
+    function sortCountriesByStatus(countries) {
+      const order = { IN: 0, PENDING: 1, OUT: 2 };
+      return [...countries].sort((a, b) =>
+        (order[a.status] ?? 9) - (order[b.status] ?? 9) ||
+        (a.displayName || a.pickName).localeCompare(b.displayName || b.pickName)
+      );
+    }
+
+    function survivalBarHtml(inCount, total) {
+      return `<div class="survival-bar" aria-label="${inCount} of ${total} countries still alive">${
+        Array.from({ length: total }, (_, i) =>
+          `<span class="survival-segment ${i < inCount ? 'alive' : ''}"></span>`
+        ).join('')
+      }</div>`;
+    }
+
+    function memberScoreClass(inCount, total) {
+      if (inCount === 0) return 'eliminated';
+      if (inCount === total) return 'surviving';
+      return 'partial';
+    }
+
+    function countryStatusMeta(c) {
+      if (c.status === 'OUT') return `Eliminated · ${c.detail || 'Out of the World Cup'}`;
+      return c.detail || 'Still in the tournament';
+    }
+
+    function renderLeaderboard() {
+      const board = document.getElementById('leaderboard');
+      const ranked = [...data.members].sort((a, b) =>
+        b.inCount - a.inCount ||
+        a.outCount - b.outCount ||
+        a.name.localeCompare(b.name)
+      );
+
+      board.innerHTML = ranked.map((m, index) => {
+        const total = m.countries.length;
+        const alive = m.countries.filter(c => c.status === 'IN');
+        const aliveNames = alive.map(c => c.displayName || c.pickName).join(', ') || 'None left';
+        const rowClass = index === 0 && m.inCount > 0 ? 'leaderboard-row top' : 'leaderboard-row';
+        const flags = alive.map(c => flagHtml(c)).join('');
+        return `
+          <div class="${rowClass}">
+            <div class="leaderboard-rank">${index + 1}</div>
+            <div>
+              <div class="leaderboard-name">${esc(m.name)}</div>
+              <div class="leaderboard-meta">${m.inCount} of ${total} alive · ${esc(aliveNames)}</div>
+            </div>
+            ${survivalBarHtml(m.inCount, total)}
+            <div class="leaderboard-flags">${flags || '<span class="leaderboard-meta">—</span>'}</div>
+          </div>
+        `;
+      }).join('');
     }
 
     function renderSummary() {
       const s = data.summary;
       document.getElementById('summaryRow').innerHTML = `
-        <div class="stat-card in"><div class="stat-label">Still In</div><div class="stat-value">${s.inCount}</div></div>
+        <div class="stat-card in"><div class="stat-label">Still Alive</div><div class="stat-value">${s.inCount}</div></div>
         <div class="stat-card out"><div class="stat-label">Eliminated</div><div class="stat-value">${s.outCount}</div></div>
         <div class="stat-card pending"><div class="stat-label">Pending</div><div class="stat-value">${s.pendingCount}</div></div>
         <div class="stat-card team"><div class="stat-label">Team Members</div><div class="stat-value">${s.members}</div></div>
@@ -732,28 +895,61 @@
           );
         })
         .map(m => {
-          const countries = m.countries.filter(c => matchesFilter(c));
-          if (countries.length === 0 && (statusFilter !== 'ALL' || search)) return '';
-          const totalPoints = m.countries.reduce((sum, c) => sum + (Number(c.points) || 0), 0);
+          const allCountries = sortCountriesByStatus(m.countries);
+          const visible = allCountries.filter(c => matchesFilter(c));
+          if (visible.length === 0 && (statusFilter !== 'ALL' || search)) return '';
+
+          const total = m.countries.length;
+          const aliveCountries = allCountries.filter(c => c.status === 'IN');
+          const outCountries = allCountries.filter(c => c.status === 'OUT');
+          const displayCountries = statusFilter === 'ALL'
+            ? allCountries
+            : visible;
+
+          const cardClass = m.inCount === 0
+            ? 'member-card gone'
+            : m.inCount === total
+              ? 'member-card perfect'
+              : 'member-card';
+
           const note = m.note ? `<div class="member-note">${esc(m.note)}</div>` : '';
-          const rows = (countries.length ? countries : m.countries).map(c => `
-            <div class="country-row" data-status="${esc(c.status)}" data-pick-name="${esc(c.pickName)}" title="View star player">
-              ${flagHtml(c)}
-              <div class="country-info">
-                <div class="country-name">${esc(c.displayName || c.pickName)}</div>
-                <div class="country-meta">${esc(c.group)} · Rank ${c.rank > 0 ? c.rank : '–'} · ${esc(c.record || '0-0-0')} · ${c.points ?? 0} pts · ${esc(c.detail)}</div>
+
+          function countryRowHtml(c) {
+            const eliminated = c.status === 'OUT';
+            return `
+              <div class="country-row${eliminated ? ' eliminated' : ''}" data-status="${esc(c.status)}" data-pick-name="${esc(c.pickName)}" title="View star player">
+                ${flagHtml(c)}
+                <div class="country-info">
+                  <div class="country-name">${esc(c.displayName || c.pickName)}</div>
+                  <div class="country-meta">${esc(countryStatusMeta(c))}</div>
+                </div>
+                ${badgeHtml(c.status)}
               </div>
-              ${badgeHtml(c.status)}
-            </div>
-          `).join('');
+            `;
+          }
+
+          let rows = '';
+          if (statusFilter === 'ALL') {
+            rows += aliveCountries.map(countryRowHtml).join('');
+            if (outCountries.length > 0) {
+              rows += `<div class="eliminated-divider">Eliminated (${outCountries.length})</div>`;
+              rows += outCountries.map(countryRowHtml).join('');
+            }
+          } else {
+            rows = displayCountries.map(countryRowHtml).join('');
+          }
+
           return `
-            <article class="member-card" data-member="${esc(m.name)}">
+            <article class="${cardClass}" data-member="${esc(m.name)}">
               <div class="member-head">
                 <div class="member-name-wrap">
                   <span class="member-name">${esc(m.name)}</span>
-                  <span class="member-total-points">${totalPoints} pts</span>
+                  <span class="member-alive-label${m.inCount === 0 ? ' all-out' : ''}">
+                    <strong>${m.inCount}</strong> of ${total} alive
+                  </span>
+                  ${survivalBarHtml(m.inCount, total)}
                 </div>
-                <span class="member-score">${m.inCount} IN · ${m.outCount} OUT</span>
+                <span class="member-score ${memberScoreClass(m.inCount, total)}">${m.inCount}/${total}</span>
               </div>
               ${note}
               ${rows}
@@ -798,7 +994,7 @@
               ${flagHtml(c)}
               <div>
                 <div class="country-card-name">${esc(c.displayName || c.pickName)}</div>
-                <div class="country-card-group">${esc(c.group)} · Rank ${c.rank} · ${c.points} pts</div>
+                <div class="country-card-group">${esc(countryStatusMeta(c))}</div>
               </div>
               ${badgeHtml(c.status)}
             </div>
@@ -847,6 +1043,7 @@
     function renderAll() {
       renderSummary();
       renderChanges();
+      renderLeaderboard();
       renderMembers();
       renderCountries();
       renderMatches();
