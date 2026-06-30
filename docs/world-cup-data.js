@@ -1,5 +1,5 @@
 window.WC_DASHBOARD_DATA = {
-    "lastUpdatedDisplay":  "Tuesday, June 30, 2026 12:00 PM",
+    "lastUpdatedDisplay":  "Tuesday, June 30, 2026 12:07 PM",
     "members":  [
                     {
                         "outCount":  1,
@@ -446,7 +446,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  2
                     },
                     {
-                        "outCount":  0,
+                        "outCount":  1,
                         "name":  "Lucy",
                         "note":  "",
                         "countries":  [
@@ -503,7 +503,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  7,
                                               "displayName":  "Netherlands",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Netherlands",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
@@ -514,10 +514,10 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/157892.png"
                                                              },
                                               "record":  "2-1-0",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Round of 32 (lost to Morocco)"
                                           }
                                       ],
-                        "inCount":  3
+                        "inCount":  2
                     },
                     {
                         "outCount":  1,
@@ -668,7 +668,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  3
                     },
                     {
-                        "outCount":  0,
+                        "outCount":  1,
                         "name":  "Eliot",
                         "note":  "",
                         "countries":  [
@@ -725,7 +725,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  5,
                                               "displayName":  "Japan",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Japan",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
@@ -736,10 +736,10 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  null
                                                              },
                                               "record":  "1-2-0",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Round of 32 (lost to Brazil)"
                                           }
                                       ],
-                        "inCount":  3
+                        "inCount":  2
                     },
                     {
                         "outCount":  2,
@@ -816,7 +816,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  1
                     },
                     {
-                        "outCount":  0,
+                        "outCount":  1,
                         "name":  "Viji",
                         "note":  "",
                         "countries":  [
@@ -873,7 +873,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  6,
                                               "displayName":  "Germany",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Germany",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
@@ -884,10 +884,10 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/303821.png"
                                                              },
                                               "record":  "2-0-1",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Round of 32 (lost to Paraguay)"
                                           }
                                       ],
-                        "inCount":  3
+                        "inCount":  2
                     },
                     {
                         "outCount":  0,
@@ -1432,18 +1432,18 @@ window.WC_DASHBOARD_DATA = {
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png"
                                      },
                                      {
-                                         "record":  "2-0-1",
-                                         "rank":  1,
-                                         "note":  "Advance to Round of 32",
-                                         "played":  3,
                                          "espnTeamId":  "481",
-                                         "points":  6,
-                                         "abbreviation":  "GER",
+                                         "record":  "2-0-1",
                                          "name":  "Germany",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
+                                         "note":  "Advance to Round of 32",
+                                         "detail":  "Eliminated in Round of 32 (lost to Paraguay)",
                                          "group":  "Group E",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ger.png"
+                                         "status":  "OUT",
+                                         "rank":  1,
+                                         "abbreviation":  "GER",
+                                         "points":  6,
+                                         "played":  3
                                      },
                                      {
                                          "record":  "2-0-1",
@@ -1479,18 +1479,18 @@ window.WC_DASHBOARD_DATA = {
                    {
                        "teams":  [
                                      {
-                                         "record":  "2-1-0",
-                                         "rank":  1,
-                                         "note":  "Advance to Round of 32",
-                                         "played":  3,
                                          "espnTeamId":  "449",
-                                         "points":  7,
-                                         "abbreviation":  "NED",
+                                         "record":  "2-1-0",
                                          "name":  "Netherlands",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
+                                         "note":  "Advance to Round of 32",
+                                         "detail":  "Eliminated in Round of 32 (lost to Morocco)",
                                          "group":  "Group F",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ned.png"
+                                         "status":  "OUT",
+                                         "rank":  1,
+                                         "abbreviation":  "NED",
+                                         "points":  7,
+                                         "played":  3
                                      },
                                      {
                                          "record":  "1-1-1",
@@ -1507,18 +1507,18 @@ window.WC_DASHBOARD_DATA = {
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/swe.png"
                                      },
                                      {
-                                         "record":  "1-2-0",
-                                         "rank":  2,
-                                         "note":  "Advance to Round of 32",
-                                         "played":  3,
                                          "espnTeamId":  "627",
-                                         "points":  5,
-                                         "abbreviation":  "JPN",
+                                         "record":  "1-2-0",
                                          "name":  "Japan",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
+                                         "note":  "Advance to Round of 32",
+                                         "detail":  "Eliminated in Round of 32 (lost to Brazil)",
                                          "group":  "Group F",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png"
+                                         "status":  "OUT",
+                                         "rank":  2,
+                                         "abbreviation":  "JPN",
+                                         "points":  5,
+                                         "played":  3
                                      },
                                      {
                                          "record":  "0-0-3",
@@ -1905,7 +1905,7 @@ window.WC_DASHBOARD_DATA = {
                    }
                ],
     "tournamentDates":  "June 11 - July 19, 2026",
-    "lastUpdated":  "2026-06-30T12:00:57-04:00",
+    "lastUpdated":  "2026-06-30T12:07:24-04:00",
     "todayMatches":  [
                          {
                              "name":  "Norway at Ivory Coast",
@@ -1969,10 +1969,10 @@ window.WC_DASHBOARD_DATA = {
     "tournament":  "2026 FIFA World Cup",
     "summary":  {
                     "matchesPlayedInTournament":  72,
-                    "outCount":  12,
+                    "outCount":  15,
                     "total":  48,
                     "members":  14,
-                    "inCount":  36,
+                    "inCount":  33,
                     "pendingCount":  0
                 },
     "countries":  [
@@ -2425,7 +2425,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  7,
                           "displayName":  "Netherlands",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ned.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Netherlands",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
@@ -2436,7 +2436,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/157892.png"
                                          },
                           "record":  "2-1-0",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Round of 32 (lost to Morocco)"
                       },
                       {
                           "abbreviation":  "CPV",
@@ -2623,7 +2623,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  5,
                           "displayName":  "Japan",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/jpn.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Japan",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
@@ -2634,7 +2634,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  null
                                          },
                           "record":  "1-2-0",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Round of 32 (lost to Brazil)"
                       },
                       {
                           "abbreviation":  "IRQ",
@@ -2755,7 +2755,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  6,
                           "displayName":  "Germany",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ger.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Germany",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
@@ -2766,7 +2766,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/303821.png"
                                          },
                           "record":  "2-0-1",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Round of 32 (lost to Paraguay)"
                       },
                       {
                           "abbreviation":  "SWE",
@@ -3034,7 +3034,24 @@ window.WC_DASHBOARD_DATA = {
                       }
                   ],
     "statusChanges":  [
-
+                          {
+                              "detail":  "Eliminated in Round of 32 (lost to Morocco)",
+                              "from":  "IN",
+                              "to":  "OUT",
+                              "country":  "Netherlands"
+                          },
+                          {
+                              "detail":  "Eliminated in Round of 32 (lost to Brazil)",
+                              "from":  "IN",
+                              "to":  "OUT",
+                              "country":  "Japan"
+                          },
+                          {
+                              "detail":  "Eliminated in Round of 32 (lost to Paraguay)",
+                              "from":  "IN",
+                              "to":  "OUT",
+                              "country":  "Germany"
+                          }
                       ],
     "unmatchedPicks":  [
 

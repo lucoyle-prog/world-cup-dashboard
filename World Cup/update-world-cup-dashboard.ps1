@@ -96,6 +96,84 @@ function Resolve-CountryStatus($Entry, [string]$GroupName, [string]$Phase) {
     return @{ status = 'IN'; detail = "Still in World Cup - $GroupName"; note = $note; groupRank = $rank; points = $pts; played = $gp }
 }
 
+function Get-KnockoutRoundLabel([string]$Slug) {
+    $labels = @{
+        'round-of-32' = 'Round of 32'
+        'round-of-16' = 'Round of 16'
+        'quarter-final' = 'Quarter-final'
+        'quarterfinals' = 'Quarter-final'
+        'semi-final' = 'Semi-final'
+        'semifinals' = 'Semi-final'
+        'third-place' = 'Third-place play-off'
+        'third-place-playoff' = 'Third-place play-off'
+        'final' = 'Final'
+    }
+    if ($labels.ContainsKey($Slug)) { return $labels[$Slug] }
+    if ([string]::IsNullOrWhiteSpace($Slug)) { return 'Knockout stage' }
+    return ($Slug -replace '-', ' ')
+}
+
+function Get-KnockoutEliminations {
+    $eliminated = @{}
+    $knockoutStart = Get-Date '2026-06-29'
+    $knockoutEnd = Get-Date '2026-07-19'
+    $today = Get-Date
+    if ($today -lt $knockoutEnd) { $knockoutEnd = $today }
+
+    for ($day = $knockoutStart; $day -le $knockoutEnd; $day = $day.AddDays(1)) {
+        $dateStr = $day.ToString('yyyyMMdd')
+        try {
+            $scoreboard = Invoke-RestMethod -Uri "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=$dateStr" -Method Get
+            foreach ($event in $scoreboard.events) {
+                $slug = $event.season.slug
+                if ([string]::IsNullOrWhiteSpace($slug) -or $slug -eq 'group-stage') { continue }
+                $comp = $event.competitions | Select-Object -First 1
+                if (-not $comp) { continue }
+                if ($comp.status.type.state -ne 'post') { continue }
+
+                $winners = @($comp.competitors | Where-Object { $_.winner -eq $true })
+                if ($winners.Count -eq 0) { continue }
+
+                $roundLabel = Get-KnockoutRoundLabel $slug
+                $winnerName = $winners[0].team.displayName
+                foreach ($competitor in $comp.competitors) {
+                    if ($competitor.winner -eq $true) { continue }
+                    $teamName = $competitor.team.displayName
+                    $eliminated[$teamName] = "Eliminated in $roundLabel (lost to $winnerName)"
+                }
+            }
+        }
+        catch {
+            Write-Warning "Could not load knockout scoreboard for ${dateStr}: $($_.Exception.Message)"
+        }
+    }
+    return $eliminated
+}
+
+function Apply-KnockoutEliminations($KnockoutMap, $CountryLookup, $AllPicks, $Groups) {
+    foreach ($espnName in $KnockoutMap.Keys) {
+        $detail = $KnockoutMap[$espnName]
+        $keys = New-Object System.Collections.Generic.HashSet[string]
+        [void]$keys.Add($espnName)
+        foreach ($pick in $AllPicks) {
+            if (Test-CountryMatch $pick $espnName) { [void]$keys.Add($pick) }
+        }
+        foreach ($key in $keys) {
+            if (-not $CountryLookup.ContainsKey($key)) { continue }
+            $CountryLookup[$key]['status'] = 'OUT'
+            $CountryLookup[$key]['detail'] = $detail
+        }
+    }
+    foreach ($group in $Groups) {
+        foreach ($team in $group.teams) {
+            if ($KnockoutMap.ContainsKey($team.name)) {
+                $team.status = 'OUT'
+                $team.detail = $KnockoutMap[$team.name]
+            }
+        }
+    }
+}
+
 function Test-CountryMatch([string]$PickName, [string]$EspnName) {
     $pickNorm = Normalize-Name $PickName
     $espnNorm = Normalize-Name $EspnName
@@ -279,6 +357,13 @@ foreach ($group in $standings.children) {
         }
     }
     $groups += @{ name = $groupName; teams = $entries }
+}
+
+Write-Host 'Checking knockout round results...'
+$knockoutEliminated = Get-KnockoutEliminations
+if ($knockoutEliminated.Count -gt 0) {
+    Write-Host "Knockout eliminations detected: $($knockoutEliminated.Count)"
+    Apply-KnockoutEliminations $knockoutEliminated $countryLookup $allPicks $groups
 }
 
 $unmatched = @()

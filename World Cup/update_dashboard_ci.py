@@ -10,7 +10,7 @@ import shutil
 import sys
 import urllib.error
 import urllib.request
-from datetime import datetime
+from datetime import datetime, timedelta
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
@@ -163,6 +163,85 @@ def resolve_country_status(entry: dict, group_name: str) -> dict:
     }
 
 
+KNOCKOUT_ROUND_LABELS = {
+    "round-of-32": "Round of 32",
+    "round-of-16": "Round of 16",
+    "quarter-final": "Quarter-final",
+    "quarterfinals": "Quarter-final",
+    "semi-final": "Semi-final",
+    "semifinals": "Semi-final",
+    "third-place": "Third-place play-off",
+    "third-place-playoff": "Third-place play-off",
+    "final": "Final",
+}
+
+
+def get_knockout_round_label(slug: str) -> str:
+    if slug in KNOCKOUT_ROUND_LABELS:
+        return KNOCKOUT_ROUND_LABELS[slug]
+    if not slug:
+        return "Knockout stage"
+    return slug.replace("-", " ")
+
+
+def get_knockout_eliminations() -> dict[str, str]:
+    eliminated: dict[str, str] = {}
+    start = datetime(2026, 6, 29)
+    end = min(datetime.now(), datetime(2026, 7, 19))
+    day = start
+    while day.date() <= end.date():
+        date_str = day.strftime("%Y%m%d")
+        try:
+            scoreboard = fetch_json(SCOREBOARD_URL.format(date=date_str))
+            for event in scoreboard.get("events") or []:
+                slug = ((event.get("season") or {}).get("slug")) or ""
+                if not slug or slug == "group-stage":
+                    continue
+                competitions = event.get("competitions") or []
+                if not competitions:
+                    continue
+                comp = competitions[0]
+                state = ((comp.get("status") or {}).get("type") or {}).get("state") or ""
+                if state != "post":
+                    continue
+                competitors = comp.get("competitors") or []
+                winners = [c for c in competitors if c.get("winner") is True]
+                if not winners:
+                    continue
+                round_label = get_knockout_round_label(slug)
+                winner_name = (winners[0].get("team") or {}).get("displayName") or "opponent"
+                for competitor in competitors:
+                    if competitor.get("winner") is True:
+                        continue
+                    team_name = (competitor.get("team") or {}).get("displayName")
+                    if team_name:
+                        eliminated[team_name] = f"Eliminated in {round_label} (lost to {winner_name})"
+        except RuntimeError as exc:
+            print(f"Warning: could not load knockout scoreboard for {date_str}: {exc}")
+        day += timedelta(days=1)
+    return eliminated
+
+
+def apply_knockout_eliminations(
+    knockout_map: dict[str, str], country_lookup: dict[str, dict], all_picks: list[str], groups_out: list[dict]
+) -> None:
+    for espn_name, detail in knockout_map.items():
+        keys = {espn_name}
+        for pick in all_picks:
+            if test_country_match(pick, espn_name):
+                keys.add(pick)
+        for key in keys:
+            if key in country_lookup:
+                country_lookup[key]["status"] = "OUT"
+                country_lookup[key]["detail"] = detail
+    for group in groups_out:
+        for team in group.get("teams") or []:
+            name = team.get("name")
+            if name in knockout_map:
+                team["status"] = "OUT"
+                team["detail"] = knockout_map[name]
+
+
 def read_team_picks(path: Path) -> list[dict]:
     members = []
     with path.open(newline="", encoding="utf-8-sig") as handle:
@@ -274,6 +353,12 @@ def build_payload() -> dict:
                     country_lookup[pick] = team_info
             entries_out.append(team_info)
         groups_out.append({"name": group_name, "teams": entries_out})
+
+    print("Checking knockout round results...")
+    knockout_eliminated = get_knockout_eliminations()
+    if knockout_eliminated:
+        print(f"Knockout eliminations detected: {len(knockout_eliminated)}")
+        apply_knockout_eliminations(knockout_eliminated, country_lookup, all_picks, groups_out)
 
     countries = []
     unmatched = []
