@@ -1,8 +1,8 @@
 window.WC_DASHBOARD_DATA = {
-    "lastUpdatedDisplay":  "Tuesday, June 30, 2026 12:07 PM",
+    "lastUpdatedDisplay":  "Thursday, July 2, 2026 9:36 AM",
     "members":  [
                     {
-                        "outCount":  1,
+                        "outCount":  3,
                         "name":  "Beth",
                         "note":  "",
                         "countries":  [
@@ -15,7 +15,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  3,
                                               "displayName":  "Senegal",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Senegal",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
@@ -26,7 +26,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/169797.png"
                                                              },
                                               "record":  "1-0-2",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Round of 32 (lost to Belgium)"
                                           },
                                           {
                                               "abbreviation":  "COD",
@@ -37,7 +37,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  4,
                                               "displayName":  "Congo DR",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Congo DR",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
@@ -48,7 +48,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  null
                                                              },
                                               "record":  "1-1-1",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Round of 32 (lost to England)"
                                           },
                                           {
                                               "abbreviation":  "UZB",
@@ -73,10 +73,10 @@ window.WC_DASHBOARD_DATA = {
                                               "detail":  "Eliminated from World Cup"
                                           }
                                       ],
-                        "inCount":  2
+                        "inCount":  0
                     },
                     {
-                        "outCount":  0,
+                        "outCount":  2,
                         "name":  "Laura",
                         "note":  "",
                         "countries":  [
@@ -89,7 +89,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  4,
                                               "displayName":  "Bosnia-Herzegovina",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Bosnia and Herzegovina",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
@@ -100,7 +100,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/102337.png"
                                                              },
                                               "record":  "1-1-1",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Round of 32 (lost to United States)"
                                           },
                                           {
                                               "abbreviation":  "ALG",
@@ -133,7 +133,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  4,
                                               "displayName":  "Ecuador",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Ecuador",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
@@ -144,13 +144,13 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/289877.png"
                                                              },
                                               "record":  "1-1-1",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Round of 32 (lost to Mexico)"
                                           }
                                       ],
-                        "inCount":  3
+                        "inCount":  1
                     },
                     {
-                        "outCount":  1,
+                        "outCount":  2,
                         "name":  "Sharon",
                         "note":  "",
                         "countries":  [
@@ -163,7 +163,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  6,
                                               "displayName":  "Ivory Coast",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "C�te d\u0027Ivoire",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
@@ -174,7 +174,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/210397.png"
                                                              },
                                               "record":  "2-0-1",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Round of 32 (lost to Norway)"
                                           },
                                           {
                                               "abbreviation":  "URU",
@@ -221,7 +221,7 @@ window.WC_DASHBOARD_DATA = {
                                               "detail":  "Eliminated from World Cup"
                                           }
                                       ],
-                        "inCount":  2
+                        "inCount":  1
                     },
                     {
                         "outCount":  1,
@@ -890,7 +890,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  2
                     },
                     {
-                        "outCount":  0,
+                        "outCount":  1,
                         "name":  "Shelby",
                         "note":  "",
                         "countries":  [
@@ -903,7 +903,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  4,
                                               "displayName":  "Sweden",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Sweden",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
@@ -914,7 +914,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/235662.png"
                                                              },
                                               "record":  "1-1-1",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Round of 32 (lost to France)"
                                           },
                                           {
                                               "abbreviation":  "POR",
@@ -961,7 +961,7 @@ window.WC_DASHBOARD_DATA = {
                                               "detail":  "Advanced - still in the World Cup"
                                           }
                                       ],
-                        "inCount":  3
+                        "inCount":  2
                     },
                     {
                         "outCount":  5,
@@ -1249,18 +1249,18 @@ window.WC_DASHBOARD_DATA = {
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/can.png"
                                      },
                                      {
-                                         "record":  "1-1-1",
-                                         "rank":  3,
-                                         "note":  "Best 8 advance",
-                                         "played":  3,
                                          "espnTeamId":  "452",
-                                         "points":  4,
-                                         "abbreviation":  "BIH",
+                                         "record":  "1-1-1",
                                          "name":  "Bosnia-Herzegovina",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
+                                         "note":  "Best 8 advance",
+                                         "detail":  "Eliminated in Round of 32 (lost to United States)",
                                          "group":  "Group B",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bih.png"
+                                         "status":  "OUT",
+                                         "rank":  3,
+                                         "abbreviation":  "BIH",
+                                         "points":  4,
+                                         "played":  3
                                      },
                                      {
                                          "record":  "2-1-0",
@@ -1418,18 +1418,18 @@ window.WC_DASHBOARD_DATA = {
                    {
                        "teams":  [
                                      {
-                                         "record":  "1-1-1",
-                                         "rank":  3,
-                                         "note":  "Best 8 advance",
-                                         "played":  3,
                                          "espnTeamId":  "209",
-                                         "points":  4,
-                                         "abbreviation":  "ECU",
+                                         "record":  "1-1-1",
                                          "name":  "Ecuador",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
+                                         "note":  "Best 8 advance",
+                                         "detail":  "Eliminated in Round of 32 (lost to Mexico)",
                                          "group":  "Group E",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png"
+                                         "status":  "OUT",
+                                         "rank":  3,
+                                         "abbreviation":  "ECU",
+                                         "points":  4,
+                                         "played":  3
                                      },
                                      {
                                          "espnTeamId":  "481",
@@ -1446,18 +1446,18 @@ window.WC_DASHBOARD_DATA = {
                                          "played":  3
                                      },
                                      {
-                                         "record":  "2-0-1",
-                                         "rank":  2,
-                                         "note":  "Advance to Round of 32",
-                                         "played":  3,
                                          "espnTeamId":  "4789",
-                                         "points":  6,
-                                         "abbreviation":  "CIV",
+                                         "record":  "2-0-1",
                                          "name":  "Ivory Coast",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
+                                         "note":  "Advance to Round of 32",
+                                         "detail":  "Eliminated in Round of 32 (lost to Norway)",
                                          "group":  "Group E",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/civ.png"
+                                         "status":  "OUT",
+                                         "rank":  2,
+                                         "abbreviation":  "CIV",
+                                         "points":  6,
+                                         "played":  3
                                      },
                                      {
                                          "record":  "0-1-2",
@@ -1493,18 +1493,18 @@ window.WC_DASHBOARD_DATA = {
                                          "played":  3
                                      },
                                      {
-                                         "record":  "1-1-1",
-                                         "rank":  3,
-                                         "note":  "Best 8 advance",
-                                         "played":  3,
                                          "espnTeamId":  "466",
-                                         "points":  4,
-                                         "abbreviation":  "SWE",
+                                         "record":  "1-1-1",
                                          "name":  "Sweden",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
+                                         "note":  "Best 8 advance",
+                                         "detail":  "Eliminated in Round of 32 (lost to France)",
                                          "group":  "Group F",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/swe.png"
+                                         "status":  "OUT",
+                                         "rank":  3,
+                                         "abbreviation":  "SWE",
+                                         "points":  4,
+                                         "played":  3
                                      },
                                      {
                                          "espnTeamId":  "627",
@@ -1690,18 +1690,18 @@ window.WC_DASHBOARD_DATA = {
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/fra.png"
                                      },
                                      {
-                                         "record":  "1-0-2",
-                                         "rank":  3,
-                                         "note":  "Best 8 advance",
-                                         "played":  3,
                                          "espnTeamId":  "654",
-                                         "points":  3,
-                                         "abbreviation":  "SEN",
+                                         "record":  "1-0-2",
                                          "name":  "Senegal",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
+                                         "note":  "Best 8 advance",
+                                         "detail":  "Eliminated in Round of 32 (lost to Belgium)",
                                          "group":  "Group I",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sen.png"
+                                         "status":  "OUT",
+                                         "rank":  3,
+                                         "abbreviation":  "SEN",
+                                         "points":  3,
+                                         "played":  3
                                      },
                                      {
                                          "record":  "0-0-3",
@@ -1826,18 +1826,18 @@ window.WC_DASHBOARD_DATA = {
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/uzb.png"
                                      },
                                      {
-                                         "record":  "1-1-1",
-                                         "rank":  3,
-                                         "note":  "Best 8 advance",
-                                         "played":  3,
                                          "espnTeamId":  "2850",
-                                         "points":  4,
-                                         "abbreviation":  "COD",
+                                         "record":  "1-1-1",
                                          "name":  "Congo DR",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
+                                         "note":  "Best 8 advance",
+                                         "detail":  "Eliminated in Round of 32 (lost to England)",
                                          "group":  "Group K",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png"
+                                         "status":  "OUT",
+                                         "rank":  3,
+                                         "abbreviation":  "COD",
+                                         "points":  4,
+                                         "played":  3
                                      }
                                  ],
                        "name":  "Group K"
@@ -1905,63 +1905,63 @@ window.WC_DASHBOARD_DATA = {
                    }
                ],
     "tournamentDates":  "June 11 - July 19, 2026",
-    "lastUpdated":  "2026-06-30T12:07:24-04:00",
+    "lastUpdated":  "2026-07-02T09:36:47-04:00",
     "todayMatches":  [
                          {
-                             "name":  "Norway at Ivory Coast",
+                             "name":  "Austria at Spain",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Norway",
+                                          "name":  "Austria",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "Ivory Coast",
+                                          "name":  "Spain",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "Ivory Coast",
-                                             "Norway"
+                                             "Spain",
+                                             "Austria"
                                          ]
                          },
                          {
-                             "name":  "Sweden at France",
+                             "name":  "Croatia at Portugal",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Sweden",
+                                          "name":  "Croatia",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "France",
+                                          "name":  "Portugal",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "France",
-                                             "Sweden"
+                                             "Portugal",
+                                             "Croatia"
                                          ]
                          },
                          {
-                             "name":  "Ecuador at Mexico",
+                             "name":  "Algeria at Switzerland",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Ecuador",
+                                          "name":  "Algeria",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "Mexico",
+                                          "name":  "Switzerland",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "Mexico",
-                                             "Ecuador"
+                                             "Switzerland",
+                                             "Algeria"
                                          ]
                          }
                      ],
@@ -1969,10 +1969,10 @@ window.WC_DASHBOARD_DATA = {
     "tournament":  "2026 FIFA World Cup",
     "summary":  {
                     "matchesPlayedInTournament":  72,
-                    "outCount":  15,
+                    "outCount":  21,
                     "total":  48,
                     "members":  14,
-                    "inCount":  33,
+                    "inCount":  27,
                     "pendingCount":  0
                 },
     "countries":  [
@@ -1985,7 +1985,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  3,
                           "displayName":  "Senegal",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sen.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Senegal",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
@@ -1996,7 +1996,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/169797.png"
                                          },
                           "record":  "1-0-2",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Round of 32 (lost to Belgium)"
                       },
                       {
                           "abbreviation":  "COD",
@@ -2007,7 +2007,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  4,
                           "displayName":  "Congo DR",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/rdc.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Congo DR",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
@@ -2018,7 +2018,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  null
                                          },
                           "record":  "1-1-1",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Round of 32 (lost to England)"
                       },
                       {
                           "abbreviation":  "UZB",
@@ -2051,7 +2051,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  4,
                           "displayName":  "Bosnia-Herzegovina",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bih.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Bosnia and Herzegovina",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
@@ -2062,7 +2062,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/102337.png"
                                          },
                           "record":  "1-1-1",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Round of 32 (lost to United States)"
                       },
                       {
                           "abbreviation":  "ALG",
@@ -2095,7 +2095,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  4,
                           "displayName":  "Ecuador",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/ecu.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Ecuador",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
@@ -2106,7 +2106,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/289877.png"
                                          },
                           "record":  "1-1-1",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Round of 32 (lost to Mexico)"
                       },
                       {
                           "abbreviation":  "CIV",
@@ -2117,7 +2117,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  6,
                           "displayName":  "Ivory Coast",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/civ.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "C�te d\u0027Ivoire",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
@@ -2128,7 +2128,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/210397.png"
                                          },
                           "record":  "2-0-1",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Round of 32 (lost to Norway)"
                       },
                       {
                           "abbreviation":  "URU",
@@ -2777,7 +2777,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  4,
                           "displayName":  "Sweden",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/swe.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Sweden",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
@@ -2788,7 +2788,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/235662.png"
                                          },
                           "record":  "1-1-1",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Round of 32 (lost to France)"
                       },
                       {
                           "abbreviation":  "POR",
@@ -3035,22 +3035,34 @@ window.WC_DASHBOARD_DATA = {
                   ],
     "statusChanges":  [
                           {
-                              "detail":  "Eliminated in Round of 32 (lost to Morocco)",
+                              "detail":  "Eliminated in Round of 32 (lost to Belgium)",
                               "from":  "IN",
                               "to":  "OUT",
-                              "country":  "Netherlands"
+                              "country":  "Senegal"
                           },
                           {
-                              "detail":  "Eliminated in Round of 32 (lost to Brazil)",
+                              "detail":  "Eliminated in Round of 32 (lost to England)",
                               "from":  "IN",
                               "to":  "OUT",
-                              "country":  "Japan"
+                              "country":  "Congo DR"
                           },
                           {
-                              "detail":  "Eliminated in Round of 32 (lost to Paraguay)",
+                              "detail":  "Eliminated in Round of 32 (lost to United States)",
                               "from":  "IN",
                               "to":  "OUT",
-                              "country":  "Germany"
+                              "country":  "Bosnia and Herzegovina"
+                          },
+                          {
+                              "detail":  "Eliminated in Round of 32 (lost to Mexico)",
+                              "from":  "IN",
+                              "to":  "OUT",
+                              "country":  "Ecuador"
+                          },
+                          {
+                              "detail":  "Eliminated in Round of 32 (lost to France)",
+                              "from":  "IN",
+                              "to":  "OUT",
+                              "country":  "Sweden"
                           }
                       ],
     "unmatchedPicks":  [
