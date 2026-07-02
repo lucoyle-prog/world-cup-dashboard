@@ -24,7 +24,7 @@ HTML_SOURCE = WC_DIR / "World-Cup-Performance-Team-Dashboard.html"
 CSS_SOURCE = ROOT / "assets" / "cisco-brand.css"
 
 STANDINGS_URL = "https://site.api.espn.com/apis/v2/sports/soccer/fifa.world/standings"
-SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates={date}"
+SCOREBOARD_URL = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates={date}&limit=100"
 
 COUNTRY_ALIASES = {
     "Congo DR": ["Congo DR", "DR Congo", "Democratic Republic of Congo"],
@@ -142,6 +142,16 @@ def resolve_country_status(entry: dict, group_name: str) -> dict:
             "played": gp,
         }
 
+    if group_stage_complete and rank == 3 and advanced == 0:
+        return {
+            "status": "OUT",
+            "detail": "Eliminated - did not qualify among best third-place teams",
+            "note": note,
+            "groupRank": rank,
+            "points": pts,
+            "played": gp,
+        }
+
     if re.search(r"Advance|Best 8", note, re.I):
         race = " - awaiting best third-place result" if re.search(r"Best 8", note, re.I) else ""
         return {
@@ -207,13 +217,21 @@ def get_knockout_eliminations() -> dict[str, str]:
                 competitors = comp.get("competitors") or []
                 winners = [c for c in competitors if c.get("winner") is True]
                 if not winners:
-                    continue
+                    scored = [c for c in competitors if str(c.get("score", "")).isdigit()]
+                    if len(scored) < 2:
+                        continue
+                    max_score = max(int(c["score"]) for c in scored)
+                    winners = [c for c in scored if int(c["score"]) == max_score]
+                    if len(winners) != 1:
+                        continue
                 round_label = get_knockout_round_label(slug)
                 winner_name = (winners[0].get("team") or {}).get("displayName") or "opponent"
                 for competitor in competitors:
                     if competitor.get("winner") is True:
                         continue
                     team_name = (competitor.get("team") or {}).get("displayName")
+                    if team_name and team_name == winner_name:
+                        continue
                     if team_name:
                         eliminated[team_name] = f"Eliminated in {round_label} (lost to {winner_name})"
         except RuntimeError as exc:

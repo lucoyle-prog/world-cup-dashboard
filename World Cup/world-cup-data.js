@@ -1,5 +1,5 @@
 window.WC_DASHBOARD_DATA = {
-    "lastUpdatedDisplay":  "Thursday, July 2, 2026 9:36 AM",
+    "lastUpdatedDisplay":  "Thursday, July 2, 2026 9:52 AM",
     "members":  [
                     {
                         "outCount":  3,
@@ -150,7 +150,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  1
                     },
                     {
-                        "outCount":  2,
+                        "outCount":  3,
                         "name":  "Sharon",
                         "note":  "",
                         "countries":  [
@@ -185,7 +185,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  2,
                                               "displayName":  "Uruguay",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Uruguay",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
@@ -196,7 +196,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/271788.png"
                                                              },
                                               "record":  "0-2-1",
-                                              "detail":  "Still in World Cup - awaiting best third-place result"
+                                              "detail":  "Eliminated - did not qualify among best third-place teams"
                                           },
                                           {
                                               "abbreviation":  "JOR",
@@ -221,10 +221,10 @@ window.WC_DASHBOARD_DATA = {
                                               "detail":  "Eliminated from World Cup"
                                           }
                                       ],
-                        "inCount":  1
+                        "inCount":  0
                     },
                     {
-                        "outCount":  1,
+                        "outCount":  2,
                         "name":  "Rosy",
                         "note":  "",
                         "countries":  [
@@ -281,7 +281,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  3,
                                               "displayName":  "Scotland",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Scotland",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
@@ -292,10 +292,10 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/104943.png"
                                                              },
                                               "record":  "1-0-2",
-                                              "detail":  "Still in World Cup - awaiting best third-place result"
+                                              "detail":  "Eliminated - did not qualify among best third-place teams"
                                           }
                                       ],
-                        "inCount":  2
+                        "inCount":  1
                     },
                     {
                         "outCount":  0,
@@ -446,7 +446,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  2
                     },
                     {
-                        "outCount":  1,
+                        "outCount":  2,
                         "name":  "Lucy",
                         "note":  "",
                         "countries":  [
@@ -481,7 +481,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  3,
                                               "displayName":  "Iran",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Iran",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
@@ -492,7 +492,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  null
                                                              },
                                               "record":  "0-3-0",
-                                              "detail":  "Still in World Cup - awaiting best third-place result"
+                                              "detail":  "Eliminated - did not qualify among best third-place teams"
                                           },
                                           {
                                               "abbreviation":  "NED",
@@ -517,7 +517,7 @@ window.WC_DASHBOARD_DATA = {
                                               "detail":  "Eliminated in Round of 32 (lost to Morocco)"
                                           }
                                       ],
-                        "inCount":  2
+                        "inCount":  1
                     },
                     {
                         "outCount":  1,
@@ -816,7 +816,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  1
                     },
                     {
-                        "outCount":  1,
+                        "outCount":  2,
                         "name":  "Viji",
                         "note":  "",
                         "countries":  [
@@ -851,7 +851,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  3,
                                               "displayName":  "South Korea",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Korea Republic",
                                               "note":  "Best 8 advance",
                                               "starPlayer":  {
@@ -862,7 +862,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/149945.png"
                                                              },
                                               "record":  "1-0-2",
-                                              "detail":  "Still in World Cup - awaiting best third-place result"
+                                              "detail":  "Eliminated - did not qualify among best third-place teams"
                                           },
                                           {
                                               "abbreviation":  "GER",
@@ -887,7 +887,7 @@ window.WC_DASHBOARD_DATA = {
                                               "detail":  "Eliminated in Round of 32 (lost to Paraguay)"
                                           }
                                       ],
-                        "inCount":  2
+                        "inCount":  1
                     },
                     {
                         "outCount":  1,
@@ -1211,8 +1211,8 @@ window.WC_DASHBOARD_DATA = {
                                          "abbreviation":  "KOR",
                                          "name":  "South Korea",
                                          "group":  "Group A",
-                                         "detail":  "Still in World Cup - awaiting best third-place result",
-                                         "status":  "IN",
+                                         "detail":  "Eliminated - did not qualify among best third-place teams",
+                                         "status":  "OUT",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/kors.png"
                                      },
                                      {
@@ -1319,8 +1319,8 @@ window.WC_DASHBOARD_DATA = {
                                          "abbreviation":  "SCO",
                                          "name":  "Scotland",
                                          "group":  "Group C",
-                                         "detail":  "Still in World Cup - awaiting best third-place result",
-                                         "status":  "IN",
+                                         "detail":  "Eliminated - did not qualify among best third-place teams",
+                                         "status":  "OUT",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sco.png"
                                      },
                                      {
@@ -1563,8 +1563,8 @@ window.WC_DASHBOARD_DATA = {
                                          "abbreviation":  "IRN",
                                          "name":  "Iran",
                                          "group":  "Group G",
-                                         "detail":  "Still in World Cup - awaiting best third-place result",
-                                         "status":  "IN",
+                                         "detail":  "Eliminated - did not qualify among best third-place teams",
+                                         "status":  "OUT",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/irn.png"
                                      },
                                      {
@@ -1624,8 +1624,8 @@ window.WC_DASHBOARD_DATA = {
                                          "abbreviation":  "URU",
                                          "name":  "Uruguay",
                                          "group":  "Group H",
-                                         "detail":  "Still in World Cup - awaiting best third-place result",
-                                         "status":  "IN",
+                                         "detail":  "Eliminated - did not qualify among best third-place teams",
+                                         "status":  "OUT",
                                          "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/uru.png"
                                      },
                                      {
@@ -1905,7 +1905,7 @@ window.WC_DASHBOARD_DATA = {
                    }
                ],
     "tournamentDates":  "June 11 - July 19, 2026",
-    "lastUpdated":  "2026-07-02T09:36:47-04:00",
+    "lastUpdated":  "2026-07-02T09:52:28-04:00",
     "todayMatches":  [
                          {
                              "name":  "Austria at Spain",
@@ -1969,10 +1969,10 @@ window.WC_DASHBOARD_DATA = {
     "tournament":  "2026 FIFA World Cup",
     "summary":  {
                     "matchesPlayedInTournament":  72,
-                    "outCount":  21,
+                    "outCount":  25,
                     "total":  48,
                     "members":  14,
-                    "inCount":  27,
+                    "inCount":  23,
                     "pendingCount":  0
                 },
     "countries":  [
@@ -2139,7 +2139,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  2,
                           "displayName":  "Uruguay",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/uru.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Uruguay",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
@@ -2150,7 +2150,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/271788.png"
                                          },
                           "record":  "0-2-1",
-                          "detail":  "Still in World Cup - awaiting best third-place result"
+                          "detail":  "Eliminated - did not qualify among best third-place teams"
                       },
                       {
                           "abbreviation":  "JOR",
@@ -2227,7 +2227,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  3,
                           "displayName":  "Scotland",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sco.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Scotland",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
@@ -2238,7 +2238,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/104943.png"
                                          },
                           "record":  "1-0-2",
-                          "detail":  "Still in World Cup - awaiting best third-place result"
+                          "detail":  "Eliminated - did not qualify among best third-place teams"
                       },
                       {
                           "abbreviation":  "AUS",
@@ -2403,7 +2403,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  3,
                           "displayName":  "Iran",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/irn.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Iran",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
@@ -2414,7 +2414,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  null
                                          },
                           "record":  "0-3-0",
-                          "detail":  "Still in World Cup - awaiting best third-place result"
+                          "detail":  "Eliminated - did not qualify among best third-place teams"
                       },
                       {
                           "abbreviation":  "NED",
@@ -2733,7 +2733,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  3,
                           "displayName":  "South Korea",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/kors.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Korea Republic",
                           "note":  "Best 8 advance",
                           "starPlayer":  {
@@ -2744,7 +2744,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/149945.png"
                                          },
                           "record":  "1-0-2",
-                          "detail":  "Still in World Cup - awaiting best third-place result"
+                          "detail":  "Eliminated - did not qualify among best third-place teams"
                       },
                       {
                           "abbreviation":  "GER",
@@ -3035,34 +3035,28 @@ window.WC_DASHBOARD_DATA = {
                   ],
     "statusChanges":  [
                           {
-                              "detail":  "Eliminated in Round of 32 (lost to Belgium)",
+                              "detail":  "Eliminated - did not qualify among best third-place teams",
                               "from":  "IN",
                               "to":  "OUT",
-                              "country":  "Senegal"
+                              "country":  "Uruguay"
                           },
                           {
-                              "detail":  "Eliminated in Round of 32 (lost to England)",
+                              "detail":  "Eliminated - did not qualify among best third-place teams",
                               "from":  "IN",
                               "to":  "OUT",
-                              "country":  "Congo DR"
+                              "country":  "Scotland"
                           },
                           {
-                              "detail":  "Eliminated in Round of 32 (lost to United States)",
+                              "detail":  "Eliminated - did not qualify among best third-place teams",
                               "from":  "IN",
                               "to":  "OUT",
-                              "country":  "Bosnia and Herzegovina"
+                              "country":  "Iran"
                           },
                           {
-                              "detail":  "Eliminated in Round of 32 (lost to Mexico)",
+                              "detail":  "Eliminated - did not qualify among best third-place teams",
                               "from":  "IN",
                               "to":  "OUT",
-                              "country":  "Ecuador"
-                          },
-                          {
-                              "detail":  "Eliminated in Round of 32 (lost to France)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Sweden"
+                              "country":  "Korea Republic"
                           }
                       ],
     "unmatchedPicks":  [

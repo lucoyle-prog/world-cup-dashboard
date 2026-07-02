@@ -88,6 +88,11 @@ function Resolve-CountryStatus($Entry, [string]$GroupName, [string]$Phase) {
         return @{ status = 'IN'; detail = $progress; note = $note; groupRank = $rank; points = $pts; played = $gp }
     }
 
+    # Third-place teams with advanced=0 missed the Best 8 cut once group stage is complete.
+    if ($groupStageComplete -and $rank -eq 3 -and $advanced -eq 0) {
+        return @{ status = 'OUT'; detail = 'Eliminated - did not qualify among best third-place teams'; note = $note; groupRank = $rank; points = $pts; played = $gp }
+    }
+
     if ($note -match 'Advance|Best 8') {
         $race = if ($note -match 'Best 8') { ' - awaiting best third-place result' } else { '' }
         return @{ status = 'IN'; detail = "Still in World Cup$race"; note = $note; groupRank = $rank; points = $pts; played = $gp }
@@ -123,7 +128,7 @@ function Get-KnockoutEliminations {
     for ($day = $knockoutStart; $day -le $knockoutEnd; $day = $day.AddDays(1)) {
         $dateStr = $day.ToString('yyyyMMdd')
         try {
-            $scoreboard = Invoke-RestMethod -Uri "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=$dateStr" -Method Get
+            $scoreboard = Invoke-RestMethod -Uri "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=$dateStr&limit=100" -Method Get
             foreach ($event in $scoreboard.events) {
                 $slug = $event.season.slug
                 if ([string]::IsNullOrWhiteSpace($slug) -or $slug -eq 'group-stage') { continue }
@@ -131,13 +136,20 @@ function Get-KnockoutEliminations {
                 if (-not $comp) { continue }
                 if ($comp.status.type.state -ne 'post') { continue }
 
-                $winners = @($comp.competitors | Where-Object { $_.winner -eq $true })
-                if ($winners.Count -eq 0) { continue }
-
                 $roundLabel = Get-KnockoutRoundLabel $slug
+                $winners = @($comp.competitors | Where-Object { $_.winner -eq $true })
+                if ($winners.Count -eq 0) {
+                    $scored = @($comp.competitors | Where-Object { $_.score -match '^\d+$' })
+                    if ($scored.Count -lt 2) { continue }
+                    $maxScore = ($scored | ForEach-Object { [int]$_.score } | Measure-Object -Maximum).Maximum
+                    $winners = @($scored | Where-Object { [int]$_.score -eq $maxScore })
+                    if ($winners.Count -ne 1) { continue }
+                }
+
                 $winnerName = $winners[0].team.displayName
                 foreach ($competitor in $comp.competitors) {
                     if ($competitor.winner -eq $true) { continue }
+                    if ($winners.Count -gt 0 -and $competitor.team.displayName -eq $winnerName) { continue }
                     $teamName = $competitor.team.displayName
                     $eliminated[$teamName] = "Eliminated in $roundLabel (lost to $winnerName)"
                 }
