@@ -194,9 +194,56 @@ def get_knockout_round_label(slug: str) -> str:
     return slug.replace("-", " ")
 
 
+def get_competitor_score(competitor: dict) -> int | None:
+    score = competitor.get("score")
+    if score is None:
+        return None
+    if isinstance(score, str) and score.isdigit():
+        return int(score)
+    if isinstance(score, dict):
+        display = score.get("displayValue")
+        if isinstance(display, str) and display.isdigit():
+            return int(display)
+        try:
+            return int(float(score.get("value", 0)))
+        except (TypeError, ValueError):
+            return None
+    try:
+        return int(score)
+    except (TypeError, ValueError):
+        return None
+
+
+def get_knockout_losers_from_competition(comp: dict, round_label: str) -> dict[str, str]:
+    losers: dict[str, str] = {}
+    state = ((comp.get("status") or {}).get("type") or {}).get("state") or ""
+    if state != "post":
+        return losers
+    competitors = comp.get("competitors") or []
+    winners = [c for c in competitors if c.get("winner") is True]
+    if not winners:
+        scored = [c for c in competitors if get_competitor_score(c) is not None]
+        if len(scored) < 2:
+            return losers
+        max_score = max(get_competitor_score(c) or 0 for c in scored)
+        winners = [c for c in scored if (get_competitor_score(c) or 0) == max_score]
+        if len(winners) != 1:
+            return losers
+    winner_name = (winners[0].get("team") or {}).get("displayName") or "opponent"
+    for competitor in competitors:
+        if competitor.get("winner") is True:
+            continue
+        team_name = (competitor.get("team") or {}).get("displayName")
+        if team_name and team_name == winner_name:
+            continue
+        if team_name:
+            losers[team_name] = f"Eliminated in {round_label} (lost to {winner_name})"
+    return losers
+
+
 def get_knockout_eliminations() -> dict[str, str]:
     eliminated: dict[str, str] = {}
-    start = datetime(2026, 6, 29)
+    start = datetime(2026, 6, 28)
     end = min(datetime.now(), datetime(2026, 7, 19))
     day = start
     while day.date() <= end.date():
@@ -211,32 +258,68 @@ def get_knockout_eliminations() -> dict[str, str]:
                 if not competitions:
                     continue
                 comp = competitions[0]
-                state = ((comp.get("status") or {}).get("type") or {}).get("state") or ""
-                if state != "post":
-                    continue
-                competitors = comp.get("competitors") or []
-                winners = [c for c in competitors if c.get("winner") is True]
-                if not winners:
-                    scored = [c for c in competitors if str(c.get("score", "")).isdigit()]
-                    if len(scored) < 2:
-                        continue
-                    max_score = max(int(c["score"]) for c in scored)
-                    winners = [c for c in scored if int(c["score"]) == max_score]
-                    if len(winners) != 1:
-                        continue
                 round_label = get_knockout_round_label(slug)
-                winner_name = (winners[0].get("team") or {}).get("displayName") or "opponent"
-                for competitor in competitors:
-                    if competitor.get("winner") is True:
-                        continue
-                    team_name = (competitor.get("team") or {}).get("displayName")
-                    if team_name and team_name == winner_name:
-                        continue
-                    if team_name:
-                        eliminated[team_name] = f"Eliminated in {round_label} (lost to {winner_name})"
+                eliminated.update(get_knockout_losers_from_competition(comp, round_label))
         except RuntimeError as exc:
             print(f"Warning: could not load knockout scoreboard for {date_str}: {exc}")
         day += timedelta(days=1)
+    return eliminated
+
+
+SCHEDULE_URL = "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/teams/{team_id}/schedule"
+
+
+def get_knockout_eliminations_from_schedules(team_ids: dict[str, str], all_picks: list[str]) -> dict[str, str]:
+    eliminated: dict[str, str] = {}
+    knockout_cutoff = datetime(2026, 6, 28)
+    for pick in all_picks:
+        espn_name = None
+        team_id = None
+        for name, tid in team_ids.items():
+            if test_country_match(pick, name):
+                espn_name = name
+                team_id = tid
+                break
+        if not team_id or not espn_name:
+            continue
+        try:
+            schedule = fetch_json(SCHEDULE_URL.format(team_id=team_id))
+        except RuntimeError as exc:
+            print(f"Warning: could not load schedule for {espn_name}: {exc}")
+            continue
+        events = sorted(schedule.get("events") or [], key=lambda event: event.get("date") or "")
+        for event in events:
+            event_date_raw = event.get("date") or ""
+            try:
+                event_date = datetime.fromisoformat(event_date_raw.replace("Z", "+00:00"))
+            except ValueError:
+                continue
+            if event_date.replace(tzinfo=None) < knockout_cutoff:
+                continue
+            slug = ((event.get("season") or {}).get("slug")) or ""
+            if slug == "group-stage":
+                continue
+            competitions = event.get("competitions") or []
+            if not competitions:
+                continue
+            comp = competitions[0]
+            state = ((comp.get("status") or {}).get("type") or {}).get("state") or ""
+            if state != "post":
+                continue
+            competitors = comp.get("competitors") or []
+            me = next((c for c in competitors if test_country_match(pick, (c.get("team") or {}).get("displayName") or "")), None)
+            if not me or me.get("winner") is True:
+                continue
+            round_label = get_knockout_round_label(slug)
+            opp = next(
+                (
+                    (c.get("team") or {}).get("displayName")
+                    for c in competitors
+                    if not test_country_match(pick, (c.get("team") or {}).get("displayName") or "")
+                ),
+                None,
+            )
+            eliminated[espn_name] = f"Eliminated in {round_label} (lost to {opp or 'opponent'})"
     return eliminated
 
 
@@ -331,6 +414,7 @@ def build_payload() -> dict:
     standings = fetch_json(STANDINGS_URL)
 
     country_lookup: dict[str, dict] = {}
+    espn_team_ids: dict[str, str] = {}
     groups_out = []
     total_matches_played = 0
 
@@ -366,6 +450,8 @@ def build_payload() -> dict:
                 "record": record,
             }
             country_lookup[team_info["name"]] = team_info
+            if team_info["name"] and team_info["espnTeamId"]:
+                espn_team_ids[team_info["name"]] = str(team_info["espnTeamId"])
             for pick in all_picks:
                 if test_country_match(pick, team_info["name"]):
                     country_lookup[pick] = team_info
@@ -374,6 +460,7 @@ def build_payload() -> dict:
 
     print("Checking knockout round results...")
     knockout_eliminated = get_knockout_eliminations()
+    knockout_eliminated.update(get_knockout_eliminations_from_schedules(espn_team_ids, all_picks))
     if knockout_eliminated:
         print(f"Knockout eliminations detected: {len(knockout_eliminated)}")
         apply_knockout_eliminations(knockout_eliminated, country_lookup, all_picks, groups_out)

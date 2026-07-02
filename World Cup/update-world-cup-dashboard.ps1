@@ -118,9 +118,52 @@ function Get-KnockoutRoundLabel([string]$Slug) {
     return ($Slug -replace '-', ' ')
 }
 
+function Get-CompetitorScore($Competitor) {
+    if ($null -eq $Competitor) { return $null }
+    $score = $Competitor.score
+    if ($null -eq $score) { return $null }
+    if ($score -is [string] -and $score -match '^\d+$') { return [int]$score }
+    if ($score.PSObject.Properties.Name -contains 'displayValue' -and $score.displayValue -match '^\d+$') {
+        return [int]$score.displayValue
+    }
+    if ($score.PSObject.Properties.Name -contains 'value') {
+        return [int][Math]::Floor([double]$score.value)
+    }
+    return $null
+}
+
+function Get-CompetitorWinner($Competitor) {
+    if ($null -eq $Competitor) { return $null }
+    if ($Competitor.PSObject.Properties.Name -contains 'winner') { return [bool]$Competitor.winner }
+    return $null
+}
+
+function Get-KnockoutLosersFromCompetition($Comp, [string]$RoundLabel) {
+    $losers = @{}
+    if ($Comp.status.type.state -ne 'post') { return $losers }
+
+    $winners = @($Comp.competitors | Where-Object { Get-CompetitorWinner $_ -eq $true })
+    if ($winners.Count -eq 0) {
+        $scored = @($Comp.competitors | Where-Object { $null -ne (Get-CompetitorScore $_) })
+        if ($scored.Count -lt 2) { return $losers }
+        $maxScore = ($scored | ForEach-Object { Get-CompetitorScore $_ } | Measure-Object -Maximum).Maximum
+        $winners = @($scored | Where-Object { (Get-CompetitorScore $_) -eq $maxScore })
+        if ($winners.Count -ne 1) { return $losers }
+    }
+
+    $winnerName = $winners[0].team.displayName
+    foreach ($competitor in $Comp.competitors) {
+        if (Get-CompetitorWinner $competitor -eq $true) { continue }
+        if ($competitor.team.displayName -eq $winnerName) { continue }
+        $teamName = $competitor.team.displayName
+        $losers[$teamName] = "Eliminated in $RoundLabel (lost to $winnerName)"
+    }
+    return $losers
+}
+
 function Get-KnockoutEliminations {
     $eliminated = @{}
-    $knockoutStart = Get-Date '2026-06-29'
+    $knockoutStart = Get-Date '2026-06-28'
     $knockoutEnd = Get-Date '2026-07-19'
     $today = Get-Date
     if ($today -lt $knockoutEnd) { $knockoutEnd = $today }
@@ -134,24 +177,9 @@ function Get-KnockoutEliminations {
                 if ([string]::IsNullOrWhiteSpace($slug) -or $slug -eq 'group-stage') { continue }
                 $comp = $event.competitions | Select-Object -First 1
                 if (-not $comp) { continue }
-                if ($comp.status.type.state -ne 'post') { continue }
-
                 $roundLabel = Get-KnockoutRoundLabel $slug
-                $winners = @($comp.competitors | Where-Object { $_.winner -eq $true })
-                if ($winners.Count -eq 0) {
-                    $scored = @($comp.competitors | Where-Object { $_.score -match '^\d+$' })
-                    if ($scored.Count -lt 2) { continue }
-                    $maxScore = ($scored | ForEach-Object { [int]$_.score } | Measure-Object -Maximum).Maximum
-                    $winners = @($scored | Where-Object { [int]$_.score -eq $maxScore })
-                    if ($winners.Count -ne 1) { continue }
-                }
-
-                $winnerName = $winners[0].team.displayName
-                foreach ($competitor in $comp.competitors) {
-                    if ($competitor.winner -eq $true) { continue }
-                    if ($winners.Count -gt 0 -and $competitor.team.displayName -eq $winnerName) { continue }
-                    $teamName = $competitor.team.displayName
-                    $eliminated[$teamName] = "Eliminated in $roundLabel (lost to $winnerName)"
+                foreach ($entry in (Get-KnockoutLosersFromCompetition $comp $roundLabel).GetEnumerator()) {
+                    $eliminated[$entry.Key] = $entry.Value
                 }
             }
         }
@@ -160,6 +188,61 @@ function Get-KnockoutEliminations {
         }
     }
     return $eliminated
+}
+
+function Get-KnockoutEliminationsFromSchedules($TeamIds, $AllPicks) {
+    $eliminated = @{}
+    $knockoutCutoff = Get-Date '2026-06-28'
+
+    foreach ($pick in $AllPicks) {
+        $espnName = $null
+        $teamId = $null
+        foreach ($name in $TeamIds.Keys) {
+            if (Test-CountryMatch $pick $name) {
+                $espnName = $name
+                $teamId = $TeamIds[$name]
+                break
+            }
+        }
+        if (-not $teamId) { continue }
+
+        try {
+            $schedule = Invoke-RestMethod -Uri "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/teams/$teamId/schedule" -Method Get
+            Start-Sleep -Milliseconds 80
+        }
+        catch {
+            Write-Warning "Could not load schedule for $espnName ($teamId): $($_.Exception.Message)"
+            continue
+        }
+
+        foreach ($event in ($schedule.events | Sort-Object date)) {
+            $eventDate = [datetime]$event.date
+            if ($eventDate -lt $knockoutCutoff) { continue }
+            $comp = $event.competitions | Select-Object -First 1
+            if (-not $comp) { continue }
+            if ($comp.status.type.state -ne 'post') { continue }
+
+            $slug = $event.season.slug
+            if ($slug -eq 'group-stage') { continue }
+
+            $me = $comp.competitors | Where-Object { Test-CountryMatch $pick $_.team.displayName } | Select-Object -First 1
+            if (-not $me) { continue }
+            if (Get-CompetitorWinner $me -eq $true) { continue }
+
+            $roundLabel = Get-KnockoutRoundLabel $slug
+            $opp = ($comp.competitors | Where-Object { -not (Test-CountryMatch $pick $_.team.displayName) } | Select-Object -First 1).team.displayName
+            if ([string]::IsNullOrWhiteSpace($opp)) { $opp = 'opponent' }
+            $eliminated[$espnName] = "Eliminated in $roundLabel (lost to $opp)"
+        }
+    }
+    return $eliminated
+}
+
+function Merge-KnockoutEliminations($Primary, $Secondary) {
+    $merged = @{}
+    foreach ($key in $Primary.Keys) { $merged[$key] = $Primary[$key] }
+    foreach ($key in $Secondary.Keys) { $merged[$key] = $Secondary[$key] }
+    return $merged
 }
 
 function Apply-KnockoutEliminations($KnockoutMap, $CountryLookup, $AllPicks, $Groups) {
@@ -373,6 +456,8 @@ foreach ($group in $standings.children) {
 
 Write-Host 'Checking knockout round results...'
 $knockoutEliminated = Get-KnockoutEliminations
+$scheduleEliminated = Get-KnockoutEliminationsFromSchedules $espnTeamIds $allPicks
+$knockoutEliminated = Merge-KnockoutEliminations $knockoutEliminated $scheduleEliminated
 if ($knockoutEliminated.Count -gt 0) {
     Write-Host "Knockout eliminations detected: $($knockoutEliminated.Count)"
     Apply-KnockoutEliminations $knockoutEliminated $countryLookup $allPicks $groups
