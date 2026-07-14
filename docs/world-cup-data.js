@@ -1,5 +1,5 @@
 window.WC_DASHBOARD_DATA = {
-    "lastUpdatedDisplay":  "Friday, July 10, 2026 2:24 PM",
+    "lastUpdatedDisplay":  "Tuesday, July 14, 2026 9:43 AM",
     "members":  [
                     {
                         "outCount":  3,
@@ -520,7 +520,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  0
                     },
                     {
-                        "outCount":  2,
+                        "outCount":  3,
                         "name":  "Kassidy",
                         "note":  "",
                         "countries":  [
@@ -555,7 +555,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  5,
                                               "displayName":  "Belgium",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Belgium",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
@@ -566,7 +566,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/134947.png"
                                                              },
                                               "record":  "1-2-0",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Knockout stage (lost to Spain)"
                                           },
                                           {
                                               "abbreviation":  "CZE",
@@ -591,7 +591,7 @@ window.WC_DASHBOARD_DATA = {
                                               "detail":  "Eliminated from World Cup"
                                           }
                                       ],
-                        "inCount":  1
+                        "inCount":  0
                     },
                     {
                         "outCount":  2,
@@ -668,7 +668,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  1
                     },
                     {
-                        "outCount":  1,
+                        "outCount":  3,
                         "name":  "Eliot",
                         "note":  "",
                         "countries":  [
@@ -681,7 +681,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  6,
                                               "displayName":  "Norway",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Norway",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
@@ -692,7 +692,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/253989.png"
                                                              },
                                               "record":  "2-0-1",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Knockout stage (lost to England)"
                                           },
                                           {
                                               "abbreviation":  "SUI",
@@ -703,7 +703,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  7,
                                               "displayName":  "Switzerland",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "Switzerland",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
@@ -714,7 +714,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/149981.png"
                                                              },
                                               "record":  "2-1-0",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Knockout stage (lost to Argentina)"
                                           },
                                           {
                                               "abbreviation":  "JPN",
@@ -739,7 +739,7 @@ window.WC_DASHBOARD_DATA = {
                                               "detail":  "Eliminated in Knockout stage (lost to Brazil)"
                                           }
                                       ],
-                        "inCount":  2
+                        "inCount":  0
                     },
                     {
                         "outCount":  2,
@@ -1263,18 +1263,18 @@ window.WC_DASHBOARD_DATA = {
                                          "played":  3
                                      },
                                      {
-                                         "record":  "2-1-0",
-                                         "rank":  1,
-                                         "note":  "Advance to Round of 32",
-                                         "played":  3,
                                          "espnTeamId":  "475",
-                                         "points":  7,
-                                         "abbreviation":  "SUI",
+                                         "record":  "2-1-0",
                                          "name":  "Switzerland",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
+                                         "note":  "Advance to Round of 32",
+                                         "detail":  "Eliminated in Knockout stage (lost to Argentina)",
                                          "group":  "Group B",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sui.png"
+                                         "status":  "OUT",
+                                         "rank":  1,
+                                         "abbreviation":  "SUI",
+                                         "points":  7,
+                                         "played":  3
                                      },
                                      {
                                          "record":  "0-1-2",
@@ -1540,18 +1540,18 @@ window.WC_DASHBOARD_DATA = {
                    {
                        "teams":  [
                                      {
-                                         "record":  "1-2-0",
-                                         "rank":  1,
-                                         "note":  "Advance to Round of 32",
-                                         "played":  3,
                                          "espnTeamId":  "459",
-                                         "points":  5,
-                                         "abbreviation":  "BEL",
+                                         "record":  "1-2-0",
                                          "name":  "Belgium",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
+                                         "note":  "Advance to Round of 32",
+                                         "detail":  "Eliminated in Knockout stage (lost to Spain)",
                                          "group":  "Group G",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bel.png"
+                                         "status":  "OUT",
+                                         "rank":  1,
+                                         "abbreviation":  "BEL",
+                                         "points":  5,
+                                         "played":  3
                                      },
                                      {
                                          "record":  "0-3-0",
@@ -1662,18 +1662,18 @@ window.WC_DASHBOARD_DATA = {
                    {
                        "teams":  [
                                      {
-                                         "record":  "2-0-1",
-                                         "rank":  2,
-                                         "note":  "Advance to Round of 32",
-                                         "played":  3,
                                          "espnTeamId":  "464",
-                                         "points":  6,
-                                         "abbreviation":  "NOR",
+                                         "record":  "2-0-1",
                                          "name":  "Norway",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
+                                         "note":  "Advance to Round of 32",
+                                         "detail":  "Eliminated in Knockout stage (lost to England)",
                                          "group":  "Group I",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/nor.png"
+                                         "status":  "OUT",
+                                         "rank":  2,
+                                         "abbreviation":  "NOR",
+                                         "points":  6,
+                                         "played":  3
                                      },
                                      {
                                          "record":  "3-0-0",
@@ -1905,25 +1905,25 @@ window.WC_DASHBOARD_DATA = {
                    }
                ],
     "tournamentDates":  "June 11 - July 19, 2026",
-    "lastUpdated":  "2026-07-10T14:24:42-04:00",
+    "lastUpdated":  "2026-07-14T09:43:19-04:00",
     "todayMatches":  [
                          {
-                             "name":  "Belgium at Spain",
+                             "name":  "Spain at France",
                              "away":  {
                                           "score":  "0",
-                                          "name":  "Belgium",
+                                          "name":  "Spain",
                                           "logo":  null
                                       },
                              "home":  {
                                           "score":  "0",
-                                          "name":  "Spain",
+                                          "name":  "France",
                                           "logo":  null
                                       },
                              "state":  "pre",
                              "status":  "Scheduled",
                              "tracked":  [
-                                             "Spain",
-                                             "Belgium"
+                                             "France",
+                                             "Spain"
                                          ]
                          }
                      ],
@@ -1931,10 +1931,10 @@ window.WC_DASHBOARD_DATA = {
     "tournament":  "2026 FIFA World Cup",
     "summary":  {
                     "matchesPlayedInTournament":  72,
-                    "outCount":  41,
+                    "outCount":  44,
                     "total":  48,
                     "members":  14,
-                    "inCount":  7,
+                    "inCount":  4,
                     "pendingCount":  0
                 },
     "countries":  [
@@ -2431,7 +2431,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  5,
                           "displayName":  "Belgium",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/bel.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Belgium",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
@@ -2442,7 +2442,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/134947.png"
                                          },
                           "record":  "1-2-0",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Knockout stage (lost to Spain)"
                       },
                       {
                           "abbreviation":  "CZE",
@@ -2541,7 +2541,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  6,
                           "displayName":  "Norway",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/nor.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Norway",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
@@ -2552,7 +2552,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/253989.png"
                                          },
                           "record":  "2-0-1",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Knockout stage (lost to England)"
                       },
                       {
                           "abbreviation":  "SUI",
@@ -2563,7 +2563,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  7,
                           "displayName":  "Switzerland",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/sui.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "Switzerland",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
@@ -2574,7 +2574,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/149981.png"
                                          },
                           "record":  "2-1-0",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Knockout stage (lost to Argentina)"
                       },
                       {
                           "abbreviation":  "JPN",
@@ -2997,94 +2997,22 @@ window.WC_DASHBOARD_DATA = {
                   ],
     "statusChanges":  [
                           {
-                              "detail":  "Eliminated in Knockout stage (lost to Switzerland)",
+                              "detail":  "Eliminated in Knockout stage (lost to Spain)",
                               "from":  "IN",
                               "to":  "OUT",
-                              "country":  "Algeria"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to Argentina)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Egypt"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to Egypt)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Australia"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to Norway)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Brazil"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to Switzerland)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Colombia"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to France)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Paraguay"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to Argentina)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Cape Verde Islands"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to Portugal)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Croatia"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to France)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Morocco"
+                              "country":  "Belgium"
                           },
                           {
                               "detail":  "Eliminated in Knockout stage (lost to England)",
                               "from":  "IN",
                               "to":  "OUT",
-                              "country":  "Mexico"
+                              "country":  "Norway"
                           },
                           {
-                              "detail":  "Eliminated in Knockout stage (lost to Spain)",
+                              "detail":  "Eliminated in Knockout stage (lost to Argentina)",
                               "from":  "IN",
                               "to":  "OUT",
-                              "country":  "Portugal"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to Spain)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Austria"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to Morocco)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Canada"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to Colombia)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Ghana"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to Belgium)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "United States"
+                              "country":  "Switzerland"
                           }
                       ],
     "unmatchedPicks":  [
