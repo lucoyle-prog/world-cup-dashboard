@@ -1,5 +1,5 @@
 window.WC_DASHBOARD_DATA = {
-    "lastUpdatedDisplay":  "Tuesday, July 14, 2026 9:43 AM",
+    "lastUpdatedDisplay":  "Wednesday, July 15, 2026 5:08 PM",
     "members":  [
                     {
                         "outCount":  3,
@@ -594,7 +594,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  0
                     },
                     {
-                        "outCount":  2,
+                        "outCount":  3,
                         "name":  "Sevana",
                         "note":  "",
                         "countries":  [
@@ -629,7 +629,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  7,
                                               "displayName":  "England",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "England",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
@@ -640,7 +640,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/142200.png"
                                                              },
                                               "record":  "2-1-0",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Semi-final (lost to Argentina)"
                                           },
                                           {
                                               "abbreviation":  "MAR",
@@ -665,7 +665,7 @@ window.WC_DASHBOARD_DATA = {
                                               "detail":  "Eliminated in Knockout stage (lost to France)"
                                           }
                                       ],
-                        "inCount":  1
+                        "inCount":  0
                     },
                     {
                         "outCount":  3,
@@ -742,7 +742,7 @@ window.WC_DASHBOARD_DATA = {
                         "inCount":  0
                     },
                     {
-                        "outCount":  2,
+                        "outCount":  3,
                         "name":  "Maria",
                         "note":  "",
                         "countries":  [
@@ -777,7 +777,7 @@ window.WC_DASHBOARD_DATA = {
                                               "points":  9,
                                               "displayName":  "France",
                                               "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-                                              "status":  "IN",
+                                              "status":  "OUT",
                                               "pickName":  "France",
                                               "note":  "Advance to Round of 32",
                                               "starPlayer":  {
@@ -788,7 +788,7 @@ window.WC_DASHBOARD_DATA = {
                                                                  "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/231388.png"
                                                              },
                                               "record":  "3-0-0",
-                                              "detail":  "Advanced - still in the World Cup"
+                                              "detail":  "Eliminated in Knockout stage (lost to Spain)"
                                           },
                                           {
                                               "abbreviation":  "TUN",
@@ -813,7 +813,7 @@ window.WC_DASHBOARD_DATA = {
                                               "detail":  "Eliminated from World Cup"
                                           }
                                       ],
-                        "inCount":  1
+                        "inCount":  0
                     },
                     {
                         "outCount":  3,
@@ -1676,18 +1676,18 @@ window.WC_DASHBOARD_DATA = {
                                          "played":  3
                                      },
                                      {
-                                         "record":  "3-0-0",
-                                         "rank":  1,
-                                         "note":  "Advance to Round of 32",
-                                         "played":  3,
                                          "espnTeamId":  "478",
-                                         "points":  9,
-                                         "abbreviation":  "FRA",
+                                         "record":  "3-0-0",
                                          "name":  "France",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
+                                         "note":  "Advance to Round of 32",
+                                         "detail":  "Eliminated in Knockout stage (lost to Spain)",
                                          "group":  "Group I",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/fra.png"
+                                         "status":  "OUT",
+                                         "rank":  1,
+                                         "abbreviation":  "FRA",
+                                         "points":  9,
+                                         "played":  3
                                      },
                                      {
                                          "espnTeamId":  "654",
@@ -1845,18 +1845,18 @@ window.WC_DASHBOARD_DATA = {
                    {
                        "teams":  [
                                      {
-                                         "record":  "2-1-0",
-                                         "rank":  1,
-                                         "note":  "Advance to Round of 32",
-                                         "played":  3,
                                          "espnTeamId":  "448",
-                                         "points":  7,
-                                         "abbreviation":  "ENG",
+                                         "record":  "2-1-0",
                                          "name":  "England",
+                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
+                                         "note":  "Advance to Round of 32",
+                                         "detail":  "Eliminated in Semi-final (lost to Argentina)",
                                          "group":  "Group L",
-                                         "detail":  "Advanced - still in the World Cup",
-                                         "status":  "IN",
-                                         "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/eng.png"
+                                         "status":  "OUT",
+                                         "rank":  1,
+                                         "abbreviation":  "ENG",
+                                         "points":  7,
+                                         "played":  3
                                      },
                                      {
                                          "espnTeamId":  "477",
@@ -1905,25 +1905,25 @@ window.WC_DASHBOARD_DATA = {
                    }
                ],
     "tournamentDates":  "June 11 - July 19, 2026",
-    "lastUpdated":  "2026-07-14T09:43:19-04:00",
+    "lastUpdated":  "2026-07-15T17:08:28-04:00",
     "todayMatches":  [
                          {
-                             "name":  "Spain at France",
+                             "name":  "Argentina at England",
                              "away":  {
-                                          "score":  "0",
-                                          "name":  "Spain",
+                                          "score":  "2",
+                                          "name":  "Argentina",
                                           "logo":  null
                                       },
                              "home":  {
-                                          "score":  "0",
-                                          "name":  "France",
+                                          "score":  "1",
+                                          "name":  "England",
                                           "logo":  null
                                       },
-                             "state":  "pre",
-                             "status":  "Scheduled",
+                             "state":  "post",
+                             "status":  "Full Time",
                              "tracked":  [
-                                             "France",
-                                             "Spain"
+                                             "England",
+                                             "Argentina"
                                          ]
                          }
                      ],
@@ -1931,10 +1931,10 @@ window.WC_DASHBOARD_DATA = {
     "tournament":  "2026 FIFA World Cup",
     "summary":  {
                     "matchesPlayedInTournament":  72,
-                    "outCount":  44,
+                    "outCount":  46,
                     "total":  48,
                     "members":  14,
-                    "inCount":  4,
+                    "inCount":  2,
                     "pendingCount":  0
                 },
     "countries":  [
@@ -2497,7 +2497,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  7,
                           "displayName":  "England",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/eng.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "England",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
@@ -2508,7 +2508,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/142200.png"
                                          },
                           "record":  "2-1-0",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Semi-final (lost to Argentina)"
                       },
                       {
                           "abbreviation":  "MAR",
@@ -2629,7 +2629,7 @@ window.WC_DASHBOARD_DATA = {
                           "points":  9,
                           "displayName":  "France",
                           "logo":  "https://a.espncdn.com/i/teamlogos/countries/500/fra.png",
-                          "status":  "IN",
+                          "status":  "OUT",
                           "pickName":  "France",
                           "note":  "Advance to Round of 32",
                           "starPlayer":  {
@@ -2640,7 +2640,7 @@ window.WC_DASHBOARD_DATA = {
                                              "headshot":  "https://a.espncdn.com/i/headshots/soccer/players/full/231388.png"
                                          },
                           "record":  "3-0-0",
-                          "detail":  "Advanced - still in the World Cup"
+                          "detail":  "Eliminated in Knockout stage (lost to Spain)"
                       },
                       {
                           "abbreviation":  "TUN",
@@ -2997,22 +2997,16 @@ window.WC_DASHBOARD_DATA = {
                   ],
     "statusChanges":  [
                           {
+                              "detail":  "Eliminated in Semi-final (lost to Argentina)",
+                              "from":  "IN",
+                              "to":  "OUT",
+                              "country":  "England"
+                          },
+                          {
                               "detail":  "Eliminated in Knockout stage (lost to Spain)",
                               "from":  "IN",
                               "to":  "OUT",
-                              "country":  "Belgium"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to England)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Norway"
-                          },
-                          {
-                              "detail":  "Eliminated in Knockout stage (lost to Argentina)",
-                              "from":  "IN",
-                              "to":  "OUT",
-                              "country":  "Switzerland"
+                              "country":  "France"
                           }
                       ],
     "unmatchedPicks":  [
