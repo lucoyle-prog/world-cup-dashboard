@@ -654,8 +654,20 @@ def build_docs() -> None:
     print(f"GitHub Pages files ready in: {DOCS_DIR}")
 
 
+def is_tournament_complete() -> bool:
+    """Skip CI updates once the published dashboard marks the tournament finished."""
+    if not DATA_JS_PATH.exists():
+        return False
+    text = DATA_JS_PATH.read_text(encoding="utf-8")
+    marker = re.sub(r"\s+", "", text)
+    return '"tournamentComplete":true' in marker
+
+
 def main() -> int:
     try:
+        if is_tournament_complete():
+            print("Tournament complete - skipping dashboard update.")
+            return 0
         print("Reading team picks from CSV...")
         payload = build_payload()
         write_data_files(payload)

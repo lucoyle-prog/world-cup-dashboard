@@ -1,9 +1,9 @@
 name: Update World Cup Dashboard
 
+# The 2026 World Cup is complete (Spain champions, July 2026).
+# Scheduled auto-updates are disabled. Use workflow_dispatch only if you
+# intentionally need a manual refresh.
 on:
-  schedule:
-    # Every 15 minutes (UTC). GitHub may delay scheduled runs by a few minutes.
-    - cron: '*/15 * * * *'
   workflow_dispatch:
 
 permissions:
