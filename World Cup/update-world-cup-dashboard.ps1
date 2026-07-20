@@ -111,6 +111,7 @@ function Get-KnockoutRoundLabel([string]$Slug) {
         'semifinals' = 'Semi-final'
         'third-place' = 'Third-place play-off'
         'third-place-playoff' = 'Third-place play-off'
+        '3rd-place-match' = 'Third-place play-off'
         'final' = 'Final'
     }
     if ($labels.ContainsKey($Slug)) { return $labels[$Slug] }
@@ -243,6 +244,254 @@ function Merge-KnockoutEliminations($Primary, $Secondary) {
     foreach ($key in $Primary.Keys) { $merged[$key] = $Primary[$key] }
     foreach ($key in $Secondary.Keys) { $merged[$key] = $Secondary[$key] }
     return $merged
+}
+
+function Get-MatchScoreLine($Comp) {
+    $scores = @($Comp.competitors | ForEach-Object { Get-CompetitorScore $_ } | Where-Object { $null -ne $_ })
+    if ($scores.Count -lt 2) { return '' }
+    return ($scores -join '-')
+}
+
+function Get-TournamentFinishMap {
+    $finishes = @{}
+    $knockoutStart = Get-Date '2026-06-28'
+    $knockoutEnd = Get-Date '2026-07-19'
+    $today = Get-Date
+    if ($today -lt $knockoutEnd) { $knockoutEnd = $today }
+
+    for ($day = $knockoutStart; $day -le $knockoutEnd; $day = $day.AddDays(1)) {
+        $dateStr = $day.ToString('yyyyMMdd')
+        try {
+            $scoreboard = Invoke-RestMethod -Uri "https://site.api.espn.com/apis/site/v2/sports/soccer/fifa.world/scoreboard?dates=$dateStr&limit=100" -Method Get
+            foreach ($event in $scoreboard.events) {
+                $slug = $event.season.slug
+                if ([string]::IsNullOrWhiteSpace($slug) -or $slug -eq 'group-stage') { continue }
+                $comp = $event.competitions | Select-Object -First 1
+                if (-not $comp -or $comp.status.type.state -ne 'post') { continue }
+
+                $winners = @($comp.competitors | Where-Object { Get-CompetitorWinner $_ -eq $true })
+                if ($winners.Count -eq 0) {
+                    $scored = @($comp.competitors | Where-Object { $null -ne (Get-CompetitorScore $_) })
+                    if ($scored.Count -lt 2) { continue }
+                    $maxScore = ($scored | ForEach-Object { Get-CompetitorScore $_ } | Measure-Object -Maximum).Maximum
+                    $winners = @($scored | Where-Object { (Get-CompetitorScore $_) -eq $maxScore })
+                    if ($winners.Count -ne 1) { continue }
+                }
+                $winnerName = $winners[0].team.displayName
+                $scoreLine = Get-MatchScoreLine $comp
+
+                foreach ($competitor in $comp.competitors) {
+                    if (Get-CompetitorWinner $competitor -eq $true) { continue }
+                    $teamName = $competitor.team.displayName
+                    $oppScore = Get-CompetitorScore $competitor
+                    $winScore = Get-CompetitorScore $winners[0]
+
+                    if ($slug -eq 'final') {
+                        $finishes[$winnerName] = @{
+                            score = 100
+                            status = 'IN'
+                            label = 'World Cup Champion'
+                            detail = "World Cup Champion - beat $teamName $winScore-$oppScore in the Final"
+                        }
+                        $finishes[$teamName] = @{
+                            score = 90
+                            status = 'OUT'
+                            label = 'Runners-up'
+                            detail = "Runners-up - lost to $winnerName $oppScore-$winScore in the Final"
+                        }
+                        continue
+                    }
+                    if ($slug -match '3rd-place') {
+                        $finishes[$winnerName] = @{
+                            score = 85
+                            status = 'OUT'
+                            label = '3rd place'
+                            detail = "Finished 3rd - beat $teamName $winScore-$oppScore in the third-place match"
+                        }
+                        $finishes[$teamName] = @{
+                            score = 82
+                            status = 'OUT'
+                            label = '4th place'
+                            detail = "Finished 4th - lost the third-place match to $winnerName $oppScore-$winScore"
+                        }
+                        continue
+                    }
+
+                    $roundLabel = Get-KnockoutRoundLabel $slug
+                    $score = switch -Regex ($slug) {
+                        'semi' { 70 }
+                        'quarter' { 50 }
+                        'round-of-16' { 30 }
+                        'round-of-32' { 20 }
+                        default { 15 }
+                    }
+                    if (-not $finishes.ContainsKey($teamName) -or $finishes[$teamName].score -lt $score) {
+                        $detailSuffix = if ($scoreLine) { " ($scoreLine)" } else { '' }
+                        $finishes[$teamName] = @{
+                            score = $score
+                            status = 'OUT'
+                            label = $roundLabel
+                            detail = "Eliminated in $roundLabel (lost to $winnerName)$detailSuffix"
+                        }
+                    }
+                }
+            }
+        }
+        catch {
+            Write-Warning "Could not load finish map for ${dateStr}: $($_.Exception.Message)"
+        }
+    }
+    return $finishes
+}
+
+function Apply-TournamentFinishes($FinishMap, $CountryLookup, $AllPicks, $Groups) {
+    foreach ($espnName in $FinishMap.Keys) {
+        $finish = $FinishMap[$espnName]
+        $keys = New-Object System.Collections.Generic.HashSet[string]
+        [void]$keys.Add($espnName)
+        foreach ($pick in $AllPicks) {
+            if (Test-CountryMatch $pick $espnName) { [void]$keys.Add($pick) }
+        }
+        foreach ($key in $keys) {
+            if (-not $CountryLookup.ContainsKey($key)) { continue }
+            $CountryLookup[$key]['status'] = $finish.status
+            $CountryLookup[$key]['detail'] = $finish.detail
+            $CountryLookup[$key]['finishLabel'] = $finish.label
+            $CountryLookup[$key]['finishScore'] = $finish.score
+        }
+    }
+    foreach ($group in $Groups) {
+        foreach ($team in $group.teams) {
+            if ($FinishMap.ContainsKey($team.name)) {
+                $finish = $FinishMap[$team.name]
+                $team.status = $finish.status
+                $team.detail = $finish.detail
+            }
+        }
+    }
+}
+
+function Get-CountryField($Country, [string]$Name) {
+    if ($null -eq $Country) { return $null }
+    if ($Country -is [hashtable]) { return $Country[$Name] }
+    return $Country.$Name
+}
+
+function Get-MemberBestFinish($MemberCountries) {
+    $bestScore = 0
+    $bestCountry = $null
+    $bestLabel = ''
+    foreach ($c in $MemberCountries) {
+        $finishScore = Get-CountryField $c 'finishScore'
+        $status = Get-CountryField $c 'status'
+        $score = if ($finishScore) { [int]$finishScore } elseif ($status -eq 'IN') { 100 } else { 5 }
+        $label = Get-CountryField $c 'finishLabel'
+        if (-not $label) {
+            if ($status -eq 'IN') { $label = 'World Cup Champion' }
+            else { $label = Get-CountryField $c 'detail' }
+        }
+        $pickName = Get-CountryField $c 'pickName'
+        if ($score -gt $bestScore) {
+            $bestScore = $score
+            $bestCountry = $pickName
+            $bestLabel = $label
+        }
+    }
+    return @{ score = $bestScore; country = $bestCountry; label = $bestLabel }
+}
+
+function Build-Podium($Members, $Countries, $FinishMap) {
+    $championEntry = $FinishMap.GetEnumerator() | Where-Object { $_.Value.score -eq 100 } | Select-Object -First 1
+    if (-not $championEntry) { return $null }
+
+    $poolMembers = @($Members | Where-Object { $_.name -notmatch 'Not Picked' })
+    $stats = @()
+    foreach ($m in $poolMembers) {
+        $groupPts = 0
+        foreach ($c in $m.countries) {
+            $pts = Get-CountryField $c 'points'
+            if ($pts) { $groupPts += [int]$pts }
+        }
+        $best = Get-MemberBestFinish $m.countries
+        $stats += [PSCustomObject]@{
+            name = $m.name
+            bestScore = $best.score
+            bestCountry = $best.country
+            bestLabel = $best.label
+            groupPoints = $groupPts
+            inCount = $m.inCount
+            countries = @($m.countries | ForEach-Object {
+                @{
+                    pickName = Get-CountryField $_ 'pickName'
+                    displayName = Get-CountryField $_ 'displayName'
+                    logo = Get-CountryField $_ 'logo'
+                    abbreviation = Get-CountryField $_ 'abbreviation'
+                    status = Get-CountryField $_ 'status'
+                }
+            })
+        }
+    }
+
+    $survivalRanked = @($stats | Sort-Object -Property @{ Expression = 'bestScore'; Descending = $true }, @{ Expression = 'groupPoints'; Descending = $true }, @{ Expression = 'name'; Descending = $false })
+    $first = $survivalRanked[0]
+    $second = if ($survivalRanked.Count -gt 1) { $survivalRanked[1] } else { $null }
+    $third = if ($survivalRanked.Count -gt 2) { $survivalRanked[2] } else { $null }
+    $topNames = @($first.name)
+    if ($second) { $topNames += $second.name }
+    if ($third) { $topNames += $third.name }
+
+    $fourth = @($stats | Sort-Object -Property @{ Expression = 'groupPoints'; Descending = $true }, @{ Expression = 'bestScore'; Descending = $true }, @{ Expression = 'name'; Descending = $false } | Where-Object { $topNames -notcontains $_.name } | Select-Object -First 1)[0]
+    if (-not $fourth) {
+        $fourth = @($stats | Sort-Object -Property @{ Expression = 'groupPoints'; Descending = $true } | Select-Object -Skip 3 -First 1)[0]
+    }
+
+    $championCountry = $Countries | Where-Object {
+        $fs = Get-CountryField $_ 'finishScore'
+        $st = Get-CountryField $_ 'status'
+        $pn = Get-CountryField $_ 'pickName'
+        ($fs -eq 100) -or ($st -eq 'IN' -and $pn -eq 'Spain')
+    } | Select-Object -First 1
+    if (-not $championCountry) {
+        $championCountry = $Countries | Where-Object { Test-CountryMatch 'Spain' (Get-CountryField $_ 'displayName') } | Select-Object -First 1
+    }
+    $winnerMember = $poolMembers | Where-Object {
+        @($_.countries | Where-Object {
+            $pn = Get-CountryField $_ 'pickName'
+            $dn = Get-CountryField $_ 'displayName'
+            ($pn -eq 'Spain') -or (Test-CountryMatch 'Spain' $dn)
+        }).Count -gt 0
+    } | Select-Object -First 1
+
+    function Format-Place($Place, $Stat, $Title, $Subtitle, $Metric) {
+        if (-not $Stat) { return $null }
+        return @{
+            place = $Place
+            title = $Title
+            subtitle = $Subtitle
+            memberName = $Stat.name
+            metric = $Metric
+            bestCountry = $Stat.bestCountry
+            bestLabel = $Stat.bestLabel
+            groupPoints = $Stat.groupPoints
+            countries = $Stat.countries
+        }
+    }
+
+    $places = @(
+        (Format-Place 1 $first '1st Place' 'World Cup Champion pick' "$($first.bestCountry) - $($first.bestLabel)")
+        (Format-Place 2 $second '2nd Place' 'Best knockout run' "$($second.bestCountry) - $($second.bestLabel)")
+        (Format-Place 3 $third '3rd Place' 'Next best knockout run' "$($third.bestCountry) - $($third.bestLabel)")
+        (Format-Place 4 $fourth '4th Place' 'Most group stage points' "$($fourth.groupPoints) pts across 3 picks")
+    ) | Where-Object { $_ }
+
+    return @{
+        complete = $true
+        championTeam = if ($championCountry) { Get-CountryField $championCountry 'displayName' } else { $championEntry.Key }
+        championPick = if ($championCountry) { Get-CountryField $championCountry 'pickName' } else { 'Spain' }
+        championLogo = if ($championCountry) { Get-CountryField $championCountry 'logo' } else { $null }
+        winnerMember = if ($winnerMember) { $winnerMember.name } else { $first.name }
+        places = $places
+    }
 }
 
 function Apply-KnockoutEliminations($KnockoutMap, $CountryLookup, $AllPicks, $Groups) {
@@ -463,6 +712,16 @@ if ($knockoutEliminated.Count -gt 0) {
     Apply-KnockoutEliminations $knockoutEliminated $countryLookup $allPicks $groups
 }
 
+Write-Host 'Resolving tournament finishes...'
+$finishMap = Get-TournamentFinishMap
+$tournamentComplete = @($finishMap.Values | Where-Object { $_.score -eq 100 }).Count -gt 0
+if ($finishMap.Count -gt 0) {
+    Apply-TournamentFinishes $finishMap $countryLookup $allPicks $groups
+    if ($tournamentComplete) {
+        Write-Host "Tournament complete - champion detected."
+    }
+}
+
 $unmatched = @()
 Write-Host 'Enriching countries with star players and FIFA links...'
 $countries = @()
@@ -485,6 +744,8 @@ foreach ($pick in $allPicks) {
             points = $info.points
             played = $info.played
             record = $info.record
+            finishScore = if ($info.finishScore) { $info.finishScore } else { 0 }
+            finishLabel = if ($info.finishLabel) { $info.finishLabel } else { '' }
             starPlayer = $star
             fifaUrl = $star.fifaUrl
         }
@@ -581,6 +842,11 @@ foreach ($member in $teamPicks) {
     }
 }
 
+$podium = $null
+if ($tournamentComplete) {
+    $podium = Build-Podium $membersOut $countries $finishMap
+}
+
 $summary = @{
     total = $countries.Count
     inCount = @($countries | Where-Object { $_.status -eq 'IN' }).Count
@@ -595,8 +861,16 @@ $payload = @{
     lastUpdatedDisplay = (Get-Date).ToString('dddd, MMMM d, yyyy h:mm tt')
     tournament = '2026 FIFA World Cup'
     tournamentDates = 'June 11 - July 19, 2026'
-    phase = if ($totalMatchesPlayed -gt 0) { 'Tournament in progress' } else { 'Group stage - opening day' }
+    phase = if ($tournamentComplete) {
+        "Tournament complete - $($podium.championTeam) are World Cup champions!"
+    } elseif ($totalMatchesPlayed -gt 0) {
+        'Tournament in progress'
+    } else {
+        'Group stage - opening day'
+    }
+    tournamentComplete = [bool]$tournamentComplete
     summary = $summary
+    podium = $podium
     statusChanges = $statusChanges
     members = $membersOut
     countries = $countries

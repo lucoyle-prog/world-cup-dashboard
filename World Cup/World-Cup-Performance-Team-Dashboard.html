@@ -367,6 +367,7 @@
       flex-shrink: 0;
     }
     .badge.in { background: rgba(0, 212, 106, 0.15); color: #00d46a; border: 1px solid rgba(0, 212, 106, 0.35); }
+    .badge.in.champion { background: rgba(255, 204, 0, 0.18); color: #ffcc00; border: 1px solid rgba(255, 204, 0, 0.5); }
     .badge.out { background: rgba(255, 77, 79, 0.15); color: #ff6b6b; border: 1px solid rgba(255, 77, 79, 0.35); }
     .badge.pending { background: rgba(255, 144, 0, 0.15); color: var(--cisco-orange); border: 1px solid rgba(255, 144, 0, 0.35); }
     .country-grid {
@@ -603,6 +604,213 @@
       padding-top: 14px;
       border-top: 1px solid rgba(82, 94, 108, 0.35);
     }
+
+    .confetti-layer {
+      pointer-events: none;
+      position: fixed;
+      inset: 0;
+      overflow: hidden;
+      z-index: 999;
+    }
+    .confetti-piece {
+      position: absolute;
+      top: -12px;
+      width: 9px;
+      height: 14px;
+      border-radius: 2px;
+      opacity: 0.85;
+      animation: confetti-fall linear infinite;
+    }
+    @keyframes confetti-fall {
+      0% { transform: translateY(-10vh) rotate(0deg); }
+      100% { transform: translateY(110vh) rotate(720deg); }
+    }
+
+    .winner-hero {
+      position: relative;
+      border-radius: var(--cisco-radius);
+      padding: 32px 24px 28px;
+      margin-bottom: 24px;
+      text-align: center;
+      background:
+        radial-gradient(circle at 20% 20%, rgba(255, 204, 0, 0.18), transparent 45%),
+        radial-gradient(circle at 80% 30%, rgba(200, 16, 46, 0.2), transparent 40%),
+        linear-gradient(135deg, rgba(200, 16, 46, 0.12), rgba(255, 204, 0, 0.08));
+      border: 1px solid rgba(255, 204, 0, 0.45);
+      box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
+      overflow: hidden;
+    }
+    .winner-hero.hidden { display: none; }
+    .winner-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.06), transparent);
+      animation: winner-shimmer 4s ease-in-out infinite;
+    }
+    @keyframes winner-shimmer {
+      0%, 100% { transform: translateX(-120%); }
+      50% { transform: translateX(120%); }
+    }
+    .winner-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #ffcc00;
+      border: 1px solid rgba(255, 204, 0, 0.5);
+      background: rgba(255, 204, 0, 0.1);
+      margin-bottom: 14px;
+      position: relative;
+    }
+    .winner-flag {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid rgba(255, 204, 0, 0.65);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+      margin-bottom: 12px;
+      position: relative;
+    }
+    .winner-name {
+      font-size: clamp(34px, 7vw, 56px);
+      font-weight: 800;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      color: #fff;
+      text-shadow: 0 2px 18px rgba(255, 204, 0, 0.25);
+      position: relative;
+    }
+    .winner-subtitle {
+      margin-top: 10px;
+      font-size: 15px;
+      color: var(--cisco-muted);
+      position: relative;
+    }
+    .winner-subtitle strong { color: #ffcc00; }
+
+    .podium-section { margin-bottom: 28px; }
+    .podium-section.hidden { display: none; }
+    .podium-intro {
+      font-size: 13px;
+      color: var(--cisco-muted);
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .podium-stage {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+    .podium-place {
+      flex: 1 1 150px;
+      max-width: 240px;
+      min-width: 140px;
+      text-align: center;
+      border-radius: var(--cisco-radius) var(--cisco-radius) 0 0;
+      padding: 18px 14px 16px;
+      border: 1px solid var(--cisco-slate);
+      background: var(--cisco-navy-mid);
+      position: relative;
+    }
+    .podium-medal {
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+    .podium-rank {
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--cisco-cyan);
+      margin-bottom: 4px;
+    }
+    .podium-name {
+      font-size: 20px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+    .podium-metric {
+      font-size: 12px;
+      color: var(--cisco-muted);
+      line-height: 1.4;
+      margin-bottom: 10px;
+      min-height: 34px;
+    }
+    .podium-flags {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .podium-place.place-1 {
+      order: 2;
+      min-height: 200px;
+      background: linear-gradient(180deg, rgba(255, 204, 0, 0.2), rgba(200, 16, 46, 0.08));
+      border-color: rgba(255, 204, 0, 0.55);
+      transform: translateY(-10px);
+      box-shadow: 0 10px 30px rgba(255, 204, 0, 0.08);
+    }
+    .podium-place.place-1 .podium-name { font-size: 24px; color: #ffcc00; }
+    .podium-place.place-2 {
+      order: 1;
+      min-height: 160px;
+      background: linear-gradient(180deg, rgba(192, 192, 192, 0.12), transparent);
+    }
+    .podium-place.place-3 {
+      order: 3;
+      min-height: 140px;
+      background: linear-gradient(180deg, rgba(205, 127, 50, 0.12), transparent);
+    }
+    .podium-place.place-4 {
+      flex: 1 1 100%;
+      max-width: 100%;
+      min-height: auto;
+      border-radius: var(--cisco-radius);
+      margin-top: 6px;
+      order: 4;
+      background: rgba(2, 200, 255, 0.06);
+      border-color: rgba(2, 200, 255, 0.35);
+      transform: none;
+    }
+    .podium-place.place-4 .podium-medal { font-size: 22px; }
+
+    .member-card.winner {
+      border-color: rgba(255, 204, 0, 0.55);
+      background: linear-gradient(180deg, rgba(255, 204, 0, 0.08), rgba(200, 16, 46, 0.04));
+      box-shadow: 0 8px 28px rgba(255, 204, 0, 0.08);
+    }
+    .member-card.winner .member-name {
+      font-size: 22px;
+      color: #ffcc00;
+    }
+    .member-card.winner .member-name-wrap::before {
+      content: '🇪🇸';
+      font-size: 20px;
+      margin-right: 6px;
+    }
+    .member-card.winner .member-score.surviving {
+      background: rgba(255, 204, 0, 0.15);
+      border-color: rgba(255, 204, 0, 0.45);
+      color: #ffcc00;
+    }
+
+    .leaderboard-section.hidden { display: none; }
+    .pill.final {
+      border-color: #ffcc00;
+      color: #ffcc00;
+      background: rgba(255, 204, 0, 0.1);
+    }
+    .pill.final .live-dot { background: #ffcc00; animation: none; }
   </style>
 </head>
 <body>
@@ -611,18 +819,27 @@
     <span class="sep">|</span>
     <span class="title">2026 FIFA World Cup Tracker</span>
     <span class="spacer"></span>
-    <span class="pill live"><span class="live-dot"></span> Daily status</span>
+    <span class="pill live" id="statusPill"><span class="live-dot"></span> <span id="statusPillText">Daily status</span></span>
     <span class="meta" id="updatedMeta">Loading…</span>
   </header>
 
   <main class="main">
-    <h1>World Cup Country Tracker</h1>
-    <p class="subtitle">
+    <h1 id="pageTitle">World Cup Country Tracker</h1>
+    <p class="subtitle" id="pageSubtitle">
       Knockout stage tracker for our FIFA Draw picks — see who still has countries
       <strong style="color:#00d46a">alive</strong> in the 2026 World Cup. Click any country for star player details.
     </p>
 
+    <div class="confetti-layer" id="confetti" aria-hidden="true"></div>
+    <div class="winner-hero hidden" id="winnerHero" aria-live="polite"></div>
+
     <div class="alert-banner" id="changesBanner"></div>
+
+    <div class="podium-section hidden" id="podiumSection">
+      <div class="section-title">Final Standings Podium</div>
+      <p class="podium-intro">Congratulations to our Performance Team pool winners — ranked by knockout survival, with a group-stage points bonus in 4th place.</p>
+      <div class="podium-stage" id="podium"></div>
+    </div>
 
     <div class="summary-row" id="summaryRow"></div>
 
@@ -638,8 +855,8 @@
     </div>
     <p class="search-hint" id="searchHint">Tip: click a country card or press Enter after searching to open star player details.</p>
 
-    <div class="section-title">Knockout Survival Standings</div>
-    <div class="leaderboard" id="leaderboard"></div>
+    <div class="section-title leaderboard-section" id="leaderboardSection">Knockout Survival Standings</div>
+    <div class="leaderboard leaderboard-section" id="leaderboard"></div>
 
     <div class="section-title">By Team Member</div>
     <div class="member-grid" id="memberGrid"></div>
@@ -793,10 +1010,101 @@
       return `<div class="flag-placeholder">${abbr}</div>`;
     }
 
-    function badgeHtml(status) {
-      const label = status === 'IN' ? 'ALIVE' : status === 'OUT' ? 'OUT' : 'PENDING';
-      const cls = status === 'IN' ? 'in' : status === 'OUT' ? 'out' : 'pending';
+    function badgeHtml(status, pickName) {
+      const isChampion = data.tournamentComplete && status === 'IN';
+      const label = isChampion ? 'CHAMP' : status === 'IN' ? 'ALIVE' : status === 'OUT' ? 'OUT' : 'PENDING';
+      const cls = isChampion ? 'in champion' : status === 'IN' ? 'in' : status === 'OUT' ? 'out' : 'pending';
       return `<span class="badge ${cls}">${label}</span>`;
+    }
+
+    function podiumMedal(place) {
+      return ({ 1: '🥇', 2: '🥈', 3: '🥉', 4: '🏅' })[place] || `#${place}`;
+    }
+
+    function startConfetti() {
+      const container = document.getElementById('confetti');
+      if (!container || container.dataset.started === '1') return;
+      container.dataset.started = '1';
+      const colors = ['#ffcc00', '#c8102e', '#00d46a', '#02c8ff', '#ffffff', '#ff6b6b'];
+      for (let i = 0; i < 90; i++) {
+        const piece = document.createElement('span');
+        piece.className = 'confetti-piece';
+        piece.style.left = `${Math.random() * 100}%`;
+        piece.style.background = colors[Math.floor(Math.random() * colors.length)];
+        piece.style.animationDelay = `${Math.random() * 5}s`;
+        piece.style.animationDuration = `${3 + Math.random() * 4}s`;
+        container.appendChild(piece);
+      }
+    }
+
+    function renderWinnerHero() {
+      const hero = document.getElementById('winnerHero');
+      const podium = data.podium;
+      if (!data.tournamentComplete || !podium) {
+        hero.classList.add('hidden');
+        hero.innerHTML = '';
+        return;
+      }
+      const logo = podium.championLogo
+        ? `<img class="winner-flag" src="${esc(podium.championLogo)}" alt="Spain flag" />`
+        : '';
+      hero.innerHTML = `
+        <div class="winner-badge">🏆 World Cup Champion</div>
+        ${logo}
+        <div class="winner-name">${esc(podium.winnerMember)}</div>
+        <div class="winner-subtitle">
+          Called it with <strong>${esc(podium.championPick || podium.championTeam)}</strong> —
+          ${esc(podium.championTeam)} win the 2026 FIFA World Cup!
+        </div>
+      `;
+      hero.classList.remove('hidden');
+      startConfetti();
+    }
+
+    function renderPodium() {
+      const section = document.getElementById('podiumSection');
+      const stage = document.getElementById('podium');
+      if (!data.podium || !data.podium.places || data.podium.places.length === 0) {
+        section.classList.add('hidden');
+        stage.innerHTML = '';
+        return;
+      }
+      stage.innerHTML = data.podium.places.map(place => {
+        const flags = (place.countries || []).map(c => flagHtml(c)).join('');
+        return `
+          <div class="podium-place place-${place.place}">
+            <div class="podium-medal">${podiumMedal(place.place)}</div>
+            <div class="podium-rank">${esc(place.title)}</div>
+            <div class="podium-name">${esc(place.memberName)}</div>
+            <div class="podium-metric">${esc(place.subtitle)}<br>${esc(place.metric || '')}</div>
+            <div class="podium-flags">${flags}</div>
+          </div>
+        `;
+      }).join('');
+      section.classList.remove('hidden');
+    }
+
+    function renderTournamentChrome() {
+      const complete = !!data.tournamentComplete;
+      const pill = document.getElementById('statusPill');
+      const pillText = document.getElementById('statusPillText');
+      const title = document.getElementById('pageTitle');
+      const subtitle = document.getElementById('pageSubtitle');
+      const leaderboardSections = document.querySelectorAll('.leaderboard-section');
+
+      if (complete) {
+        pill.classList.add('final');
+        pillText.textContent = 'Final results';
+        title.textContent = 'World Cup Pool — Final Results';
+        subtitle.innerHTML = `Spain are champions! Congratulations to <strong style="color:#ffcc00">${esc(data.podium?.winnerMember || 'Shraddha')}</strong> and everyone who played along. Click any country for star player details.`;
+        leaderboardSections.forEach(el => el.classList.add('hidden'));
+      } else {
+        pill.classList.remove('final');
+        pillText.textContent = 'Daily status';
+        title.textContent = 'World Cup Country Tracker';
+        subtitle.innerHTML = 'Knockout stage tracker for our FIFA Draw picks — see who still has countries <strong style="color:#00d46a">alive</strong> in the 2026 World Cup. Click any country for star player details.';
+        leaderboardSections.forEach(el => el.classList.remove('hidden'));
+      }
     }
 
     function sortCountriesByStatus(countries) {
@@ -856,8 +1164,9 @@
 
     function renderSummary() {
       const s = data.summary;
+      const aliveLabel = data.tournamentComplete ? 'Champion' : 'Still Alive';
       document.getElementById('summaryRow').innerHTML = `
-        <div class="stat-card in"><div class="stat-label">Still Alive</div><div class="stat-value">${s.inCount}</div></div>
+        <div class="stat-card in"><div class="stat-label">${aliveLabel}</div><div class="stat-value">${s.inCount}</div></div>
         <div class="stat-card out"><div class="stat-label">Eliminated</div><div class="stat-value">${s.outCount}</div></div>
         <div class="stat-card pending"><div class="stat-label">Pending</div><div class="stat-value">${s.pendingCount}</div></div>
         <div class="stat-card team"><div class="stat-label">Team Members</div><div class="stat-value">${s.members}</div></div>
@@ -906,13 +1215,19 @@
             ? allCountries
             : visible;
 
-          const cardClass = m.inCount === 0
-            ? 'member-card gone'
-            : m.inCount === total
-              ? 'member-card perfect'
-              : 'member-card';
+          const cardClass = data.podium && m.name === data.podium.winnerMember
+            ? 'member-card winner'
+            : m.inCount === 0
+              ? 'member-card gone'
+              : m.inCount === total
+                ? 'member-card perfect'
+                : 'member-card';
 
           const note = m.note ? `<div class="member-note">${esc(m.note)}</div>` : '';
+          const isWinner = data.podium && m.name === data.podium.winnerMember;
+          const aliveLabel = isWinner
+            ? '<strong style="color:#ffcc00">World Cup Champion!</strong>'
+            : `<strong>${m.inCount}</strong> of ${total} alive`;
 
           function countryRowHtml(c) {
             const eliminated = c.status === 'OUT';
@@ -944,8 +1259,8 @@
               <div class="member-head">
                 <div class="member-name-wrap">
                   <span class="member-name">${esc(m.name)}</span>
-                  <span class="member-alive-label${m.inCount === 0 ? ' all-out' : ''}">
-                    <strong>${m.inCount}</strong> of ${total} alive
+                  <span class="member-alive-label${m.inCount === 0 && !isWinner ? ' all-out' : ''}">
+                    ${aliveLabel}
                   </span>
                   ${survivalBarHtml(m.inCount, total)}
                 </div>
@@ -1041,6 +1356,9 @@
     }
 
     function renderAll() {
+      renderTournamentChrome();
+      renderWinnerHero();
+      renderPodium();
       renderSummary();
       renderChanges();
       renderLeaderboard();
